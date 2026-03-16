@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Artist — Kirsteen — Maison Cordier</title>
+<meta name="description" content="Kirsteen is a Scottish painter trained in Edinburgh and exhibited internationally, including a solo show at Galleri Cupido, Stockholm 2025. Her original mixed media works are curated across Europe by Maison Cordier.">
+<meta property="og:title" content="The Artist — Kirsteen — Maison Cordier">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://maisoncordier.art/artist.html">
+<link rel="canonical" href="https://maisoncordier.art/artist.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "name": "Kirsteen — Scottish Painter",
+  "url": "https://maisoncordier.art/artist.html",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Kirsteen",
+    "description": "Scottish contemporary painter. Trained in Edinburgh. Exhibited internationally including solo show Galleri Cupido, Stockholm 2025.",
+    "url": "https://kirsteenart.com",
+    "sameAs": ["https://kirsteenart.com"]
+  }
+}
+</script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+:root{
+  --ink:#0E0B09;--deep:#141008;--parchment:#FAF6EE;--warm:#F2EAD8;
+  --gold:#B8842A;--gold-lt:#D4A855;--copper:#C59669;--sand:#E8D0A8;
+}
+body{background:var(--ink);color:var(--parchment);font-family:'Jost',sans-serif;font-weight:300;line-height:1.8;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:0.5;mix-blend-mode:overlay}
+
+nav{position:fixed;top:0;width:100%;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 3rem;background:rgba(10,8,6,0.96);backdrop-filter:blur(24px);border-bottom:1px solid rgba(184,132,42,0.25)}
+.nav-brand{font-family:'Cormorant',serif;font-size:1.25rem;font-weight:400;font-style:italic;color:var(--parchment);letter-spacing:0.04em;text-decoration:none}
+.nav-brand em{color:var(--gold);font-style:normal}
+.nav-sub{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--sand);opacity:0.92;margin-top:0.1rem;display:block}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-link{font-family:'Jost',sans-serif;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--sand);text-decoration:none;opacity:0.75;transition:opacity 0.2s}
+.nav-link:hover,.nav-link.active{opacity:1;color:var(--gold)}
+.nav-lang{display:flex;gap:0.25rem}
+.lang-btn{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.1em;background:transparent;border:1px solid rgba(184,132,42,0.3);color:var(--sand);padding:0.22rem 0.45rem;cursor:pointer;transition:all 0.2s;border-radius:1px}
+.lang-btn.active,.lang-btn:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.nav-enquire{font-family:'Jost',sans-serif;font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:0.5rem 1.1rem;text-decoration:none;border-radius:1px;transition:background 0.2s;white-space:nowrap}
+.nav-enquire:hover{background:var(--gold-lt)}
+
+/* ARTIST HERO */
+.artist-hero{min-height:100vh;display:grid;grid-template-columns:50% 50%;position:relative;overflow:hidden}
+.artist-portrait{position:relative;overflow:hidden}
+.artist-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(0.85) saturate(1.05)}
+.portrait-overlay{position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,var(--ink) 100%)}
+.artist-intro{display:flex;flex-direction:column;justify-content:center;padding:10rem 5rem 6rem 4rem;position:relative}
+.artist-intro::before{content:'';position:absolute;top:0;left:0;width:2px;height:100%;background:linear-gradient(to bottom,transparent,var(--gold),transparent);opacity:0.3}
+.artist-eyebrow{font-size:0.52rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;opacity:0;animation:fadeUp 0.9s ease 0.3s forwards}
+.artist-name{font-family:'Cormorant',serif;font-size:clamp(3.5rem,5vw,6rem);font-weight:300;font-style:italic;color:var(--parchment);line-height:0.92;margin-bottom:1rem;opacity:0;animation:fadeUp 1s ease 0.5s forwards}
+.artist-subtitle{font-size:0.75rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--sand);margin-bottom:3rem;opacity:0;animation:fadeUp 1s ease 0.7s forwards}
+.artist-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.2rem,2vw,1.65rem);color:var(--warm);line-height:1.55;font-weight:300;border-left:2px solid rgba(184,132,42,0.4);padding-left:1.8rem;margin-bottom:3rem;opacity:0;animation:fadeUp 1s ease 0.9s forwards}
+.artist-quote em{color:var(--gold);font-style:normal}
+
+/* BIO SECTION */
+.artist-bio{padding:8rem 3rem;max-width:1100px;margin:0 auto}
+.bio-grid{display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:start}
+.bio-label{font-size:0.52rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.bio-h2{font-family:'Cormorant',serif;font-size:clamp(2.5rem,4vw,4rem);font-weight:300;color:var(--parchment);line-height:1.05;margin-bottom:2rem}
+.bio-h2 em{font-style:italic;color:var(--gold)}
+.bio-text{font-size:0.95rem;color:rgba(232,210,168,0.9);line-height:2;margin-bottom:1.5rem}
+.bio-text strong{color:var(--warm);font-weight:400}
+
+/* TIMELINE */
+.timeline{padding:0;list-style:none}
+.timeline-item{display:flex;gap:2rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(184,132,42,0.1);margin-bottom:2.5rem;position:relative}
+.timeline-item:last-child{border-bottom:none;margin-bottom:0}
+.timeline-year{font-family:'Cormorant',serif;font-style:italic;font-size:1.4rem;color:var(--gold);flex-shrink:0;width:4rem;text-align:right;margin-top:-0.1rem}
+.timeline-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:0.55rem;opacity:0.6}
+.timeline-content{}
+.timeline-event{font-size:0.88rem;color:var(--warm);font-weight:400;margin-bottom:0.2rem}
+.timeline-detail{font-size:0.8rem;color:rgba(232,210,168,0.65)}
+
+/* PROCESS */
+.artist-process{
+  background:linear-gradient(135deg,#0A0806,#120C07);
+  border-top:1px solid rgba(184,132,42,0.15);
+  border-bottom:1px solid rgba(184,132,42,0.15);
+  padding:8rem 3rem;
+}
+.process-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:4rem}
+.process-card{}
+.process-num{font-family:'Cormorant',serif;font-size:4rem;font-weight:300;font-style:italic;color:rgba(184,132,42,0.2);line-height:1;margin-bottom:0.5rem}
+.process-title{font-family:'Cormorant',serif;font-size:1.4rem;font-weight:400;color:var(--warm);margin-bottom:0.8rem}
+.process-text{font-size:0.85rem;color:rgba(232,210,168,0.75);line-height:1.9}
+
+/* WORKS PREVIEW */
+.works-preview{padding:6rem 3rem;background:var(--ink)}
+.preview-inner{max-width:1100px;margin:0 auto}
+.preview-label{font-size:0.52rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:1rem}
+.preview-h2{font-family:'Cormorant',serif;font-size:clamp(2.5rem,4vw,4rem);font-weight:300;color:var(--parchment);text-align:center;margin-bottom:4rem}
+.preview-h2 em{font-style:italic;color:var(--gold)}
+.preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.preview-item{position:relative;overflow:hidden;aspect-ratio:3/4}
+.preview-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease;filter:brightness(0.85)}
+.preview-item:hover img{transform:scale(1.05)}
+.preview-caption{position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(14,11,9,0.95),transparent);opacity:0;transition:opacity 0.3s}
+.preview-item:hover .preview-caption{opacity:1}
+.preview-cap-title{font-family:'Cormorant',serif;font-size:1.1rem;font-style:italic;color:var(--parchment)}
+.preview-cap-price{font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-top:0.2rem}
+
+/* LINK TO COLLECTION */
+.preview-cta{text-align:center;margin-top:4rem}
+.btn-primary{display:inline-flex;align-items:center;padding:1rem 2.4rem;background:var(--gold);color:var(--ink);font-family:'Jost',sans-serif;font-weight:500;font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all 0.25s}
+.btn-primary:hover{background:var(--gold-lt);transform:translateY(-2px)}
+
+/* EXTERNAL LINK */
+.kirsteenart-link{
+  text-align:center;padding:4rem 3rem;
+  border-top:1px solid rgba(184,132,42,0.1);
+}
+.kirsteenart-link p{font-size:0.85rem;color:rgba(232,210,168,0.65);margin-bottom:0.8rem}
+.kirsteenart-link a{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,132,42,0.4);padding-bottom:2px;transition:all 0.2s}
+.kirsteenart-link a:hover{color:var(--gold-lt);border-color:var(--gold-lt)}
+
+/* FOOTER */
+footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:2rem;border-top:1px solid rgba(184,132,42,0.12)}
+.footer-brand{font-family:'Cormorant',serif;font-size:1rem;font-weight:400;font-style:italic;color:var(--sand)}
+.footer-brand em{color:var(--gold);font-style:normal}
+.footer-nav{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
+.footer-nav a{font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.55);text-decoration:none;transition:color 0.2s}
+.footer-nav a:hover{color:var(--gold)}
+.footer-right{text-align:right;font-size:0.52rem;letter-spacing:0.1em;color:rgba(232,210,168,0.75)}
+.footer-right a{color:var(--gold);text-decoration:none;opacity:0.8}
+.footer-right a:hover{opacity:1}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(45px);transition:opacity 1s ease,transform 1s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:860px){
+  nav{padding:0.9rem 1.2rem}
+  .nav-sub,.nav-links,.nav-enquire{display:none}
+  .artist-hero{grid-template-columns:1fr;min-height:auto}
+  .artist-portrait{height:70vw}
+  .portrait-overlay{background:linear-gradient(to bottom,transparent 50%,var(--ink) 100%)}
+  .artist-intro{padding:3rem 1.5rem}
+  .artist-bio{padding:4rem 1.5rem}
+  .bio-grid{grid-template-columns:1fr;gap:3rem}
+  .artist-process{padding:5rem 1.5rem}
+  .process-inner{grid-template-columns:1fr;gap:2.5rem}
+  .works-preview{padding:4rem 1.5rem}
+  .preview-grid{grid-template-columns:1fr 1fr}
+  footer{grid-template-columns:1fr;gap:1rem}
+  .footer-nav,.footer-right{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">Maison <em>Cordier</em><span class="nav-sub">Original Works · Curated Collection</span></a>
+  <div style="display:flex;align-items:center;gap:2rem">
+    <div class="nav-links">
+      <a href="collection.html" class="nav-link">Collection</a>
+      <a href="artist.html" class="nav-link active">The Artist</a>
+      <a href="collect.html" class="nav-link">Collect</a>
+    </div>
+    <div class="nav-lang">
+      <button class="lang-btn active">EN</button>
+      <button class="lang-btn">NL</button>
+      <button class="lang-btn">FR</button>
+      <button class="lang-btn">DE</button>
+    </div>
+    <a href="collect.html" class="nav-enquire">Enquire</a>
+  </div>
+</nav>
+
+<!-- ARTIST HERO -->
+<div class="artist-hero">
+  <div class="artist-portrait">
+    <img src="https://i.ibb.co/HLqFhqmz/Kirsteen-profile.png" alt="Kirsteen — Scottish contemporary painter">
+    <div class="portrait-overlay"></div>
+  </div>
+  <div class="artist-intro">
+    <p class="artist-eyebrow">The Artist</p>
+    <h1 class="artist-name">Kirsteen</h1>
+    <p class="artist-subtitle">Scottish Painter · Edinburgh Trained · Exhibiting Internationally</p>
+    <blockquote class="artist-quote">&ldquo;Born into art. Trained in Edinburgh.<br>Exhibited in Stockholm.<br>Now in European homes — <em>personally placed.</em>&rdquo;</blockquote>
+    <p style="font-size:0.88rem;color:rgba(232,210,168,0.75);line-height:1.9">Kirsteen works in mixed media — paint, copper leaf, oil pastel, found materials — creating works that hold light and change with the hour. Each piece begins with observation and ends in transformation.</p>
+  </div>
+</div>
+
+<!-- BIO -->
+<div class="artist-bio">
+  <div class="bio-grid">
+    <div class="reveal">
+      <p class="bio-label">The work</p>
+      <h2 class="bio-h2">Art that<br>moves with<br><em>the light</em></h2>
+      <p class="bio-text">Kirsteen's paintings are not decorations. They are companions — works that reveal new things as the light in a room shifts, as seasons change, as the viewer changes. Mixed media allows her to build surfaces that breathe: copper leaf beneath layers of paint catches afternoon sun differently than morning grey.</p>
+      <p class="bio-text">Her subjects are drawn from landscape — coastal grasses, Mediterranean streets, botanical forms — but her interest is in what those landscapes <strong>feel like</strong> from the inside. Not documentation. Translation.</p>
+      <p class="bio-text">Each work in this collection is A2 or A3, edges painted, ready to hang. No framing required. No decisions to defer. It arrives, you hang it, and it begins.</p>
+    </div>
+    <div class="reveal">
+      <p class="bio-label">The journey</p>
+      <ul class="timeline">
+        <li class="timeline-item">
+          <span class="timeline-year">Early</span>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <p class="timeline-event">Born into art</p>
+            <p class="timeline-detail">Grew up surrounded by creativity. Art was not a choice — it was a first language.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-year">Edin.</span>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <p class="timeline-event">Trained in Edinburgh</p>
+            <p class="timeline-detail">Formal training in Scotland's capital — rigorous, traditional foundations that she later broke productively.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-year">2025</span>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <p class="timeline-event">Solo exhibition — Galleri Cupido, Stockholm</p>
+            <p class="timeline-detail">International debut in Scandinavia. Critical recognition. Works placed in private European collections.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-year">Now</span>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <p class="timeline-event">Curated by Maison Cordier across Europe</p>
+            <p class="timeline-detail">Five original works available — personally introduced, never sold through galleries or agents.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<div class="artist-process">
+  <div class="process-inner">
+    <div class="reveal">
+      <div class="process-num">01</div>
+      <h3 class="process-title">Observation</h3>
+      <p class="process-text">Every work begins in the world — coastlines, streets, botanical forms. Kirsteen draws from direct experience, not reference images. The feeling of a place, not its record.</p>
+    </div>
+    <div class="reveal">
+      <div class="process-num">02</div>
+      <h3 class="process-title">Accumulation</h3>
+      <p class="process-text">Mixed media means building surfaces in layers — copper leaf, paint, oil pastel, texture. Each layer changes what came before. The final work contains every earlier decision.</p>
+    </div>
+    <div class="reveal">
+      <div class="process-num">03</div>
+      <h3 class="process-title">The unrepeatable</h3>
+      <p class="process-text">A work is finished when it becomes its own thing — when it starts telling her something she didn't know she was saying. No two works are alike. No work is ever repeated.</p>
+    </div>
+  </div>
+</div>
+
+<!-- WORKS PREVIEW -->
+<div class="works-preview">
+  <div class="preview-inner">
+    <p class="preview-label">Five works · All available</p>
+    <h2 class="preview-h2">The <em>Collection</em></h2>
+    <div class="preview-grid reveal">
+      <a href="collection.html" class="preview-item">
+        <img src="https://i.ibb.co/rKgLZ9G5/Painting-40-Grasses1.avif" alt="Coastal Grasses" loading="lazy">
+        <div class="preview-caption"><p class="preview-cap-title">Coastal Grasses</p><p class="preview-cap-price">€1,095 · Available</p></div>
+      </a>
+      <a href="collection.html" class="preview-item">
+        <img src="https://i.ibb.co/bMnHjrv8/Kirsteen-Art-Painting-30-Malta-Street1.avif" alt="Malta Street" loading="lazy">
+        <div class="preview-caption"><p class="preview-cap-title">Malta Street</p><p class="preview-cap-price">€1,095 · Available</p></div>
+      </a>
+      <a href="collection.html" class="preview-item">
+        <img src="https://i.ibb.co/Xr82YZZs/Kirsteen-Art-Painting-28-Blue-Flowers-on-Copper1.avif" alt="Blue Flowers on Copper" loading="lazy">
+        <div class="preview-caption"><p class="preview-cap-title">Blue Flowers on Copper</p><p class="preview-cap-price">€1,095 · Available</p></div>
+      </a>
+    </div>
+    <div class="preview-cta reveal">
+      <a href="collection.html" class="btn-primary">View all five works</a>
+    </div>
+  </div>
+</div>
+
+<!-- LINK TO ARTIST SITE -->
+<div class="kirsteenart-link reveal">
+  <p>Discover more of Kirsteen's practice and wider body of work</p>
+  <a href="https://kirsteenart.com" target="_blank" rel="noopener">kirsteenart.com &rarr;</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Maison <em>Cordier</em></div>
+  <div class="footer-nav">
+    <a href="index.html">Home</a>
+    <a href="collection.html">Collection</a>
+    <a href="artist.html">The Artist</a>
+    <a href="collect.html">Collect</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+  <div class="footer-right">
+    <a href="mailto:bonjour@maisoncordier.art">bonjour@maisoncordier.art</a><br>
+    <span style="margin-top:0.3rem;display:block">&copy; 2026 Maison Cordier &mdash; CaeseySolutions LLC</span>
+  </div>
+</footer>
+
+<script>
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+</script>
+</body>
+</html>

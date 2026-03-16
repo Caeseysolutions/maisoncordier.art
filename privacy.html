@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Maison Cordier</title>
+<meta name="description" content="Privacy policy for maisoncordier.art. GDPR compliant. Your data is handled with care and never sold.">
+<meta property="og:title" content="Privacy Policy — Maison Cordier">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://maisoncordier.art/privacy.html">
+<link rel="canonical" href="https://maisoncordier.art/privacy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+:root{
+  --ink:#0E0B09;--parchment:#FAF6EE;--warm:#F2EAD8;
+  --gold:#B8842A;--gold-lt:#D4A855;--sand:#E8D0A8;
+}
+body{background:var(--ink);color:var(--parchment);font-family:'Jost',sans-serif;font-weight:300;line-height:1.8;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:0.5;mix-blend-mode:overlay}
+
+nav{position:fixed;top:0;width:100%;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 3rem;background:rgba(10,8,6,0.96);backdrop-filter:blur(24px);border-bottom:1px solid rgba(184,132,42,0.25)}
+.nav-brand{font-family:'Cormorant',serif;font-size:1.25rem;font-weight:400;font-style:italic;color:var(--parchment);letter-spacing:0.04em;text-decoration:none}
+.nav-brand em{color:var(--gold);font-style:normal}
+.nav-sub{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--sand);opacity:0.92;margin-top:0.1rem;display:block}
+.nav-back{font-family:'Jost',sans-serif;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--sand);text-decoration:none;opacity:0.75;transition:opacity 0.2s}
+.nav-back:hover{opacity:1;color:var(--gold)}
+
+.page-header{padding:13rem 3rem 5rem;border-bottom:1px solid rgba(184,132,42,0.12)}
+.page-header-inner{max-width:720px}
+.page-eyebrow{font-size:0.52rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.page-header h1{font-family:'Cormorant',serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:300;color:var(--parchment);line-height:0.95;margin-bottom:1.5rem}
+.page-header h1 em{font-style:italic;color:var(--gold)}
+.page-header-meta{font-size:0.75rem;color:rgba(232,210,168,0.55);letter-spacing:0.08em}
+
+.content{padding:6rem 3rem;max-width:720px}
+.content h2{font-family:'Cormorant',serif;font-size:1.6rem;font-weight:300;color:var(--warm);margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid rgba(184,132,42,0.1)}
+.content h2:first-of-type{margin-top:0;border-top:none;padding-top:0}
+.content p{font-size:0.92rem;color:rgba(232,210,168,0.85);line-height:2;margin-bottom:1.2rem}
+.content p strong{color:var(--warm);font-weight:400}
+.content a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,132,42,0.3);padding-bottom:1px}
+.content a:hover{color:var(--gold-lt);border-color:var(--gold-lt)}
+.content ul{padding-left:0;list-style:none;margin-bottom:1.2rem}
+.content ul li{display:flex;gap:0.8rem;font-size:0.92rem;color:rgba(232,210,168,0.85);line-height:1.9;padding:0.3rem 0}
+.content ul li::before{content:'·';color:var(--gold);flex-shrink:0;margin-top:0.05rem}
+
+footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:2rem;border-top:1px solid rgba(184,132,42,0.12)}
+.footer-brand{font-family:'Cormorant',serif;font-size:1rem;font-weight:400;font-style:italic;color:var(--sand)}
+.footer-brand em{color:var(--gold);font-style:normal}
+.footer-nav{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
+.footer-nav a{font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.55);text-decoration:none;transition:color 0.2s}
+.footer-nav a:hover{color:var(--gold)}
+.footer-right{text-align:right;font-size:0.52rem;letter-spacing:0.1em;color:rgba(232,210,168,0.75)}
+.footer-right a{color:var(--gold);text-decoration:none;opacity:0.8}
+
+@media(max-width:860px){
+  nav{padding:0.9rem 1.2rem}
+  .nav-sub{display:none}
+  .page-header,.content{padding-left:1.5rem;padding-right:1.5rem}
+  .page-header{padding-top:9rem}
+  footer{grid-template-columns:1fr;gap:1rem}
+  .footer-nav,.footer-right{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Maison <em>Cordier</em><span class="nav-sub">Original Works · Curated Collection</span></a>
+  <a href="javascript:history.back()" class="nav-back">← Back</a>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow">Legal</p>
+    <h1>Privacy <em>Policy</em></h1>
+    <p class="page-header-meta">Last updated: March 2026 &nbsp;·&nbsp; Maison Cordier / CaeseySolutions LLC</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <h2>Who we are</h2>
+  <p>Maison Cordier operates under <strong>CaeseySolutions LLC</strong>, a Wyoming-registered company. We curate and introduce original artworks across Europe. This website is maisoncordier.art.</p>
+  <p>For all data-related enquiries: <a href="mailto:bonjour@maisoncordier.art">bonjour@maisoncordier.art</a></p>
+
+  <h2>What data we collect</h2>
+  <p>We collect personal data only when you choose to contact us. This includes:</p>
+  <ul>
+    <li>Your name and email address (when you write to us by email)</li>
+    <li>Your phone number and message content (when you contact us via WhatsApp)</li>
+    <li>Any additional information you choose to share in your enquiry</li>
+  </ul>
+  <p>We do not use cookies for tracking, analytics, or advertising. We do not run advertising. We do not use third-party analytics tools that collect visitor data.</p>
+
+  <h2>Why we collect it</h2>
+  <p>Your contact information is collected solely to <strong>respond to your enquiry</strong>. We use it to:</p>
+  <ul>
+    <li>Reply to questions about artworks, the artist, or the collection</li>
+    <li>Facilitate the sale and delivery of an artwork if you wish to purchase</li>
+    <li>Follow up on a conversation you have initiated</li>
+  </ul>
+  <p>We will not use your data to send you unsolicited communications, newsletters, or marketing messages. If you wish to hear from us about future works, you must explicitly request this.</p>
+
+  <h2>Legal basis (GDPR)</h2>
+  <p>For visitors in the European Union and EEA, we process your personal data on the following lawful bases:</p>
+  <ul>
+    <li><strong>Legitimate interests</strong> — responding to enquiries you initiate</li>
+    <li><strong>Contract performance</strong> — fulfilling a sale and delivery if agreed</li>
+    <li><strong>Consent</strong> — where you have explicitly agreed to further contact</li>
+  </ul>
+
+  <h2>How we store and protect your data</h2>
+  <p>Enquiry communications are handled via standard email and WhatsApp. We do not store your data on any additional databases or CRM systems. Your email correspondence is retained only as long as necessary to serve your enquiry or fulfil any transaction.</p>
+  <p>We take reasonable technical and organisational measures to protect your data. We do not transfer your data to third parties except where necessary to complete a delivery (e.g., providing your name and address to a shipping courier).</p>
+
+  <h2>Your rights</h2>
+  <p>Under GDPR, you have the right to:</p>
+  <ul>
+    <li>Access the personal data we hold about you</li>
+    <li>Request correction of inaccurate data</li>
+    <li>Request erasure of your data ("right to be forgotten")</li>
+    <li>Object to or restrict processing of your data</li>
+    <li>Lodge a complaint with your national data protection authority</li>
+  </ul>
+  <p>To exercise any of these rights, contact us at <a href="mailto:bonjour@maisoncordier.art">bonjour@maisoncordier.art</a>. We will respond within 30 days.</p>
+
+  <h2>Third-party links</h2>
+  <p>This site includes a link to <a href="https://kirsteenart.com" target="_blank" rel="noopener">kirsteenart.com</a>, the artist's website. We are not responsible for the privacy practices of that site. Please review their privacy policy directly.</p>
+
+  <h2>Children</h2>
+  <p>This website is not directed at children under 16. We do not knowingly collect data from minors.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>We may update this privacy policy from time to time. The current version will always be available at this address. Material changes will be noted with an updated date at the top of this page.</p>
+
+  <h2>Contact</h2>
+  <p>For any questions about this policy or your data: <a href="mailto:bonjour@maisoncordier.art">bonjour@maisoncordier.art</a> or WhatsApp <a href="https://wa.me/32456396879">+32 456 39 68 79</a>.</p>
+
+</div>
+
+<footer>
+  <div class="footer-brand">Maison <em>Cordier</em></div>
+  <div class="footer-nav">
+    <a href="index.html">Home</a>
+    <a href="collection.html">Collection</a>
+    <a href="artist.html">The Artist</a>
+    <a href="collect.html">Collect</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+  <div class="footer-right">
+    <a href="mailto:bonjour@maisoncordier.art">bonjour@maisoncordier.art</a><br>
+    <span style="margin-top:0.3rem;display:block">&copy; 2026 Maison Cordier &mdash; CaeseySolutions LLC</span>
+  </div>
+</footer>
+
+</body>
+</html>

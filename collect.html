@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collect — Maison Cordier</title>
+<meta name="description" content="Enquire about a painting from Maison Cordier. No galleries, no agents — a personal introduction. WhatsApp or email. Response within 24 hours.">
+<meta property="og:title" content="Collect — Maison Cordier">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://maisoncordier.art/collect.html">
+<link rel="canonical" href="https://maisoncordier.art/collect.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+:root{
+  --ink:#0E0B09;--parchment:#FAF6EE;--warm:#F2EAD8;
+  --gold:#B8842A;--gold-lt:#D4A855;--copper:#C59669;--sand:#E8D0A8;
+}
+body{background:var(--ink);color:var(--parchment);font-family:'Jost',sans-serif;font-weight:300;line-height:1.8;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:0.5;mix-blend-mode:overlay}
+
+nav{position:fixed;top:0;width:100%;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 3rem;background:rgba(10,8,6,0.96);backdrop-filter:blur(24px);border-bottom:1px solid rgba(184,132,42,0.25)}
+.nav-brand{font-family:'Cormorant',serif;font-size:1.25rem;font-weight:400;font-style:italic;color:var(--parchment);letter-spacing:0.04em;text-decoration:none}
+.nav-brand em{color:var(--gold);font-style:normal}
+.nav-sub{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--sand);opacity:0.92;margin-top:0.1rem;display:block}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-link{font-family:'Jost',sans-serif;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--sand);text-decoration:none;opacity:0.75;transition:opacity 0.2s}
+.nav-link:hover,.nav-link.active{opacity:1;color:var(--gold)}
+.nav-lang{display:flex;gap:0.25rem}
+.lang-btn{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.1em;background:transparent;border:1px solid rgba(184,132,42,0.3);color:var(--sand);padding:0.22rem 0.45rem;cursor:pointer;transition:all 0.2s;border-radius:1px}
+.lang-btn.active,.lang-btn:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.nav-enquire{font-family:'Jost',sans-serif;font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:0.5rem 1.1rem;text-decoration:none;border-radius:1px;transition:background 0.2s;white-space:nowrap}
+.nav-enquire:hover{background:var(--gold-lt)}
+
+/* HERO */
+.page-hero{padding:14rem 3rem 7rem;text-align:center;position:relative;overflow:hidden;background:linear-gradient(to bottom,#0A0806,var(--ink))}
+.page-hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(184,132,42,0.06) 0%,transparent 60%);pointer-events:none}
+.page-eyebrow{font-size:0.52rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.9s ease 0.2s forwards}
+.page-hero h1{font-family:'Cormorant',serif;font-size:clamp(3rem,6vw,6.5rem);font-weight:300;color:var(--parchment);line-height:0.92;margin-bottom:1.5rem;opacity:0;animation:fadeUp 1s ease 0.4s forwards}
+.page-hero h1 em{font-style:italic;color:var(--gold)}
+.hero-body{font-size:1rem;color:var(--sand);max-width:520px;margin:0 auto;line-height:1.9;opacity:0;animation:fadeUp 1s ease 0.6s forwards}
+
+/* HOW IT WORKS */
+.how{padding:7rem 3rem;background:linear-gradient(135deg,#0A0806,#120C07);border-top:1px solid rgba(184,132,42,0.15)}
+.how-inner{max-width:1000px;margin:0 auto}
+.section-label{font-size:0.52rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:1rem}
+.section-h2{font-family:'Cormorant',serif;font-size:clamp(2.5rem,4vw,4rem);font-weight:300;color:var(--parchment);text-align:center;margin-bottom:4rem}
+.section-h2 em{font-style:italic;color:var(--gold)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5rem}
+.step{}
+.step-num{font-family:'Cormorant',serif;font-size:3.5rem;font-weight:300;font-style:italic;color:rgba(184,132,42,0.25);line-height:1;margin-bottom:0.8rem}
+.step-title{font-family:'Cormorant',serif;font-size:1.3rem;font-weight:400;color:var(--warm);margin-bottom:0.6rem}
+.step-text{font-size:0.82rem;color:rgba(232,210,168,0.72);line-height:1.85}
+
+/* CONTACT SECTION */
+.contact-section{padding:8rem 3rem;max-width:1100px;margin:0 auto}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+
+/* CONTACT CARDS */
+.contact-card{background:linear-gradient(135deg,rgba(20,16,8,0.8),rgba(14,11,9,0.9));border:1px solid rgba(184,132,42,0.2);padding:3rem;border-radius:2px;position:relative;overflow:hidden}
+.contact-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);opacity:0.5}
+.contact-card-label{font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.contact-card-title{font-family:'Cormorant',serif;font-size:1.8rem;font-weight:300;color:var(--parchment);margin-bottom:1rem}
+.contact-card-text{font-size:0.88rem;color:rgba(232,210,168,0.8);line-height:1.9;margin-bottom:2rem}
+.contact-card-text em{color:var(--warm);font-style:italic}
+
+.btn-contact{display:inline-flex;align-items:center;gap:0.8rem;padding:1rem 2rem;font-family:'Jost',sans-serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all 0.25s;width:100%;justify-content:center;margin-bottom:1rem}
+.btn-contact-primary{background:var(--gold);color:var(--ink);border:1px solid var(--gold)}
+.btn-contact-primary:hover{background:var(--gold-lt);border-color:var(--gold-lt)}
+.btn-contact-ghost{background:transparent;color:var(--sand);border:1px solid rgba(184,132,42,0.35)}
+.btn-contact-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+.contact-detail{font-size:0.72rem;color:rgba(232,210,168,0.55);text-align:center;margin-top:0.8rem;letter-spacing:0.05em}
+
+/* WHAT TO INCLUDE */
+.what-to-include{}
+.what-label{font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.what-h3{font-family:'Cormorant',serif;font-size:1.8rem;font-weight:300;color:var(--parchment);margin-bottom:1rem}
+.what-text{font-size:0.88rem;color:rgba(232,210,168,0.8);line-height:1.95;margin-bottom:1.5rem}
+.what-list{list-style:none;padding:0}
+.what-list li{display:flex;gap:0.8rem;align-items:flex-start;font-size:0.85rem;color:rgba(232,210,168,0.75);padding:0.6rem 0;border-bottom:1px solid rgba(184,132,42,0.08)}
+.what-list li:last-child{border-bottom:none}
+.what-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:0.6rem}
+
+/* PRACTICAL INFO */
+.practical{padding:5rem 3rem;background:linear-gradient(135deg,#0A0806,#120C07);border-top:1px solid rgba(184,132,42,0.12)}
+.practical-inner{max-width:1000px;margin:0 auto}
+.practical-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;margin-top:4rem}
+.practical-card{padding:2rem;border:1px solid rgba(184,132,42,0.15);border-radius:2px}
+.practical-icon{font-family:'Cormorant',serif;font-style:italic;font-size:1.5rem;color:var(--gold);margin-bottom:1rem}
+.practical-title{font-family:'Jost',sans-serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--warm);margin-bottom:0.8rem}
+.practical-text{font-size:0.82rem;color:rgba(232,210,168,0.72);line-height:1.85}
+
+/* HUMANITARIAN */
+.humanitarian{padding:5rem 3rem;text-align:center;border-top:1px solid rgba(184,132,42,0.12)}
+.humanitarian-inner{max-width:560px;margin:0 auto}
+.humanitarian-label{font-size:0.52rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.humanitarian-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;color:var(--warm);line-height:1.7}
+.humanitarian-text em{color:var(--gold);font-style:normal}
+
+/* FOOTER */
+footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:2rem;border-top:1px solid rgba(184,132,42,0.12)}
+.footer-brand{font-family:'Cormorant',serif;font-size:1rem;font-weight:400;font-style:italic;color:var(--sand)}
+.footer-brand em{color:var(--gold);font-style:normal}
+.footer-nav{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
+.footer-nav a{font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.55);text-decoration:none;transition:color 0.2s}
+.footer-nav a:hover{color:var(--gold)}
+.footer-right{text-align:right;font-size:0.52rem;letter-spacing:0.1em;color:rgba(232,210,168,0.75)}
+.footer-right a{color:var(--gold);text-decoration:none;opacity:0.8}
+.footer-right a:hover{opacity:1}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(45px);transition:opacity 1s ease,transform 1s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:860px){
+  nav{padding:0.9rem 1.2rem}
+  .nav-sub,.nav-links,.nav-enquire{display:none}
+  .page-hero{padding:10rem 1.5rem 5rem}
+  .how{padding:5rem 1.5rem}
+  .steps{grid-template-columns:1fr 1fr;gap:2rem}
+  .contact-section{padding:4rem 1.5rem}
+  .contact-grid{grid-template-columns:1fr;gap:3rem}
+  .practical{padding:3rem 1.5rem}
+  .practical-grid{grid-template-columns:1fr;gap:2rem}
+  .humanitarian{padding:3rem 1.5rem}
+  footer{grid-template-columns:1fr;gap:1rem}
+  .footer-nav,.footer-right{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">Maison <em>Cordier</em><span class="nav-sub">Original Works · Curated Collection</span></a>
+  <div style="display:flex;align-items:center;gap:2rem">
+    <div class="nav-links">
+      <a href="collection.html" class="nav-link">Collection</a>
+      <a href="artist.html" class="nav-link">The Artist</a>
+      <a href="collect.html" class="nav-link active">Collect</a>
+    </div>
+    <div class="nav-lang">
+      <button class="lang-btn active">EN</button>
+      <button class="lang-btn">NL</button>
+      <button class="lang-btn">FR</button>
+      <button class="lang-btn">DE</button>
+    </div>
+    <a href="collect.html" class="nav-enquire">Enquire</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <p class="page-eyebrow">Maison Cordier · Private Enquiry</p>
+  <h1>How to<br><em>Collect</em></h1>
+  <p class="hero-body">No galleries, no agents. A painting finds its home through a conversation — one work, one person, one introduction. Write to us. We'll take it from there.</p>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="how">
+  <div class="how-inner">
+    <p class="section-label">The process</p>
+    <h2 class="section-h2">Simple by <em>design</em></h2>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3 class="step-title">You write</h3>
+        <p class="step-text">Tell us which work caught your attention. Tell us about your space. Or simply say hello — there's no wrong way to start.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3 class="step-title">We respond</h3>
+        <p class="step-text">Kristof responds personally, always within 24 hours. A conversation, not a sales process. Questions welcome. No pressure.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3 class="step-title">Agreement</h3>
+        <p class="step-text">If the work is right for you, we agree terms directly. Payment by bank transfer or equivalent. Secure, simple, human.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3 class="step-title">Delivered</h3>
+        <p class="step-text">Carefully packaged, fully insured. Shipped across Europe. Arrives ready to hang. And the conversation doesn't end there.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-section">
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="contact-card" style="margin-bottom:2rem">
+        <p class="contact-card-label">Email</p>
+        <h3 class="contact-card-title">Write a letter</h3>
+        <p class="contact-card-text">The unhurried option. Tell us about a work, your space, or anything you'd like us to know. <em>Kristof reads every message himself.</em></p>
+        <a href="mailto:bonjour@maisoncordier.art?subject=Enquiry%20—%20Maison%20Cordier" class="btn-contact btn-contact-primary">bonjour@maisoncordier.art</a>
+        <p class="contact-detail">Response within 24 hours · Personal reply · EN · NL · FR · DE</p>
+      </div>
+      <div class="contact-card">
+        <p class="contact-card-label">WhatsApp</p>
+        <h3 class="contact-card-title">Start a conversation</h3>
+        <p class="contact-card-text">Prefer to talk? Send a message on WhatsApp. <em>Voice notes welcome.</em> Same personal response, same 24-hour commitment.</p>
+        <a href="https://wa.me/32456396879" class="btn-contact btn-contact-ghost">+32 456 39 68 79</a>
+        <p class="contact-detail">Available across Europe · Any language welcome</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="what-label">What to include</p>
+      <h3 class="what-h3">Nothing required. These help.</h3>
+      <p class="what-text">You don't need to have anything figured out before you write. But if you want to give us a head start, here's what helps a conversation move well:</p>
+      <ul class="what-list">
+        <li><div class="what-dot"></div><span>Which work or works you're drawn to — a name, a number, or a description is fine</span></li>
+        <li><div class="what-dot"></div><span>Something about the room or space you have in mind — light, colour, feeling</span></li>
+        <li><div class="what-dot"></div><span>Your location in Europe — for shipping and timing</span></li>
+        <li><div class="what-dot"></div><span>Any questions about the work, the artist, or the process — all welcome</span></li>
+        <li><div class="what-dot"></div><span>Or simply say <em style="color:var(--warm);font-style:italic">bonjour</em> — and we'll go from there</span></li>
+      </ul>
+      <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(184,132,42,0.15)">
+        <p style="font-size:0.8rem;color:rgba(232,210,168,0.55);line-height:1.9">We collect your name and email solely to respond to your enquiry. We do not send unsolicited communications. Your data is never shared. See our <a href="privacy.html" style="color:var(--gold);text-decoration:none">privacy policy</a> for full details.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRACTICAL INFO -->
+<div class="practical">
+  <div class="practical-inner">
+    <p class="section-label" style="text-align:center">Practical</p>
+    <h2 class="section-h2" style="text-align:center">Good to <em>know</em></h2>
+    <div class="practical-grid reveal">
+      <div class="practical-card">
+        <p class="practical-icon">€1,095</p>
+        <p class="practical-title">Pricing</p>
+        <p class="practical-text">Each of the five works is priced at €1,095. This is the final price — there are no gallery commissions, no agent fees. You pay the artist's value directly.</p>
+      </div>
+      <div class="practical-card">
+        <p class="practical-icon">Shipping</p>
+        <p class="practical-title">Delivery across Europe</p>
+        <p class="practical-text">Works are carefully packaged and shipped fully insured. Delivery time and cost discussed at enquiry stage. Works arrive ready to hang — edges painted, no framing required. Import duties beyond the EU are the buyer's responsibility.</p>
+      </div>
+      <div class="practical-card">
+        <p class="practical-icon">Once</p>
+        <p class="practical-title">Scarcity by nature</p>
+        <p class="practical-text">Each work exists once. When it finds its home, it leaves this collection permanently. There are no editions, no prints, no reproductions. Five works, five homes — and then they're gone.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HUMANITARIAN -->
+<div class="humanitarian reveal">
+  <div class="humanitarian-inner">
+    <p class="humanitarian-label">A purchase with purpose</p>
+    <p class="humanitarian-text">A portion of proceeds from every sale supports humanitarian projects across <em>Europe and Africa</em> — including ongoing work in Tanzania. When you collect, you give twice.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Maison <em>Cordier</em></div>
+  <div class="footer-nav">
+    <a href="index.html">Home</a>
+    <a href="collection.html">Collection</a>
+    <a href="artist.html">The Artist</a>
+    <a href="collect.html">Collect</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+  <div class="footer-right">
+    <a href="mailto:bonjour@maisoncordier.art">bonjour@maisoncordier.art</a><br>
+    <span style="margin-top:0.3rem;display:block">&copy; 2026 Maison Cordier &mdash; CaeseySolutions LLC</span>
+  </div>
+</footer>
+
+<script>
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+
+// Pre-fill subject from collection page
+(function(){
+  var w=sessionStorage.getItem('mc_work');
+  if(w){
+    var links=document.querySelectorAll('a[href^="mailto:bonjour"]');
+    links.forEach(function(l){
+      l.href='mailto:bonjour@maisoncordier.art?subject=Enquiry%20%E2%80%94%20'+encodeURIComponent(w);
+    });
+    var wa=document.querySelector('a[href^="https://wa.me"]');
+    if(wa) wa.href='https://wa.me/32456396879?text='+encodeURIComponent('Hello, I am interested in: '+w);
+  }
+})();
+</script>
+</body>
+</html>
