@@ -42,9 +42,9 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 nav{position:fixed;top:0;width:100%;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 3rem;background:rgba(10,8,6,0.96);backdrop-filter:blur(24px);border-bottom:1px solid rgba(184,132,42,0.25)}
 .nav-brand{font-family:'Cormorant',serif;font-size:1.25rem;font-weight:400;font-style:italic;color:var(--parchment);letter-spacing:0.04em;text-decoration:none}
 .nav-brand em{color:var(--gold);font-style:normal}
-.nav-sub{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--sand);opacity:0.92;margin-top:0.1rem;display:block}
+.nav-sub{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--parchment);opacity:0.85;margin-top:0.1rem;display:block}
 .nav-links{display:flex;align-items:center;gap:2rem}
-.nav-link{font-family:'Jost',sans-serif;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--sand);text-decoration:none;opacity:0.75;transition:opacity 0.2s}
+.nav-link{font-family:'Jost',sans-serif;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--parchment);text-decoration:none;opacity:0.9;transition:opacity 0.2s}
 .nav-link:hover,.nav-link.active{opacity:1;color:var(--gold)}
 .nav-lang{display:flex;gap:0.25rem}
 .lang-btn{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.1em;background:transparent;border:1px solid rgba(184,132,42,0.3);color:var(--sand);padding:0.22rem 0.45rem;cursor:pointer;transition:all 0.2s;border-radius:1px}
@@ -131,7 +131,7 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
 .footer-brand{font-family:'Cormorant',serif;font-size:1rem;font-weight:400;font-style:italic;color:var(--sand)}
 .footer-brand em{color:var(--gold);font-style:normal}
 .footer-nav{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
-.footer-nav a{font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.55);text-decoration:none;transition:color 0.2s}
+.footer-nav a{font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none;transition:color 0.2s}
 .footer-nav a:hover{color:var(--gold)}
 .footer-right{text-align:right;font-size:0.52rem;letter-spacing:0.1em;color:rgba(232,210,168,0.75)}
 .footer-right a{color:var(--gold);text-decoration:none;opacity:0.8}
@@ -273,15 +273,15 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
     <h2 class="preview-h2">The <em>Collection</em></h2>
     <div class="preview-grid reveal">
       <a href="collection.html" class="preview-item">
-        <img src="https://i.ibb.co/rKgLZ9G5/Painting-40-Grasses1.avif" alt="Coastal Grasses" loading="lazy">
+        <img src="https://i.ibb.co/rKgLZ9G5/Painting-40-Grasses1.avif" alt="Coastal Grasses">
         <div class="preview-caption"><p class="preview-cap-title">Coastal Grasses</p><p class="preview-cap-price">€1,095 · Available</p></div>
       </a>
       <a href="collection.html" class="preview-item">
-        <img src="https://i.ibb.co/bMnHjrv8/Kirsteen-Art-Painting-30-Malta-Street1.avif" alt="Malta Street" loading="lazy">
+        <img src="https://i.ibb.co/bMnHjrv8/Kirsteen-Art-Painting-30-Malta-Street1.avif" alt="Malta Street">
         <div class="preview-caption"><p class="preview-cap-title">Malta Street</p><p class="preview-cap-price">€1,095 · Available</p></div>
       </a>
       <a href="collection.html" class="preview-item">
-        <img src="https://i.ibb.co/Xr82YZZs/Kirsteen-Art-Painting-28-Blue-Flowers-on-Copper1.avif" alt="Blue Flowers on Copper" loading="lazy">
+        <img src="https://i.ibb.co/Xr82YZZs/Kirsteen-Art-Painting-28-Blue-Flowers-on-Copper1.avif" alt="Blue Flowers on Copper">
         <div class="preview-caption"><p class="preview-cap-title">Blue Flowers on Copper</p><p class="preview-cap-price">€1,095 · Available</p></div>
       </a>
     </div>
@@ -308,14 +308,9 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
     <a href="privacy.html">Privacy</a>
   </div>
   <div class="footer-right">
-    <a href="mailto:bonjour@maisoncordier.art">bonjour@maisoncordier.art</a><br>
+    <a href="/cdn-cgi/l/email-protection#44262b2a2e2b31360429252d372b2a272b36202d21366a253630"><span class="__cf_email__" data-cfemail="b5d7dadbdfdac0c7f5d8d4dcc6dadbd6dac7d1dcd0c79bd4c7c1">[email&#160;protected]</span></a><br>
     <span style="margin-top:0.3rem;display:block">&copy; 2026 Maison Cordier &mdash; CaeseySolutions LLC</span>
   </div>
 </footer>
 
-<script>
-var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
-</script>
-</body>
-</html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script
