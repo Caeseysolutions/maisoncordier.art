@@ -238,16 +238,7 @@ footer{
   footer{grid-template-columns:1fr;gap:1rem}
   .footer-center,.footer-right{text-align:left}
   .hero-scroll{display:none}
-}
 
-/* ═══ HAMBURGER MENU ═══ */
-.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;z-index:200}
-.nav-toggle span{display:block;width:22px;height:2px;background:var(--parchment);transition:all 0.3s;border-radius:1px}
-.nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-.nav-toggle.open span:nth-child(2){opacity:0}
-.nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-
-@media(max-width:860px){
   .nav-toggle{display:flex}
   .nav-mobile-menu{
     display:none;
@@ -291,6 +282,15 @@ footer{
   }
 }
 
+/* ═══ HAMBURGER MENU ═══ */
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;z-index:200}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--parchment);transition:all 0.3s;border-radius:1px}
+.nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+
+
 </style>
 </head>
 <body>
@@ -306,6 +306,7 @@ footer{
     <a href="collection.html" class="nav-link">Collection</a>
     <a href="artist.html" class="nav-link">The Artist</a>
     <a href="collect.html" class="nav-link">Collect</a>
+    <a href="journal.html" class="nav-link">Journal</a>
   </div>
   <div class="nav-right">
     <div class="nav-lang">
@@ -327,6 +328,7 @@ footer{
   <a href="collection.html">Collection</a>
   <a href="artist.html">The Artist</a>
   <a href="collect.html">Collect</a>
+  <a href="journal.html">Journal</a>
   <a href="collect.html" class="mob-enquire">Enquire</a>
   <div class="mob-lang">
     <button class="lang-btn" onclick="setLang('en');document.getElementById('nav-mobile-menu').classList.remove('open');document.getElementById('nav-toggle').classList.remove('open');document.body.style.overflow=''">EN</button>
@@ -522,6 +524,14 @@ footer{
     <a href="collection.html" style="font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none">Collection</a>
     <a href="artist.html" style="font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none">The Artist</a>
     <a href="collect.html" style="font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none">Collect</a>
+    <a href="privacy.html" style="font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none">Privacy</a>
+  </div>
+  <div style="grid-column:1/-1;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;padding-top:1rem;border-top:1px solid rgba(184,132,42,0.15)">
+    <a href="index.html" style="font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none">Home</a>
+    <a href="collection.html" style="font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none">Collection</a>
+    <a href="artist.html" style="font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none">The Artist</a>
+    <a href="collect.html" style="font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none">Collect</a>
+    <a href="journal.html" style="font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none">Journal</a>
     <a href="privacy.html" style="font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none">Privacy</a>
   </div>
 </footer>
