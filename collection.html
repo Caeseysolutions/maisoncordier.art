@@ -75,11 +75,11 @@ nav{
 .nav-sub{
   font-family:'Jost',sans-serif;font-size:0.52rem;
   letter-spacing:0.28em;text-transform:uppercase;
-  color:var(--sand);opacity:0.92;
+  color:var(--parchment);opacity:0.85;
   margin-top:0.1rem;display:block;
 }
 .nav-links{display:flex;align-items:center;gap:2rem}
-.nav-link{font-family:'Jost',sans-serif;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--sand);text-decoration:none;opacity:0.75;transition:opacity 0.2s}
+.nav-link{font-family:'Jost',sans-serif;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--parchment);text-decoration:none;opacity:0.9;transition:opacity 0.2s}
 .nav-link:hover,.nav-link.active{opacity:1;color:var(--gold)}
 .nav-right{display:flex;align-items:center;gap:1.5rem}
 .nav-lang{display:flex;gap:0.25rem}
@@ -147,8 +147,8 @@ nav{
 .work:nth-child(4){--ac:#489CE4;--ac2:#93826E}
 .work:nth-child(5){--ac:#BE916A;--ac2:#593E31}
 
-.work-img{position:relative;overflow:hidden;min-height:65vh}
-.work-img img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 1s ease;display:block}
+.work-img{position:relative;overflow:hidden;min-height:65vh;height:65vh}
+.work-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 1s ease;display:block}
 .work-img:hover img{transform:scale(1.05)}
 .work-img-shade{position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,11,9,0.08),transparent 60%)}
 .work-num{position:absolute;bottom:1.5rem;right:1.5rem;font-family:'Cormorant',serif;font-size:6rem;font-weight:300;font-style:italic;color:rgba(255,255,255,0.06);line-height:1;pointer-events:none;z-index:1}
@@ -169,7 +169,7 @@ nav{
 .avail-dot{width:6px;height:6px;background:#4CAF50;border-radius:50%;animation:blink 2.5s ease infinite}
 @keyframes blink{0%,100%{opacity:0.5}50%{opacity:1}}
 
-.work-duties{font-size:0.52rem;color:rgba(232,210,168,0.5);margin-top:0.5rem;font-style:italic}
+.work-duties{font-size:0.52rem;color:rgba(232,210,168,0.75);margin-top:0.5rem;font-style:italic}
 
 .work-cta{display:flex;flex-direction:column;align-items:flex-start;gap:0.8rem}
 .btn-enquire{display:inline-flex;align-items:center;gap:0.8rem;padding:1rem 2.2rem;border:1px solid var(--ac);color:var(--parchment);font-family:'Jost',sans-serif;font-weight:300;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all 0.3s;background:transparent}
@@ -207,7 +207,7 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
 .footer-brand{font-family:'Cormorant',serif;font-size:1rem;font-weight:400;font-style:italic;color:var(--sand)}
 .footer-brand em{color:var(--gold);font-style:normal}
 .footer-nav{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
-.footer-nav a{font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.55);text-decoration:none;transition:color 0.2s}
+.footer-nav a{font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none;transition:color 0.2s}
 .footer-nav a:hover{color:var(--gold)}
 .footer-right{text-align:right;font-size:0.52rem;letter-spacing:0.1em;color:rgba(232,210,168,0.75)}
 .footer-right a{color:var(--gold);text-decoration:none;opacity:0.8}
@@ -229,7 +229,7 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
   .room-caption{left:1.5rem;bottom:1rem}
   .work,.work.flip{grid-template-columns:1fr}
   .work.flip .work-img,.work.flip .work-info{order:unset}
-  .work-img{min-height:60vw}
+  .work-img{min-height:60vw;height:60vw}
   .work-info{padding:3rem 1.5rem}
   .work-num{font-size:4rem}
   .humanitarian{padding:3rem 1.5rem}
@@ -270,8 +270,8 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
 </div>
 
 <!-- ROOM IN SITU VIEW -->
-<div class="room-view reveal">
-  <img src="https://i.ibb.co/Lz4BTTGd/Grasses-interior.png" alt="Coastal Grasses painting in a European interior" loading="lazy">
+<div class="room-view">
+  <img src="https://i.ibb.co/Lz4BTTGd/Grasses-interior.png" alt="Coastal Grasses painting in a European interior">
   <div class="room-view-overlay"></div>
   <div class="room-caption">Coastal Grasses · Shown in situ · <em>Each work ships ready to hang</em></div>
 </div>
@@ -280,9 +280,9 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
 <div class="works">
 
   <!-- 01 Coastal Grasses -->
-  <div class="work reveal">
+  <div class="work">
     <div class="work-img">
-      <img src="https://i.ibb.co/rKgLZ9G5/Painting-40-Grasses1.avif" alt="Coastal Grasses — original mixed media painting by Kirsteen" loading="lazy">
+      <img src="https://i.ibb.co/rKgLZ9G5/Painting-40-Grasses1.avif" alt="Coastal Grasses — original mixed media painting by Kirsteen">
       <div class="work-img-shade"></div>
       <div class="work-num">01</div>
     </div>
@@ -305,9 +305,9 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
   </div>
 
   <!-- 02 Malta Street -->
-  <div class="work flip reveal">
+  <div class="work flip">
     <div class="work-img">
-      <img src="https://i.ibb.co/bMnHjrv8/Kirsteen-Art-Painting-30-Malta-Street1.avif" alt="Malta Street — original mixed media painting by Kirsteen" loading="lazy">
+      <img src="https://i.ibb.co/bMnHjrv8/Kirsteen-Art-Painting-30-Malta-Street1.avif" alt="Malta Street — original mixed media painting by Kirsteen">
       <div class="work-img-shade"></div>
       <div class="work-num">02</div>
     </div>
@@ -330,9 +330,9 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
   </div>
 
   <!-- 03 Blue Flowers on Copper -->
-  <div class="work reveal">
+  <div class="work">
     <div class="work-img">
-      <img src="https://i.ibb.co/Xr82YZZs/Kirsteen-Art-Painting-28-Blue-Flowers-on-Copper1.avif" alt="Blue Flowers on Copper — original mixed media painting by Kirsteen" loading="lazy">
+      <img src="https://i.ibb.co/Xr82YZZs/Kirsteen-Art-Painting-28-Blue-Flowers-on-Copper1.avif" alt="Blue Flowers on Copper — original mixed media painting by Kirsteen">
       <div class="work-img-shade"></div>
       <div class="work-num">03</div>
     </div>
@@ -355,9 +355,9 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
   </div>
 
   <!-- 04 Seagrasses & Island -->
-  <div class="work flip reveal">
+  <div class="work flip">
     <div class="work-img">
-      <img src="https://i.ibb.co/5q471wL/Kirsteen-Art-Painting-31-Seagrasses-and-Island1.avif" alt="Seagrasses and Island — original mixed media painting by Kirsteen" loading="lazy">
+      <img src="https://i.ibb.co/5q471wL/Kirsteen-Art-Painting-31-Seagrasses-and-Island1.avif" alt="Seagrasses and Island — original mixed media painting by Kirsteen">
       <div class="work-img-shade"></div>
       <div class="work-num">04</div>
     </div>
@@ -380,9 +380,9 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
   </div>
 
   <!-- 05 Magnolia & Bamboo -->
-  <div class="work reveal">
+  <div class="work">
     <div class="work-img">
-      <img src="https://i.ibb.co/zHQ2sywh/Kirsteen-Art-Painting-27-Magnolia-and-Bamboo1.avif" alt="Magnolia and Bamboo — original mixed media painting by Kirsteen" loading="lazy">
+      <img src="https://i.ibb.co/zHQ2sywh/Kirsteen-Art-Painting-27-Magnolia-and-Bamboo1.avif" alt="Magnolia and Bamboo — original mixed media painting by Kirsteen">
       <div class="work-img-shade"></div>
       <div class="work-num">05</div>
     </div>
@@ -407,7 +407,7 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
 </div>
 
 <!-- HUMANITARIAN -->
-<div class="humanitarian reveal">
+<div class="humanitarian">
   <div class="humanitarian-inner">
     <p class="humanitarian-label">A purchase with purpose</p>
     <p class="humanitarian-text">A portion of proceeds from every sale supports humanitarian projects across <em>Europe and Africa</em> — including work in Tanzania. Art that gives, twice over.</p>
@@ -415,7 +415,7 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
 </div>
 
 <!-- CLOSER -->
-<div class="closer reveal">
+<div class="closer">
   <div class="closer-glow"></div>
   <div class="closer-inner">
     <p class="closer-eyebrow">A personal introduction</p>
@@ -423,7 +423,7 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
     <p class="closer-body">If one of these works stopped you — even for a moment — that is worth a conversation. Tell me which one. Tell me about your space. Just write bonjour.</p>
     <p class="closer-body">No catalogue, no pressure, no hard sell. Just two people talking about a painting. I respond personally, always within 24 hours.</p>
     <p class="closer-body"><em style="color:var(--warm)">Each work exists once. When it finds its home, it leaves this collection permanently.</em></p>
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--gold);margin:1.5rem 0">&mdash; Kristof Cordier, Maison Cordier</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--gold);margin:1.5rem 0">&mdash; Marc, Maison Cordier</p>
     <div class="cta-row">
       <a href="/cdn-cgi/l/email-protection#f5979a9b9f9a8087b598949c869a9b969a87919c9087db948781" class="btn-primary">Write to us</a>
       <a href="https://wa.me/32456396879" class="btn-whatsapp">WhatsApp</a>
@@ -448,7 +448,7 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.1});
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.05,rootMargin:"0px 0px -50px 0px"});setTimeout(function(){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible')})},1200);
 document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
 
 // Auto-fill enquiry form if work param is set
