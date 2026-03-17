@@ -147,8 +147,8 @@ nav{
 .work:nth-child(4){--ac:#489CE4;--ac2:#93826E}
 .work:nth-child(5){--ac:#BE916A;--ac2:#593E31}
 
-.work-img{position:relative;overflow:hidden;min-height:500px}
-.work-img img{width:100%;height:100%;object-fit:contain;object-position:center;transition:transform 1s ease;display:block;max-height:600px}
+.work-img{position:relative;overflow:hidden;min-height:500px;align-self:stretch}
+.work-img img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform 1s ease;display:block}
 .work-img:hover img{transform:scale(1.05)}
 .work-img-shade{position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,11,9,0.08),transparent 60%)}
 .work-num{position:absolute;bottom:1.5rem;right:1.5rem;font-family:'Cormorant',serif;font-size:6rem;font-weight:300;font-style:italic;color:rgba(255,255,255,0.06);line-height:1;pointer-events:none;z-index:1}
