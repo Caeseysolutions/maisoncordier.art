@@ -17,6 +17,8 @@ html{scroll-behavior:smooth;font-size:16px}
 :root{--ink:#0E0B09;--parchment:#FAF6EE;--warm:#F2EAD8;--gold:#B8842A;--gold-lt:#D4A855;--sand:#E8D0A8;}
 body{background:var(--ink);color:var(--parchment);font-family:'Jost',sans-serif;font-weight:300;line-height:1.8;overflow-x:hidden}
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:0.5;mix-blend-mode:overlay}
+
+/* ═══ NAV ═══ */
 nav{position:fixed;top:0;width:100%;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 3rem;background:rgba(10,8,6,0.96);backdrop-filter:blur(24px);border-bottom:1px solid rgba(184,132,42,0.25)}
 .nav-brand{font-family:'Cormorant',serif;font-size:1.25rem;font-weight:400;font-style:italic;color:var(--parchment);letter-spacing:0.04em;text-decoration:none}
 .nav-brand em{color:var(--gold);font-style:normal}
@@ -34,6 +36,46 @@ nav{position:fixed;top:0;width:100%;z-index:500;display:flex;justify-content:spa
 .nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .nav-toggle.open span:nth-child(2){opacity:0}
 .nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* ═══ JOURNAL ═══ */
+.journal-hero{padding:14rem 3rem 7rem;text-align:center;background:linear-gradient(to bottom,#0A0806,var(--ink));position:relative;overflow:hidden}
+.journal-hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(184,132,42,0.06) 0%,transparent 60%);pointer-events:none}
+.journal-eyebrow{font-size:0.52rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.9s ease 0.2s forwards}
+.journal-hero h1{font-family:'Cormorant',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:300;color:var(--parchment);line-height:1.0;margin-bottom:1.5rem;opacity:0;animation:fadeUp 1s ease 0.4s forwards}
+.journal-hero h1 em{font-style:italic;color:var(--gold)}
+.journal-hero-body{font-size:0.95rem;color:var(--sand);max-width:520px;margin:0 auto;line-height:1.9;opacity:0;animation:fadeUp 1s ease 0.6s forwards}
+.journal-grid{padding:7rem 3rem;max-width:1100px;margin:0 auto}
+.journal-grid-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem}
+.journal-card{display:block;text-decoration:none;border:1px solid rgba(184,132,42,0.12);transition:border-color 0.3s;position:relative;overflow:hidden}
+.journal-card:hover{border-color:rgba(184,132,42,0.4)}
+.journal-card-img{position:relative;overflow:hidden;aspect-ratio:16/9}
+.journal-card-img img{width:100%;height:100%;object-fit:cover;filter:brightness(0.7);transition:transform 0.6s ease,filter 0.3s}
+.journal-card:hover .journal-card-img img{transform:scale(1.04);filter:brightness(0.85)}
+.journal-card-body{padding:2rem;display:flex;flex-direction:column}
+.journal-card-tag{font-size:0.48rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;display:block}
+.journal-card-title{font-family:'Cormorant',serif;font-size:1.35rem;font-weight:300;color:var(--parchment);line-height:1.2;margin-bottom:0.8rem}
+.journal-card-title em{color:var(--gold);font-style:italic}
+.journal-card-excerpt{font-size:0.82rem;color:rgba(232,210,168,0.7);line-height:1.8;margin-bottom:1.5rem}
+.journal-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:1.2rem;border-top:1px solid rgba(184,132,42,0.12)}
+.journal-card-meta{font-size:0.48rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.45)}
+.journal-read{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:0.4rem;transition:gap 0.2s}
+.journal-card:hover .journal-read{gap:0.7rem}
+.journal-card.featured{grid-column:1/-1;display:grid;grid-template-columns:55% 45%}
+.journal-card.featured .journal-card-img{aspect-ratio:unset;min-height:380px}
+.journal-card.featured .journal-card-body{display:flex;flex-direction:column;justify-content:center;padding:3.5rem}
+.journal-card.featured .journal-card-title{font-size:clamp(1.8rem,3vw,2.8rem);margin-bottom:1.2rem}
+.journal-card.featured .journal-card-excerpt{font-size:0.9rem;margin-bottom:1.8rem}
+.journal-card.featured .journal-card-footer{border-top:1px solid rgba(184,132,42,0.15);padding-top:1.5rem;margin-top:1rem}
+.journal-card.featured .journal-read{font-size:0.58rem}
+.journal-cta{padding:7rem 3rem;text-align:center;background:linear-gradient(135deg,#0A0806,#120C07);border-top:1px solid rgba(184,132,42,0.12)}
+.journal-cta-inner{max-width:560px;margin:0 auto}
+.journal-cta h2{font-family:'Cormorant',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;color:var(--parchment);line-height:1.05;margin-bottom:1.2rem}
+.journal-cta h2 em{color:var(--gold);font-style:italic}
+.journal-cta p{font-size:0.95rem;color:var(--sand);line-height:1.9;margin-bottom:2rem}
+.btn-primary{display:inline-flex;align-items:center;padding:1rem 2.4rem;background:var(--gold);color:var(--ink);font-family:'Jost',sans-serif;font-weight:500;font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all 0.25s}
+.btn-primary:hover{background:var(--gold-lt);transform:translateY(-2px)}
+
+/* ═══ FOOTER ═══ */
 footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:2rem;border-top:1px solid rgba(184,132,42,0.12)}
 .footer-brand{font-family:'Cormorant',serif;font-size:1rem;font-weight:400;font-style:italic;color:var(--sand)}
 .footer-brand em{color:var(--gold);font-style:normal}
@@ -41,48 +83,11 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
 .footer-nav a{font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none;transition:color 0.2s}
 .footer-nav a:hover{color:var(--gold)}
 .footer-right{text-align:right;font-size:0.52rem;letter-spacing:0.1em;color:rgba(232,210,168,0.75)}
-.footer-right a{color:var(--gold);text-decoration:none;opacity:0.8}
+
+/* ═══ ANIMATIONS ═══ */
 @keyframes fadeUp{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}
-.btn-primary{display:inline-flex;align-items:center;padding:1rem 2.4rem;background:var(--gold);color:var(--ink);font-family:'Jost',sans-serif;font-weight:500;font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all 0.25s}
-.btn-primary:hover{background:var(--gold-lt);transform:translateY(-2px)}
 
-
-.journal-hero{padding:14rem 3rem 7rem;text-align:center;background:linear-gradient(to bottom,#0A0806,var(--ink));position:relative;overflow:hidden}
-.journal-hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(184,132,42,0.06) 0%,transparent 60%);pointer-events:none}
-.journal-eyebrow{font-size:0.52rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.9s ease 0.2s forwards}
-.journal-hero h1{font-family:'Cormorant',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:300;color:var(--parchment);line-height:1.0;margin-bottom:1.5rem;opacity:0;animation:fadeUp 1s ease 0.4s forwards}
-.journal-hero h1 em{font-style:italic;color:var(--gold)}
-.journal-hero-body{font-size:0.95rem;color:var(--sand);max-width:520px;margin:0 auto;line-height:1.9;opacity:0;animation:fadeUp 1s ease 0.6s forwards}
-
-.journal-grid{padding:7rem 3rem;max-width:1100px;margin:0 auto}
-.journal-grid-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem}
-
-.journal-card{display:block;text-decoration:none;border:1px solid rgba(184,132,42,0.12);transition:border-color 0.3s;position:relative;overflow:hidden}
-.journal-card:hover{border-color:rgba(184,132,42,0.4)}
-.journal-card-img{position:relative;overflow:hidden;aspect-ratio:16/9}
-.journal-card-img img{width:100%;height:100%;object-fit:cover;filter:brightness(0.7);transition:transform 0.6s ease,filter 0.3s}
-.journal-card:hover .journal-card-img img{transform:scale(1.04);filter:brightness(0.85)}
-.journal-card-body{padding:2rem}
-.journal-card-tag{font-size:0.48rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;display:block}
-.journal-card-title{font-family:'Cormorant',serif;font-size:1.35rem;font-weight:300;color:var(--parchment);line-height:1.2;margin-bottom:0.8rem}
-.journal-card-title em{color:var(--gold);font-style:italic}
-.journal-card-excerpt{font-size:0.82rem;color:rgba(232,210,168,0.7);line-height:1.8;margin-bottom:1.2rem}
-.journal-card-meta{font-size:0.48rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.45)}
-
-.journal-card.featured{grid-column:1/-1;display:grid;grid-template-columns:55% 45%}
-.journal-card.featured .journal-card-img{aspect-ratio:unset;min-height:380px}
-.journal-card.featured .journal-card-body{display:flex;flex-direction:column;justify-content:center;padding:3.5rem}
-.journal-card.featured .journal-card-title{font-size:clamp(1.8rem,3vw,2.8rem);margin-bottom:1.2rem}
-.journal-card.featured .journal-card-excerpt{font-size:0.9rem;margin-bottom:1.8rem}
-
-.journal-cta{padding:7rem 3rem;text-align:center;background:linear-gradient(135deg,#0A0806,#120C07);border-top:1px solid rgba(184,132,42,0.12)}
-.journal-cta-inner{max-width:560px;margin:0 auto}
-.journal-cta h2{font-family:'Cormorant',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;color:var(--parchment);line-height:1.05;margin-bottom:1.2rem}
-.journal-cta h2 em{color:var(--gold);font-style:italic}
-.journal-cta p{font-size:0.95rem;color:var(--sand);line-height:1.9;margin-bottom:2rem}
-
-
-
+/* ═══ MOBILE ═══ */
 @media(max-width:860px){
   nav{padding:0.9rem 1.2rem}
   .nav-sub,.nav-links,.nav-enquire{display:none}
@@ -90,54 +95,66 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
   .nav-mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(14,11,9,0.98);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
   .nav-mobile-menu.open{display:flex}
   .nav-mobile-menu a{font-family:'Cormorant',serif;font-size:2.2rem;font-weight:300;color:var(--parchment);text-decoration:none;letter-spacing:0.05em;transition:color 0.2s}
-  .nav-mobile-menu a:hover{color:var(--gold)}
+  .nav-mobile-menu a:hover,.nav-mobile-menu a.active{color:var(--gold)}
   .nav-mobile-menu .mob-enquire{margin-top:1rem;font-family:'Jost',sans-serif;font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.9rem 2rem;border:1px solid var(--gold);color:var(--gold);background:transparent;text-decoration:none}
   .nav-mobile-menu .mob-lang{display:flex;gap:0.4rem;margin-top:0.5rem}
   .nav-mobile-menu .mob-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--parchment);opacity:0.6;line-height:1}
-  footer{grid-template-columns:1fr;gap:1rem}
-  .footer-nav,.footer-right{text-align:left}
   .journal-hero{padding:10rem 1.5rem 5rem}
   .journal-grid{padding:4rem 1.5rem}
   .journal-grid-inner{grid-template-columns:1fr}
   .journal-card.featured{grid-column:unset;grid-template-columns:1fr}
-  .journal-card.featured .journal-card-img{min-height:55vw}
+  .journal-card.featured .journal-card-img{min-height:55vw;aspect-ratio:16/9}
+  .journal-card.featured .journal-card-body{padding:2rem}
   .journal-cta{padding:4rem 1.5rem}
+  footer{grid-template-columns:1fr;gap:1rem}
+  .footer-nav,.footer-right{text-align:left}
 }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-brand">Maison <em>Cordier</em><span class="nav-sub">Original Works · Curated Collection</span></a>
+  <a href="index.html" class="nav-brand">Maison <em>Cordier</em><span class="nav-sub" id="nav-sub">Original Works · Curated Collection</span></a>
   <div class="nav-links">
-    <a href="collection.html" class="nav-link">Collection</a>
-    <a href="artist.html" class="nav-link">The Artist</a>
-    <a href="collect.html" class="nav-link">Collect</a>
-    <a href="journal.html" class="nav-link active">Journal</a>
+    <a href="collection.html" class="nav-link" id="nav-collection">Collection</a>
+    <a href="artist.html" class="nav-link" id="nav-artist">The Artist</a>
+    <a href="collect.html" class="nav-link" id="nav-collect">Collect</a>
+    <a href="journal.html" class="nav-link active" id="nav-journal">Journal</a>
   </div>
   <div style="display:flex;align-items:center;gap:1.5rem">
     <div class="nav-lang">
-      <button class="lang-btn active" onclick="void(0)">EN</button>
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('nl')">NL</button>
+      <button class="lang-btn" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" onclick="setLang('de')">DE</button>
     </div>
-    <a href="collect.html" class="nav-enquire">Enquire</a>
+    <a href="collect.html" class="nav-enquire" id="nav-enquire">Enquire</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<!-- MOBILE MENU -->
 <div class="nav-mobile-menu" id="nav-mobile-menu">
   <button class="mob-close" onclick="document.getElementById('nav-toggle').classList.remove('open');document.getElementById('nav-mobile-menu').classList.remove('open');document.body.style.overflow=''">&#x2715;</button>
-  <a href="collection.html">Collection</a>
-  <a href="artist.html">The Artist</a>
-  <a href="collect.html">Collect</a>
-  <a href="journal.html">Journal</a>
-  <a href="journal.html">Journal</a>
-  <a href="collect.html" class="mob-enquire">Enquire</a>
+  <a href="collection.html" id="mob-collection">Collection</a>
+  <a href="artist.html" id="mob-artist">The Artist</a>
+  <a href="collect.html" id="mob-collect">Collect</a>
+  <a href="journal.html" id="mob-journal" class="active">Journal</a>
+  <a href="collect.html" class="mob-enquire" id="mob-enquire">Enquire</a>
+  <div class="mob-lang">
+    <button class="lang-btn" onclick="setLang('en');document.getElementById('nav-toggle').classList.remove('open');document.getElementById('nav-mobile-menu').classList.remove('open');document.body.style.overflow=''">EN</button>
+    <button class="lang-btn" onclick="setLang('nl');document.getElementById('nav-toggle').classList.remove('open');document.getElementById('nav-mobile-menu').classList.remove('open');document.body.style.overflow=''">NL</button>
+    <button class="lang-btn" onclick="setLang('fr');document.getElementById('nav-toggle').classList.remove('open');document.getElementById('nav-mobile-menu').classList.remove('open');document.body.style.overflow=''">FR</button>
+    <button class="lang-btn" onclick="setLang('de');document.getElementById('nav-toggle').classList.remove('open');document.getElementById('nav-mobile-menu').classList.remove('open');document.body.style.overflow=''">DE</button>
+  </div>
 </div>
 
 <!-- HERO -->
 <div class="journal-hero">
-  <p class="journal-eyebrow">Maison Cordier · Journal</p>
-  <h1>Notes on art,<br>collecting, and <em>living well</em></h1>
-  <p class="journal-hero-body">Thoughts from Marc on original works, the artist behind them, and what it means to bring something made by hand into a home.</p>
+  <p class="journal-eyebrow" id="j-eyebrow">Maison Cordier · Journal</p>
+  <h1 id="j-h1">Notes on art,<br>collecting, and <em>living well</em></h1>
+  <p class="journal-hero-body" id="j-body">Thoughts from Marc on original works, the artist behind them, and what it means to bring something made by hand into a home.</p>
 </div>
 
 <!-- ARTICLES GRID -->
@@ -150,59 +167,77 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
         <img src="https://i.ibb.co/Xr82YZZs/Kirsteen-Art-Painting-28-Blue-Flowers-on-Copper1.avif" alt="Blue Flowers on Copper — mixed media painting by Kirsteen">
       </div>
       <div class="journal-card-body">
-        <span class="journal-card-tag">About the Work</span>
-        <h2 class="journal-card-title">Mixed media explained — what makes Kirsteen's work <em>different</em></h2>
-        <p class="journal-card-excerpt">The term "mixed media" appears on every second contemporary painting listing. Here is what it actually means — and why copper leaf beneath layers of paint changes everything about how a work lives in a room.</p>
-        <span class="journal-card-meta">March 2026 · 5 min read</span>
+        <span class="journal-card-tag" id="tag1">About the Work</span>
+        <h2 class="journal-card-title" id="title1">Mixed media explained — what makes Kirsteen's work <em>different</em></h2>
+        <p class="journal-card-excerpt" id="excerpt1">The term "mixed media" appears on every second contemporary painting listing. Here is what it actually means — and why copper leaf beneath layers of paint changes everything about how a work lives in a room.</p>
+        <div class="journal-card-footer">
+          <span class="journal-card-meta" id="meta1">March 2026 · 5 min read</span>
+          <span class="journal-read" id="read1">Read the article &rarr;</span>
+        </div>
       </div>
     </a>
 
-    <!-- ROW 2 -->
+    <!-- CARD 2 -->
     <a href="blog-how-to-choose-art-for-your-interior.html" class="journal-card">
       <div class="journal-card-img">
         <img src="https://i.ibb.co/pjPhsxMk/Painting-40-Grasses7.jpg" alt="Coastal Grasses — original painting by Kirsteen" loading="lazy">
       </div>
       <div class="journal-card-body">
-        <span class="journal-card-tag">Guide</span>
-        <h2 class="journal-card-title">How to choose art for your <em>interior space</em></h2>
-        <p class="journal-card-excerpt">Start with the light, not the wall. A practical guide to making a decision that lasts years rather than months.</p>
-        <span class="journal-card-meta">March 2026 · 6 min read</span>
+        <span class="journal-card-tag" id="tag2">Guide</span>
+        <h2 class="journal-card-title" id="title2">How to choose art for your <em>interior space</em></h2>
+        <p class="journal-card-excerpt" id="excerpt2">Start with the light, not the wall. A practical guide to making a decision that lasts years rather than months.</p>
+        <div class="journal-card-footer">
+          <span class="journal-card-meta" id="meta2">March 2026 · 6 min read</span>
+          <span class="journal-read" id="read2">Read &rarr;</span>
+        </div>
       </div>
     </a>
 
+    <!-- CARD 3 -->
     <a href="blog-investing-in-original-art.html" class="journal-card">
       <div class="journal-card-img">
         <img src="https://i.ibb.co/zHQ2sywh/Kirsteen-Art-Painting-27-Magnolia-and-Bamboo1.avif" alt="Magnolia and Bamboo — original painting by Kirsteen" loading="lazy">
       </div>
       <div class="journal-card-body">
-        <span class="journal-card-tag">Perspective</span>
-        <h2 class="journal-card-title">Investing in original art — <em>what to know</em></h2>
-        <p class="journal-card-excerpt">An honest account of what drives value in original works, what to look for, and how to think about it as both a financial and a personal decision.</p>
-        <span class="journal-card-meta">March 2026 · 5 min read</span>
+        <span class="journal-card-tag" id="tag3">Perspective</span>
+        <h2 class="journal-card-title" id="title3">Investing in original art — <em>what to know</em></h2>
+        <p class="journal-card-excerpt" id="excerpt3">An honest account of what drives value in original works, what to look for, and how to think about it as both a financial and a personal decision.</p>
+        <div class="journal-card-footer">
+          <span class="journal-card-meta" id="meta3">March 2026 · 5 min read</span>
+          <span class="journal-read" id="read3">Read &rarr;</span>
+        </div>
       </div>
     </a>
 
+    <!-- CARD 4 -->
     <a href="blog-how-to-buy-original-art.html" class="journal-card">
       <div class="journal-card-img">
         <img src="https://i.ibb.co/5q471wL/Kirsteen-Art-Painting-31-Seagrasses-and-Island1.avif" alt="Seagrasses and Island — original painting by Kirsteen" loading="lazy">
       </div>
       <div class="journal-card-body">
-        <span class="journal-card-tag">Guide</span>
-        <h2 class="journal-card-title">How to buy original art <em>without a gallery</em></h2>
-        <p class="journal-card-excerpt">What to look for, what to ask, and why the gallery model is changing — a plain-language guide to acquiring original work directly.</p>
-        <span class="journal-card-meta">March 2026 · 6 min read</span>
+        <span class="journal-card-tag" id="tag4">Guide</span>
+        <h2 class="journal-card-title" id="title4">How to buy original art <em>without a gallery</em></h2>
+        <p class="journal-card-excerpt" id="excerpt4">What to look for, what to ask, and why the gallery model is changing — a plain-language guide to acquiring original work directly.</p>
+        <div class="journal-card-footer">
+          <span class="journal-card-meta" id="meta4">March 2026 · 6 min read</span>
+          <span class="journal-read" id="read4">Read &rarr;</span>
+        </div>
       </div>
     </a>
 
+    <!-- CARD 5 -->
     <a href="blog-why-original-art-beats-prints.html" class="journal-card">
       <div class="journal-card-img">
         <img src="https://i.ibb.co/bMnHjrv8/Kirsteen-Art-Painting-30-Malta-Street1.avif" alt="Malta Street — original painting by Kirsteen" loading="lazy">
       </div>
       <div class="journal-card-body">
-        <span class="journal-card-tag">Perspective</span>
-        <h2 class="journal-card-title">Why original art beats prints <em>every time</em></h2>
-        <p class="journal-card-excerpt">Prints look good in a shop. An original painting changes your home. The honest case for one work that stays with you over five that fade into the background.</p>
-        <span class="journal-card-meta">March 2026 · 4 min read</span>
+        <span class="journal-card-tag" id="tag5">Perspective</span>
+        <h2 class="journal-card-title" id="title5">Why original art beats prints <em>every time</em></h2>
+        <p class="journal-card-excerpt" id="excerpt5">Prints look good in a shop. An original painting changes your home. The honest case for one work that stays with you over five that fade into the background.</p>
+        <div class="journal-card-footer">
+          <span class="journal-card-meta" id="meta5">March 2026 · 4 min read</span>
+          <span class="journal-read" id="read5">Read &rarr;</span>
+        </div>
       </div>
     </a>
 
@@ -212,12 +247,13 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
 <!-- CTA -->
 <div class="journal-cta">
   <div class="journal-cta-inner">
-    <h2>Five works,<br>still <em>available</em></h2>
-    <p>Everything written here is in service of one thing: helping the right work find the right home. If something stopped you — in the collection or in these pages — write to us.</p>
-    <a href="collection.html" class="btn-primary">View the collection</a>
+    <h2 id="j-cta-h2">Five works,<br>still <em>available</em></h2>
+    <p id="j-cta-p">Everything written here is in service of one thing: helping the right work find the right home. If something stopped you — in the collection or in these pages — write to us.</p>
+    <a href="collection.html" class="btn-primary" id="j-cta-btn">View the collection</a>
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-brand">Maison <em>Cordier</em></div>
   <div class="footer-nav">
@@ -225,6 +261,7 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
     <a href="collection.html">Collection</a>
     <a href="artist.html">The Artist</a>
     <a href="collect.html">Collect</a>
+    <a href="journal.html">Journal</a>
     <a href="privacy.html">Privacy</a>
   </div>
   <div class="footer-right">
@@ -233,6 +270,140 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
 </footer>
 
 <script>
+const T = {
+en:{
+  "nav-sub":"Original Works · Curated Collection",
+  "nav-collection":"Collection","nav-artist":"The Artist","nav-collect":"Collect","nav-journal":"Journal",
+  "nav-enquire":"Enquire","mob-collection":"Collection","mob-artist":"The Artist","mob-collect":"Collect",
+  "mob-journal":"Journal","mob-enquire":"Enquire",
+  "j-eyebrow":"Maison Cordier · Journal",
+  "j-h1":"Notes on art,<br>collecting, and <em>living well</em>",
+  "j-body":"Thoughts from Marc on original works, the artist behind them, and what it means to bring something made by hand into a home.",
+  "tag1":"About the Work","title1":"Mixed media explained — what makes Kirsteen's work <em>different</em>",
+  "excerpt1":"The term \"mixed media\" appears on every second contemporary painting listing. Here is what it actually means — and why copper leaf beneath layers of paint changes everything about how a work lives in a room.",
+  "meta1":"March 2026 · 5 min read","read1":"Read the article &rarr;",
+  "tag2":"Guide","title2":"How to choose art for your <em>interior space</em>",
+  "excerpt2":"Start with the light, not the wall. A practical guide to making a decision that lasts years rather than months.",
+  "meta2":"March 2026 · 6 min read","read2":"Read &rarr;",
+  "tag3":"Perspective","title3":"Investing in original art — <em>what to know</em>",
+  "excerpt3":"An honest account of what drives value in original works, what to look for, and how to think about it as both a financial and a personal decision.",
+  "meta3":"March 2026 · 5 min read","read3":"Read &rarr;",
+  "tag4":"Guide","title4":"How to buy original art <em>without a gallery</em>",
+  "excerpt4":"What to look for, what to ask, and why the gallery model is changing — a plain-language guide to acquiring original work directly.",
+  "meta4":"March 2026 · 6 min read","read4":"Read &rarr;",
+  "tag5":"Perspective","title5":"Why original art beats prints <em>every time</em>",
+  "excerpt5":"Prints look good in a shop. An original painting changes your home. The honest case for one work that stays with you over five that fade into the background.",
+  "meta5":"March 2026 · 4 min read","read5":"Read &rarr;",
+  "j-cta-h2":"Five works,<br>still <em>available</em>",
+  "j-cta-p":"Everything written here is in service of one thing: helping the right work find the right home. If something stopped you — in the collection or in these pages — write to us.",
+  "j-cta-btn":"View the collection"
+},
+nl:{
+  "nav-sub":"Originele Werken · Samengestelde Collectie",
+  "nav-collection":"Collectie","nav-artist":"De Kunstenares","nav-collect":"Verzamelen","nav-journal":"Journaal",
+  "nav-enquire":"Contact","mob-collection":"Collectie","mob-artist":"De Kunstenares","mob-collect":"Verzamelen",
+  "mob-journal":"Journaal","mob-enquire":"Contact",
+  "j-eyebrow":"Maison Cordier · Journaal",
+  "j-h1":"Notities over kunst,<br>verzamelen, en <em>goed leven</em>",
+  "j-body":"Gedachten van Marc over originele werken, de kunstenares erachter, en wat het betekent om iets met de hand gemaakt in huis te brengen.",
+  "tag1":"Over het Werk","title1":"Mixed media uitgelegd — wat maakt Kirsteen's werk <em>anders</em>",
+  "excerpt1":"De term \"mixed media\" staat op elk tweede hedendaags schilderijlijst. Hier is wat het eigenlijk betekent — en waarom koperblad onder lagen verf alles verandert aan hoe een werk in een kamer leeft.",
+  "meta1":"Maart 2026 · 5 min lezen","read1":"Lees het artikel &rarr;",
+  "tag2":"Gids","title2":"Hoe kunst te kiezen voor uw <em>interieur</em>",
+  "excerpt2":"Begin met het licht, niet de muur. Een praktische gids voor een beslissing die jaren meegaat.",
+  "meta2":"Maart 2026 · 6 min lezen","read2":"Lees &rarr;",
+  "tag3":"Perspectief","title3":"Investeren in originele kunst — <em>wat te weten</em>",
+  "excerpt3":"Een eerlijk overzicht van wat waarde bepaalt in originele werken, waar op te letten, en hoe u het als een financiële én persoonlijke beslissing kunt bekijken.",
+  "meta3":"Maart 2026 · 5 min lezen","read3":"Lees &rarr;",
+  "tag4":"Gids","title4":"Hoe originele kunst te kopen <em>zonder galerij</em>",
+  "excerpt4":"Waar op te letten, wat te vragen, en waarom het galerij-model verandert — een praktische gids voor het rechtstreeks verwerven van origineel werk.",
+  "meta4":"Maart 2026 · 6 min lezen","read4":"Lees &rarr;",
+  "tag5":"Perspectief","title5":"Waarom originele kunst prints <em>altijd wint</em>",
+  "excerpt5":"Prints zien er goed uit in een winkel. Een origineel schilderij verandert uw thuis. Het eerlijke verhaal voor één werk dat u bijblijft.",
+  "meta5":"Maart 2026 · 4 min lezen","read5":"Lees &rarr;",
+  "j-cta-h2":"Vijf werken,<br>nog steeds <em>beschikbaar</em>",
+  "j-cta-p":"Alles wat hier geschreven is, staat in dienst van één ding: het juiste werk met het juiste thuis verbinden. Als iets u deed stoppen — schrijf ons.",
+  "j-cta-btn":"Bekijk de collectie"
+},
+fr:{
+  "nav-sub":"Œuvres Originales · Collection Curatée",
+  "nav-collection":"Collection","nav-artist":"L'Artiste","nav-collect":"Acquérir","nav-journal":"Journal",
+  "nav-enquire":"Nous contacter","mob-collection":"Collection","mob-artist":"L'Artiste","mob-collect":"Acquérir",
+  "mob-journal":"Journal","mob-enquire":"Nous contacter",
+  "j-eyebrow":"Maison Cordier · Journal",
+  "j-h1":"Notes sur l'art,<br>la collection, et <em>bien vivre</em>",
+  "j-body":"Réflexions de Marc sur les œuvres originales, l'artiste qui les crée, et ce que signifie accueillir chez soi quelque chose fait à la main.",
+  "tag1":"Sur l'Œuvre","title1":"La technique mixte expliquée — ce qui rend le travail de Kirsteen <em>différent</em>",
+  "excerpt1":"Le terme « technique mixte » apparaît sur une annonce de tableau sur deux. Voici ce qu'il signifie réellement — et pourquoi la feuille de cuivre sous des couches de peinture change tout à la façon dont une œuvre vit dans une pièce.",
+  "meta1":"Mars 2026 · 5 min de lecture","read1":"Lire l'article &rarr;",
+  "tag2":"Guide","title2":"Comment choisir une œuvre pour votre <em>intérieur</em>",
+  "excerpt2":"Commencez par la lumière, pas le mur. Un guide pratique pour une décision qui dure des années.",
+  "meta2":"Mars 2026 · 6 min de lecture","read2":"Lire &rarr;",
+  "tag3":"Perspective","title3":"Investir dans l'art original — <em>ce qu'il faut savoir</em>",
+  "excerpt3":"Un bilan honnête de ce qui détermine la valeur des œuvres originales, ce qu'il faut rechercher, et comment l'envisager comme une décision à la fois financière et personnelle.",
+  "meta3":"Mars 2026 · 5 min de lecture","read3":"Lire &rarr;",
+  "tag4":"Guide","title4":"Comment acheter de l'art original <em>sans galerie</em>",
+  "excerpt4":"Ce qu'il faut rechercher, quelles questions poser, et pourquoi le modèle des galeries évolue — un guide pratique pour acquérir directement une œuvre originale.",
+  "meta4":"Mars 2026 · 6 min de lecture","read4":"Lire &rarr;",
+  "tag5":"Perspective","title5":"Pourquoi l'art original surpasse les impressions <em>à chaque fois</em>",
+  "excerpt5":"Les impressions ont l'air bien dans une boutique. Un tableau original change votre maison. L'argument sincère pour une œuvre qui reste avec vous.",
+  "meta5":"Mars 2026 · 4 min de lecture","read5":"Lire &rarr;",
+  "j-cta-h2":"Cinq œuvres,<br>encore <em>disponibles</em>",
+  "j-cta-p":"Tout ce qui est écrit ici est au service d'une seule chose : aider la bonne œuvre à trouver le bon foyer. Si quelque chose vous a arrêté — écrivez-nous.",
+  "j-cta-btn":"Voir la collection"
+},
+de:{
+  "nav-sub":"Originalwerke · Kuratierte Sammlung",
+  "nav-collection":"Sammlung","nav-artist":"Die Künstlerin","nav-collect":"Erwerben","nav-journal":"Journal",
+  "nav-enquire":"Anfrage stellen","mob-collection":"Sammlung","mob-artist":"Die Künstlerin","mob-collect":"Erwerben",
+  "mob-journal":"Journal","mob-enquire":"Anfrage stellen",
+  "j-eyebrow":"Maison Cordier · Journal",
+  "j-h1":"Notizen über Kunst,<br>Sammeln und <em>gutes Leben</em>",
+  "j-body":"Gedanken von Marc über originale Werke, die Künstlerin dahinter und was es bedeutet, etwas Handgemachtes in ein Zuhause zu bringen.",
+  "tag1":"Über das Werk","title1":"Mixed Media erklärt — was Kirsteens Arbeit <em>anders macht</em>",
+  "excerpt1":"Der Begriff „Mixed Media\" erscheint in jeder zweiten zeitgenössischen Gemäldebeschreibung. Hier ist, was er wirklich bedeutet — und warum Kupferblatt unter Farbschichten alles daran ändert, wie ein Werk in einem Raum lebt.",
+  "meta1":"März 2026 · 5 Min. lesen","read1":"Artikel lesen &rarr;",
+  "tag2":"Leitfaden","title2":"Wie man Kunst für den <em>Innenraum</em> auswählt",
+  "excerpt2":"Beginnen Sie mit dem Licht, nicht der Wand. Ein praktischer Leitfaden für eine Entscheidung, die Jahre anhält.",
+  "meta2":"März 2026 · 6 Min. lesen","read2":"Lesen &rarr;",
+  "tag3":"Perspektive","title3":"In originale Kunst investieren — <em>was man wissen sollte</em>",
+  "excerpt3":"Ein ehrlicher Überblick darüber, was den Wert originaler Werke bestimmt, worauf man achten sollte und wie man es als finanzielle und persönliche Entscheidung betrachten kann.",
+  "meta3":"März 2026 · 5 Min. lesen","read3":"Lesen &rarr;",
+  "tag4":"Leitfaden","title4":"Wie man originale Kunst kauft <em>ohne Galerie</em>",
+  "excerpt4":"Worauf man achten sollte, was man fragen sollte und warum sich das Galeriemodell ändert — ein praktischer Leitfaden für den direkten Erwerb originaler Werke.",
+  "meta4":"März 2026 · 6 Min. lesen","read4":"Lesen &rarr;",
+  "tag5":"Perspektive","title5":"Warum originale Kunst Drucke <em>immer übertrifft</em>",
+  "excerpt5":"Drucke sehen im Laden gut aus. Ein Originalgemälde verändert Ihr Zuhause. Das ehrliche Argument für ein Werk, das bei Ihnen bleibt.",
+  "meta5":"März 2026 · 4 Min. lesen","read5":"Lesen &rarr;",
+  "j-cta-h2":"Fünf Werke,<br>noch <em>verfügbar</em>",
+  "j-cta-p":"Alles, was hier geschrieben steht, dient einem einzigen Zweck: das richtige Werk mit dem richtigen Zuhause zusammenzubringen. Wenn etwas Sie aufgehalten hat — schreiben Sie uns.",
+  "j-cta-btn":"Die Sammlung ansehen"
+}
+};
+
+const ids=["nav-sub","nav-collection","nav-artist","nav-collect","nav-journal","nav-enquire",
+  "mob-collection","mob-artist","mob-collect","mob-journal","mob-enquire",
+  "j-eyebrow","j-h1","j-body",
+  "tag1","title1","excerpt1","meta1","read1",
+  "tag2","title2","excerpt2","meta2","read2",
+  "tag3","title3","excerpt3","meta3","read3",
+  "tag4","title4","excerpt4","meta4","read4",
+  "tag5","title5","excerpt5","meta5","read5",
+  "j-cta-h2","j-cta-p","j-cta-btn"];
+
+function setLang(l){
+  var d=T[l];if(!d)return;
+  ids.forEach(function(id){var el=document.getElementById(id);if(el&&d[id])el.innerHTML=d[id];});
+  document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent===l.toUpperCase());});
+  document.documentElement.lang=l;
+  try{localStorage.setItem('mc_lang',l);}catch(e){}
+}
+(function(){
+  var s='';try{s=localStorage.getItem('mc_lang')||'';}catch(e){}
+  var b=(navigator.language||'en').toLowerCase().slice(0,2);
+  setLang(s||{en:'en',nl:'nl',fr:'fr',de:'de'}[b]||'en');
+})();
+
 (function(){
   var toggle=document.getElementById('nav-toggle');
   var menu=document.getElementById('nav-mobile-menu');
