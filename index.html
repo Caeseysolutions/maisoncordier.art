@@ -551,7 +551,7 @@ footer{
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const T={
 en:{
   "nav-sub":"Original Works · Curated Collection",
@@ -750,17 +750,4 @@ document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
   var menu = document.getElementById('nav-mobile-menu');
   if(!toggle || !menu) return;
   toggle.addEventListener('click', function(){
-    toggle.classList.toggle('open');
-    menu.classList.toggle('open');
-    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
-  });
-  menu.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      toggle.classList.remove('open');
-      menu.classList.remove('open');
-      document.body.style.overflow = '';
-    });
-  });
-})();
-</script>
-</html>
+    toggle.c
