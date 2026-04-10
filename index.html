@@ -737,17 +737,4 @@ var obs=new IntersectionObserver(function(entries){
 document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
 
 (function(){
-  var s='';try{s=localStorage.getItem('mc_lang')||'';}catch(e){}
-  var m={en:'en',nl:'nl',fr:'fr',de:'de'};
-  var b=(navigator.language||'en').toLowerCase().slice(0,2);
-  setLang(s||m[b]||'en');
-})();
-</script>
-</body>
-<script>
-(function(){
-  var toggle = document.getElementById('nav-toggle');
-  var menu = document.getElementById('nav-mobile-menu');
-  if(!toggle || !menu) return;
-  toggle.addEventListener('click', function(){
-    toggle.c
+  var s='';try{s=localStorage.getItem('mc_l
