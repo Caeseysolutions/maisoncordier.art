@@ -190,8 +190,6 @@ nav{
   border-radius:1px;transition:all 0.3s;background:transparent;
 }
 .btn-enquire:hover{background:var(--ac);color:var(--ink)}
-.btn-enquire-quiet{font-family:'Jost',sans-serif;font-size:0.75rem;letter-spacing:0.03em;color:rgba(232,210,168,0.65);text-decoration:none;padding:0.4rem 0;transition:color 0.25s;margin-top:0.3rem;border-bottom:1px solid transparent;font-style:italic}
-.btn-enquire-quiet:hover{color:var(--gold);border-bottom-color:rgba(184,132,42,0.4)}
 .cta-note{font-size:0.52rem;letter-spacing:0.1em;color:rgba(232,210,168,0.78);font-style:italic}
 
 /* ═══ CLOSER ═══ */
@@ -223,13 +221,6 @@ footer{
 .footer-right{text-align:right;font-size:0.52rem;letter-spacing:0.1em;color:rgba(232,210,168,0.75)}
 .footer-right a{color:var(--gold);text-decoration:none;opacity:0.8}
 .footer-right a:hover{opacity:1}
-.footer-nav{grid-column:1/-1;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;padding-top:1.2rem;margin-top:0.5rem;border-top:1px solid rgba(184,132,42,0.15)}
-.footer-nav a{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none;transition:color 0.2s}
-.footer-nav a:hover{color:var(--gold)}
-.footer-journal{grid-column:1/-1;display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;padding-top:1rem;margin-top:0.3rem;border-top:1px solid rgba(184,132,42,0.08);align-items:center}
-.footer-journal-label{font-family:'Cormorant',serif;font-style:italic;font-size:0.75rem;color:rgba(184,132,42,0.85);letter-spacing:0.05em;padding-right:0.5rem}
-.footer-journal a{font-family:'Jost',sans-serif;font-size:0.62rem;letter-spacing:0.04em;color:rgba(232,210,168,0.55);text-decoration:none;transition:color 0.2s}
-.footer-journal a:hover{color:var(--sand)}
 
 /* ═══ ANIMATIONS ═══ */
 @keyframes fadeUp{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}
@@ -302,12 +293,11 @@ footer{
 }
 
 /* ═══ HAMBURGER MENU ═══ */
-.nav-toggle{display:none;flex-direction:column;gap:6px;cursor:pointer;padding:8px 10px;background:rgba(184,132,42,0.08);border:1px solid rgba(184,132,42,0.4);border-radius:2px;z-index:200;transition:all 0.2s}
-.nav-toggle:hover{background:rgba(184,132,42,0.2);border-color:var(--gold)}
-.nav-toggle span{display:block;width:26px;height:2.5px;background:var(--gold);transition:all 0.3s;border-radius:1px}
-.nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(6px,6px)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;z-index:200}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--parchment);transition:all 0.3s;border-radius:1px}
+.nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .nav-toggle.open span:nth-child(2){opacity:0}
-.nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
+.nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
 
 
@@ -361,7 +351,7 @@ footer{
 <!-- HERO -->
 <section class="hero">
   <div class="hero-img">
-    <img src="https://i.ibb.co/5q471wL/Kirsteen-Art-Painting-31-Seagrasses-and-Island1.avif" alt="Seagrasses &amp; Island &mdash; original mixed media painting by Kirsteen">
+    <img src="https://i.ibb.co/rKgLZ9G5/Painting-40-Grasses1.avif" alt="Original coastal landscape painting &mdash; Maison Cordier">
   </div>
   <div class="hero-grad"></div>
   <div class="hero-content">
@@ -401,97 +391,97 @@ footer{
 <!-- WORKS -->
 <div class="works" id="works">
 
-  <!-- 01 SEAGRASSES &amp; ISLAND (hero match) -->
+  <!-- 01 COASTAL GRASSES -->
   <div class="work reveal">
     <div class="work-img">
-      <img src="https://i.ibb.co/5q471wL/Kirsteen-Art-Painting-31-Seagrasses-and-Island1.avif" alt="Seagrasses and Island &mdash; original mixed media painting by Kirsteen" loading="lazy">
+      <img src="https://i.ibb.co/rKgLZ9G5/Painting-40-Grasses1.avif" alt="Coastal Grasses &mdash; original mixed media painting" loading="lazy">
       <div class="work-img-shade"></div>
       <div class="work-num">01</div>
     </div>
     <div class="work-info">
-      <p class="work-tag" id="tag1">Original &middot; Mixed Media &amp; Oil Pastel &middot; A3</p>
-      <h2 class="work-title" id="title1">Seagrasses<br>&amp; Island</h2>
-      <p class="work-medium">Mixed media with oil pastel on canvas &middot; Edges painted &middot; Ready to hang</p>
+      <p class="work-tag" id="tag1">Original &middot; Mixed Media &middot; A2</p>
+      <h2 class="work-title" id="title1">Coastal Grasses</h2>
+      <p class="work-medium">Mixed media on canvas-covered board &middot; Edges painted &middot; Ready to hang</p>
       <div class="work-availability"><div class="avail-dot"></div><span id="avail1">Available</span></div>
       <div class="work-desc" id="desc1">
-        <p>Soft, expressive layers of wind-swept seagrasses fill the foreground. On the horizon, a distant island rests against the sky &mdash; promising escape, calm, and the pull of somewhere just beyond reach.</p>
-        <p>This piece balances freedom and structure: fluid painterly marks combined with confident linear accents. Neither restless nor static.</p>
+        <p>Tall stems bending in the sea breeze. Warm ochres, soft browns, pale creams and deep coastal blues &mdash; layered in loose, energetic brushstrokes that suggest rhythm and natural motion.</p>
+        <p>Hints of delicate seed heads and wild plants appear among the sweeping strokes, evoking the untamed edges of Scotland&rsquo;s shores where grasses grow thick over dunes and sandy ground. A lively contemporary landscape that brings the movement and atmosphere of the Scottish coast into a room &mdash; and keeps it there.</p>
       </div>
       <div class="work-cta">
-        <a href="https://www.kirsteenart.com/product-page/seagrasses-and-island" class="btn-buy-now" id="buy1" target="_blank" rel="noopener">Buy Now &mdash; &euro;1,095</a>
-        <a href="mailto:bonjour@maisoncordier.art?subject=Enquiry: Seagrasses and Island" class="btn-enquire-quiet" id="cta1">or ask about this painting &rarr;</a>
+        <a href="https://www.kirsteenart.com/product-page/coastal-grasses" class="btn-buy-now" id="buy1" target="_blank" rel="noopener">Buy Now — €1,095</a>
+        <a href="mailto:bonjour@maisoncordier.art?subject=Enquiry: Coastal Grasses" class="btn-enquire" id="cta1">I want this painting</a>
         <span class="cta-note" id="note1">Personal response within 24 hours &middot; Original, not a print &middot; Ships across Europe</span>
       </div>
     </div>
   </div>
 
-  <!-- 02 COASTAL GRASSES -->
+  <!-- 02 MALTA STREET -->
   <div class="work flip reveal reveal-slow">
     <div class="work-img">
-      <img src="https://i.ibb.co/rKgLZ9G5/Painting-40-Grasses1.avif" alt="Coastal Grasses &mdash; original mixed media painting by Kirsteen" loading="lazy">
+      <img src="https://i.ibb.co/bMnHjrv8/Kirsteen-Art-Painting-30-Malta-Street1.avif" alt="Malta Street &mdash; original mixed media painting" loading="lazy">
       <div class="work-img-shade"></div>
       <div class="work-num">02</div>
     </div>
     <div class="work-info">
       <p class="work-tag" id="tag2">Original &middot; Mixed Media &middot; A2</p>
-      <h2 class="work-title" id="title2">Coastal Grasses</h2>
+      <h2 class="work-title" id="title2">Malta Street</h2>
       <p class="work-medium">Mixed media on canvas-covered board &middot; Edges painted &middot; Ready to hang</p>
       <div class="work-availability"><div class="avail-dot"></div><span id="avail2">Available</span></div>
       <div class="work-desc" id="desc2">
-        <p>Tall stems bending in the sea breeze. Warm ochres, soft browns, pale creams and deep coastal blues &mdash; layered in loose, energetic brushstrokes that suggest rhythm and natural motion.</p>
-        <p>Hints of delicate seed heads and wild plants appear among the sweeping strokes, evoking the untamed edges of Scotland&rsquo;s shores where grasses grow thick over dunes and sandy ground. A lively contemporary landscape that brings the movement and atmosphere of the Scottish coast into a room &mdash; and keeps it there.</p>
+        <p>Pale stone walls. Deep shadows. Vivid blues and sun-warmed yellows. The air itself glowing.</p>
+        <p>Loose, expressive marks suggest architecture rather than depicting it. Layers of paint evoke heat, movement and memory rather than a fixed place. A painting that carries the warmth of the Mediterranean &mdash; and places it permanently on your wall.</p>
       </div>
       <div class="work-cta">
-        <a href="https://www.kirsteenart.com/product-page/coastal-grasses" class="btn-buy-now" id="buy2" target="_blank" rel="noopener">Buy Now &mdash; &euro;1,095</a>
-        <a href="mailto:bonjour@maisoncordier.art?subject=Enquiry: Coastal Grasses" class="btn-enquire-quiet" id="cta2">or ask about this painting &rarr;</a>
+        <a href="https://www.kirsteenart.com/product-page/malta-street" class="btn-buy-now" id="buy2" target="_blank" rel="noopener">Buy Now — €1,095</a>
+        <a href="mailto:bonjour@maisoncordier.art?subject=Enquiry: Malta Street" class="btn-enquire" id="cta2">I want this painting</a>
         <span class="cta-note" id="note2">Personal response within 24 hours &middot; Original, not a print &middot; Ships across Europe</span>
       </div>
     </div>
   </div>
 
-  <!-- 03 MALTA STREET -->
+  <!-- 03 BLUE FLOWERS ON COPPER -->
   <div class="work reveal">
     <div class="work-img">
-      <img src="https://i.ibb.co/bMnHjrv8/Kirsteen-Art-Painting-30-Malta-Street1.avif" alt="Malta Street &mdash; original mixed media painting by Kirsteen" loading="lazy">
+      <img src="https://i.ibb.co/Xr82YZZs/Kirsteen-Art-Painting-28-Blue-Flowers-on-Copper1.avif" alt="Blue Flowers on Copper &mdash; original mixed media painting" loading="lazy">
       <div class="work-img-shade"></div>
       <div class="work-num">03</div>
     </div>
     <div class="work-info">
-      <p class="work-tag" id="tag3">Original &middot; Mixed Media &middot; A2</p>
-      <h2 class="work-title" id="title3">Malta Street</h2>
-      <p class="work-medium">Mixed media on canvas-covered board &middot; Edges painted &middot; Ready to hang</p>
+      <p class="work-tag" id="tag3">Original &middot; Copper Leaf &amp; Mixed Media &middot; A2</p>
+      <h2 class="work-title" id="title3">Blue Flowers<br>on Copper</h2>
+      <p class="work-medium">Copper leaf, paint &amp; mixed media on canvas &middot; Edges painted &middot; Ready to hang</p>
       <div class="work-availability"><div class="avail-dot"></div><span id="avail3">Available</span></div>
       <div class="work-desc" id="desc3">
-        <p>Pale stone walls. Deep shadows. Vivid blues and sun-warmed yellows. The air itself glowing.</p>
-        <p>Loose, expressive marks suggest architecture rather than depicting it. Layers of paint evoke heat, movement and memory rather than a fixed place. A painting that carries the warmth of the Mediterranean &mdash; and places it permanently on your wall.</p>
+        <p>Luminous blue floral forms emerging against the warmth of real copper leaf &mdash; a surface that reflects light subtly, shifting in mood as the light in your room changes.</p>
+        <p>A contemporary botanical that feels both energetic and grounded. A painting that breathes with the room, changes with the hour, and rewards the kind of looking that most art never earns.</p>
       </div>
       <div class="work-cta">
-        <a href="https://www.kirsteenart.com/product-page/malta-street" class="btn-buy-now" id="buy3" target="_blank" rel="noopener">Buy Now &mdash; &euro;1,095</a>
-        <a href="mailto:bonjour@maisoncordier.art?subject=Enquiry: Malta Street" class="btn-enquire-quiet" id="cta3">or ask about this painting &rarr;</a>
+        <a href="https://www.kirsteenart.com/product-page/blue-flowers-on-copper" class="btn-buy-now" id="buy3" target="_blank" rel="noopener">Buy Now — €1,095</a>
+        <a href="mailto:bonjour@maisoncordier.art?subject=Enquiry: Blue Flowers on Copper" class="btn-enquire" id="cta3">I want this painting</a>
         <span class="cta-note" id="note3">Personal response within 24 hours &middot; Original, not a print &middot; Ships across Europe</span>
       </div>
     </div>
   </div>
 
-  <!-- 04 BLUE FLOWERS ON COPPER -->
+  <!-- 04 SEAGRASSES AND ISLAND -->
   <div class="work flip reveal reveal-slow">
     <div class="work-img">
-      <img src="https://i.ibb.co/Xr82YZZs/Kirsteen-Art-Painting-28-Blue-Flowers-on-Copper1.avif" alt="Blue Flowers on Copper &mdash; original mixed media painting by Kirsteen" loading="lazy">
+      <img src="https://i.ibb.co/5q471wL/Kirsteen-Art-Painting-31-Seagrasses-and-Island1.avif" alt="Seagrasses and Island &mdash; original mixed media painting" loading="lazy">
       <div class="work-img-shade"></div>
       <div class="work-num">04</div>
     </div>
     <div class="work-info">
-      <p class="work-tag" id="tag4">Original &middot; Copper Leaf &amp; Mixed Media &middot; A2</p>
-      <h2 class="work-title" id="title4">Blue Flowers<br>on Copper</h2>
-      <p class="work-medium">Copper leaf, paint &amp; mixed media on canvas &middot; Edges painted &middot; Ready to hang</p>
+      <p class="work-tag" id="tag4">Original &middot; Mixed Media &amp; Oil Pastel &middot; A3</p>
+      <h2 class="work-title" id="title4">Seagrasses<br>&amp; Island</h2>
+      <p class="work-medium">Mixed media with oil pastel on canvas &middot; Edges painted &middot; Ready to hang</p>
       <div class="work-availability"><div class="avail-dot"></div><span id="avail4">Available</span></div>
       <div class="work-desc" id="desc4">
-        <p>Luminous blue floral forms emerging against the warmth of real copper leaf &mdash; a surface that reflects light subtly, shifting in mood as the light in your room changes.</p>
-        <p>A contemporary botanical that feels both energetic and grounded. A painting that breathes with the room, changes with the hour, and rewards the kind of looking that most art never earns.</p>
+        <p>Soft, expressive layers of wind-swept seagrasses fill the foreground. On the horizon, a distant island rests against the sky &mdash; promising escape, calm, and the pull of somewhere just beyond reach.</p>
+        <p>This piece balances freedom and structure: fluid painterly marks combined with confident linear accents. Neither restless nor static.</p>
       </div>
       <div class="work-cta">
-        <a href="https://www.kirsteenart.com/product-page/blue-flowers-on-copper" class="btn-buy-now" id="buy4" target="_blank" rel="noopener">Buy Now &mdash; &euro;1,095</a>
-        <a href="mailto:bonjour@maisoncordier.art?subject=Enquiry: Blue Flowers on Copper" class="btn-enquire-quiet" id="cta4">or ask about this painting &rarr;</a>
+        <a href="https://www.kirsteenart.com/product-page/seagrasses-and-island" class="btn-buy-now" id="buy4" target="_blank" rel="noopener">Buy Now — €1,095</a>
+        <a href="mailto:bonjour@maisoncordier.art?subject=Enquiry: Seagrasses and Island" class="btn-enquire" id="cta4">I want this painting</a>
         <span class="cta-note" id="note4">Personal response within 24 hours &middot; Original, not a print &middot; Ships across Europe</span>
       </div>
     </div>
@@ -500,7 +490,7 @@ footer{
   <!-- 05 MAGNOLIA AND BAMBOO -->
   <div class="work reveal">
     <div class="work-img">
-      <img src="https://i.ibb.co/zHQ2sywh/Kirsteen-Art-Painting-27-Magnolia-and-Bamboo1.avif" alt="Magnolia and Bamboo &mdash; original mixed media painting by Kirsteen" loading="lazy">
+      <img src="https://i.ibb.co/zHQ2sywh/Kirsteen-Art-Painting-27-Magnolia-and-Bamboo1.avif" alt="Magnolia and Bamboo &mdash; original mixed media painting" loading="lazy">
       <div class="work-img-shade"></div>
       <div class="work-num">05</div>
     </div>
@@ -514,8 +504,8 @@ footer{
         <p>Copper leaf catches the light beneath layers of paint, adding warmth and luminosity that shifts as the viewer moves. A work that invites close, contemplative viewing &mdash; and keeps giving.</p>
       </div>
       <div class="work-cta">
-        <a href="https://www.kirsteenart.com/product-page/magnolia-and-bamboo" class="btn-buy-now" id="buy5" target="_blank" rel="noopener">Buy Now &mdash; &euro;1,095</a>
-        <a href="mailto:bonjour@maisoncordier.art?subject=Enquiry: Magnolia and Bamboo" class="btn-enquire-quiet" id="cta5">or ask about this painting &rarr;</a>
+        <a href="https://www.kirsteenart.com/product-page/magnolia-and-bamboo" class="btn-buy-now" id="buy5" target="_blank" rel="noopener">Buy Now — €1,095</a>
+        <a href="mailto:bonjour@maisoncordier.art?subject=Enquiry: Magnolia and Bamboo" class="btn-enquire" id="cta5">I want this painting</a>
         <span class="cta-note" id="note5">Personal response within 24 hours &middot; Original, not a print &middot; Ships across Europe</span>
       </div>
     </div>
@@ -545,26 +535,14 @@ footer{
     <a href="mailto:bonjour@maisoncordier.art">bonjour@maisoncordier.art</a><br>
     <span style="margin-top:0.3rem;display:block">&copy; 2026 Maison Cordier &mdash; CaeseySolutions LLC</span>
   </div>
-
-  <!-- Primary nav -->
-  <nav class="footer-nav" aria-label="Footer navigation">
-    <a href="index.html">Home</a>
-    <a href="collection.html">Collection</a>
-    <a href="artist.html">The Artist</a>
-    <a href="collect.html">Collect</a>
-    <a href="journal.html">Journal</a>
-    <a href="privacy.html">Privacy</a>
-  </nav>
-
-  <!-- Journal index for crawlability (Google crawl signal) -->
-  <nav class="footer-journal" aria-label="Recent journal entries">
-    <span class="footer-journal-label">From the Journal</span>
-    <a href="blog-how-to-buy-original-art.html">How to buy original art</a>
-    <a href="blog-why-original-art-beats-prints.html">Why original art beats prints</a>
-    <a href="blog-mixed-media-explained.html">Mixed media explained</a>
-    <a href="blog-how-to-choose-art-for-your-interior.html">Choosing art for your interior</a>
-    <a href="blog-investing-in-original-art.html">Investing in original art</a>
-  </nav>
+  <div style="grid-column:1/-1;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;padding-top:1rem;border-top:1px solid rgba(184,132,42,0.15)">
+    <a href="index.html" style="font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none">Home</a>
+    <a href="collection.html" style="font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none">Collection</a>
+    <a href="artist.html" style="font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none">The Artist</a>
+    <a href="collect.html" style="font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none">Collect</a>
+    <a href="journal.html" style="font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none">Journal</a>
+    <a href="privacy.html" style="font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none">Privacy</a>
+  </div>
 </footer>
 
 <script>
@@ -758,8 +736,9 @@ document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
   var b=(navigator.language||'en').toLowerCase().slice(0,2);
   setLang(s||m[b]||'en');
 })();
-
-// Mobile hamburger menu
+</script>
+</body>
+<script>
 (function(){
   var toggle = document.getElementById('nav-toggle');
   var menu = document.getElementById('nav-mobile-menu');
@@ -778,5 +757,4 @@ document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
   });
 })();
 </script>
-</body>
 </html>
