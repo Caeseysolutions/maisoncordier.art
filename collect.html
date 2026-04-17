@@ -4,443 +4,437 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Collect — Maison Cordier</title>
-<meta name="description" content="Enquire about a painting from Maison Cordier. No galleries, no agents — a personal introduction. WhatsApp or email. Response within 24 hours.">
+<meta name="description" content="How to collect an original painting by Kirsteen through Maison Cordier. Direct, personal, across Europe. No galleries, no agents — just one conversation.">
 <meta property="og:title" content="Collect — Maison Cordier">
+<meta property="og:description" content="No galleries, no agents. A painting finds its home through a conversation.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://maisoncordier.art/collect.html">
-<link rel="canonical" href="collect.html">
+<link rel="canonical" href="https://maisoncordier.art/collect.html">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-116XS4MFSJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-116XS4MFSJ');
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
+
 :root{
-  --ink:#0E0B09;--parchment:#FAF6EE;--warm:#F2EAD8;
-  --gold:#B8842A;--gold-lt:#D4A855;--sand:#E8D0A8;
+  --ink:#0E0B09;
+  --deep:#141008;
+  --parchment:#FAF6EE;
+  --warm:#F2EAD8;
+  --gold:#B8842A;
+  --gold-lt:#D4A855;
+  --copper:#C59669;
+  --sand:#E8D0A8;
+  --mist:rgba(232,210,168,0.95);
+  --whatsapp:#25D366;
+  --whatsapp-dk:#128C7E;
 }
+
 body{background:var(--ink);color:var(--parchment);font-family:'Jost',sans-serif;font-weight:300;line-height:1.8;overflow-x:hidden}
+
+/* GRAIN */
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:0.5;mix-blend-mode:overlay}
 
 /* ═══ NAV ═══ */
-nav{position:fixed;top:0;width:100%;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 3rem;background:rgba(10,8,6,0.96);backdrop-filter:blur(24px);border-bottom:1px solid rgba(184,132,42,0.25)}
+nav.site-nav{
+  position:fixed;top:0;width:100%;z-index:500;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.1rem 3rem;
+  background:rgba(10,8,6,0.96);
+  backdrop-filter:blur(24px);
+  border-bottom:1px solid rgba(184,132,42,0.25);
+}
 .nav-brand{font-family:'Cormorant',serif;font-size:1.25rem;font-weight:400;font-style:italic;color:var(--parchment);letter-spacing:0.04em;text-decoration:none}
 .nav-brand em{color:var(--gold);font-style:normal}
 .nav-sub{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--parchment);opacity:0.85;margin-top:0.1rem;display:block}
 .nav-links{display:flex;align-items:center;gap:2.5rem}
 .nav-link{font-family:'Jost',sans-serif;font-size:0.9rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:#FFFFFF;text-decoration:none;transition:all 0.2s;padding:0.3rem 0;border-bottom:2px solid transparent}
 .nav-link:hover,.nav-link.active{color:var(--gold);border-bottom-color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:1.5rem}
 .nav-lang{display:flex;gap:0.25rem}
 .lang-btn{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.1em;background:transparent;border:1px solid rgba(184,132,42,0.3);color:var(--sand);padding:0.22rem 0.45rem;cursor:pointer;transition:all 0.2s;border-radius:1px}
 .lang-btn.active,.lang-btn:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
 .nav-enquire{font-family:'Jost',sans-serif;font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:0.5rem 1.1rem;text-decoration:none;border-radius:1px;transition:background 0.2s;white-space:nowrap}
 .nav-enquire:hover{background:var(--gold-lt)}
-.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;z-index:200}
-.nav-toggle span{display:block;width:22px;height:2px;background:var(--parchment);transition:all 0.3s;border-radius:1px}
-.nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+
+/* HAMBURGER */
+.nav-toggle{display:none;flex-direction:column;gap:6px;cursor:pointer;padding:8px 10px;background:rgba(184,132,42,0.08);border:1px solid rgba(184,132,42,0.4);border-radius:2px;z-index:200;transition:all 0.2s}
+.nav-toggle:hover{background:rgba(184,132,42,0.2);border-color:var(--gold)}
+.nav-toggle span{display:block;width:26px;height:2.5px;background:var(--gold);transition:all 0.3s;border-radius:1px}
+.nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(6px,6px)}
 .nav-toggle.open span:nth-child(2){opacity:0}
-.nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
 
-/* ═══ HERO ═══ */
-.page-hero{padding:14rem 3rem 7rem;text-align:center;position:relative;overflow:hidden;background:linear-gradient(to bottom,#0A0806,var(--ink))}
-.page-hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(184,132,42,0.06) 0%,transparent 60%);pointer-events:none}
-.page-eyebrow{font-size:0.52rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.9s ease 0.2s forwards}
-.page-hero h1{font-family:'Cormorant',serif;font-size:clamp(3rem,6vw,6.5rem);font-weight:300;color:var(--parchment);line-height:0.92;margin-bottom:1.5rem;opacity:0;animation:fadeUp 1s ease 0.4s forwards}
-.page-hero h1 em{font-style:italic;color:var(--gold)}
-.hero-body{font-size:1rem;color:var(--sand);max-width:520px;margin:0 auto;line-height:1.9;opacity:0;animation:fadeUp 1s ease 0.6s forwards}
+.nav-mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(14,11,9,0.98);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+.nav-mobile-menu.open{display:flex}
+.nav-mobile-menu a{font-family:'Cormorant',serif;font-size:2.2rem;font-weight:300;color:var(--parchment);text-decoration:none;letter-spacing:0.05em;transition:color 0.2s}
+.nav-mobile-menu a:hover,.nav-mobile-menu a.active{color:var(--gold)}
+.nav-mobile-menu .mob-lang{display:flex;gap:0.4rem;margin-top:0.5rem}
+.nav-mobile-menu .mob-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--parchment);opacity:0.6;line-height:1}
 
-/* ═══ HOW IT WORKS ═══ */
-.how{padding:7rem 3rem;background:linear-gradient(135deg,#0A0806,#120C07);border-top:1px solid rgba(184,132,42,0.15)}
-.how-inner{max-width:1000px;margin:0 auto}
-.section-label{font-size:0.52rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:1rem}
-.section-h2{font-family:'Cormorant',serif;font-size:clamp(2.5rem,4vw,4rem);font-weight:300;color:var(--parchment);text-align:center;margin-bottom:4rem}
-.section-h2 em{font-style:italic;color:var(--gold)}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5rem}
-.step-num{font-family:'Cormorant',serif;font-size:3.5rem;font-weight:300;font-style:italic;color:rgba(184,132,42,0.25);line-height:1;margin-bottom:0.8rem}
-.step-title{font-family:'Cormorant',serif;font-size:1.3rem;font-weight:400;color:var(--warm);margin-bottom:0.6rem}
-.step-text{font-size:0.82rem;color:rgba(232,210,168,0.72);line-height:1.85}
+/* ═══ PAGE HEADER ═══ */
+.page-head{padding:11rem 3rem 6rem;text-align:center;position:relative;overflow:hidden;background:linear-gradient(160deg,#0A0806 0%,#18100A 50%,#0A0806 100%)}
+.page-head::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(184,132,42,0.06) 0%,transparent 60%);pointer-events:none}
+.page-head-inner{position:relative;z-index:1;max-width:760px;margin:0 auto}
+.page-eyebrow{font-family:'Jost',sans-serif;font-size:0.55rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem}
+.page-head h1{font-family:'Cormorant',serif;font-size:clamp(3.5rem,7vw,7rem);font-weight:300;line-height:0.95;color:var(--parchment);margin-bottom:2rem}
+.page-head h1 em{font-style:italic;color:var(--gold)}
+.page-head-body{font-size:1rem;font-weight:300;color:var(--sand);line-height:1.95;max-width:560px;margin:0 auto}
 
-/* ═══ CONTACT ═══ */
-.contact-section{padding:8rem 3rem;max-width:1100px;margin:0 auto}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
-.contact-card{background:linear-gradient(135deg,rgba(20,16,8,0.8),rgba(14,11,9,0.9));border:1px solid rgba(184,132,42,0.2);padding:3rem;border-radius:2px;position:relative;overflow:hidden;margin-bottom:2rem}
-.contact-card:last-of-type{margin-bottom:0}
-.contact-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);opacity:0.5}
-.contact-card-label{font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
-.contact-card-title{font-family:'Cormorant',serif;font-size:1.8rem;font-weight:300;color:var(--parchment);margin-bottom:1rem}
-.contact-card-text{font-size:0.88rem;color:rgba(232,210,168,0.8);line-height:1.9;margin-bottom:2rem}
-.contact-card-text em{color:var(--warm);font-style:italic}
-.btn-contact{display:inline-flex;align-items:center;gap:0.8rem;padding:1rem 2rem;font-family:'Jost',sans-serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all 0.25s;width:100%;justify-content:center;margin-bottom:1rem}
-.btn-contact-primary{background:var(--gold);color:var(--ink);border:1px solid var(--gold)}
-.btn-contact-primary:hover{background:var(--gold-lt);border-color:var(--gold-lt)}
-.btn-contact-ghost{background:transparent;color:var(--sand);border:1px solid rgba(184,132,42,0.35)}
-.btn-contact-ghost:hover{border-color:var(--gold);color:var(--gold)}
-.contact-detail{font-size:0.72rem;color:rgba(232,210,168,0.78);text-align:center;margin-top:0.8rem;letter-spacing:0.05em}
+/* ═══ PROCESS STEPS ═══ */
+.section-label{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:1.5rem}
+.section-title{font-family:'Cormorant',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:300;color:var(--parchment);text-align:center;margin-bottom:5rem;line-height:1.05}
+.section-title em{font-style:italic;color:var(--gold)}
 
-/* ═══ WHAT TO INCLUDE ═══ */
-.what-label{font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
-.what-h3{font-family:'Cormorant',serif;font-size:1.8rem;font-weight:300;color:var(--parchment);margin-bottom:1rem}
-.what-text{font-size:0.88rem;color:rgba(232,210,168,0.8);line-height:1.95;margin-bottom:1.5rem}
-.what-list{list-style:none;padding:0}
-.what-list li{display:flex;gap:0.8rem;align-items:flex-start;font-size:0.85rem;color:rgba(232,210,168,0.75);padding:0.6rem 0;border-bottom:1px solid rgba(184,132,42,0.08)}
-.what-list li:last-child{border-bottom:none}
-.what-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:0.6rem}
-.privacy-note{margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(184,132,42,0.15);font-size:0.8rem;color:rgba(232,210,168,0.78);line-height:1.9}
-.privacy-note a{color:var(--gold);text-decoration:none}
+.process{padding:7rem 3rem;background:var(--ink);border-top:1px solid rgba(184,132,42,0.12)}
+.process-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2.5rem}
+.process-step{position:relative;padding:2rem 1.5rem 2rem;border-top:1px solid rgba(184,132,42,0.2)}
+.process-num{font-family:'Cormorant',serif;font-size:0.85rem;font-weight:300;font-style:italic;color:var(--gold);letter-spacing:0.1em;margin-bottom:1.2rem;display:block}
+.process-step h3{font-family:'Cormorant',serif;font-size:1.6rem;font-weight:400;color:var(--warm);margin-bottom:1rem;line-height:1.2}
+.process-step p{font-size:0.9rem;color:rgba(232,210,168,0.85);line-height:1.8}
+
+/* ═══ CONTACT CARDS ═══ */
+.contact{padding:7rem 3rem;background:linear-gradient(180deg,#0A0806 0%,#130D08 100%)}
+.contact-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.contact-card{padding:3.5rem 3rem;background:rgba(20,16,8,0.6);border:1px solid rgba(184,132,42,0.2);border-radius:2px;position:relative;transition:border-color 0.3s,transform 0.3s}
+.contact-card:hover{border-color:rgba(184,132,42,0.5);transform:translateY(-3px)}
+.contact-card-label{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.contact-card h3{font-family:'Cormorant',serif;font-size:2rem;font-weight:400;color:var(--parchment);margin-bottom:1.2rem;line-height:1.15}
+.contact-card-body{font-size:0.92rem;color:rgba(232,210,168,0.88);line-height:1.9;margin-bottom:2.2rem}
+.contact-card-body em{font-style:italic;color:var(--warm)}
+
+/* EMAIL BUTTON */
+.btn-email{display:inline-flex;align-items:center;gap:0.8rem;padding:1.1rem 2rem;background:var(--gold);color:var(--ink);font-family:'Jost',sans-serif;font-weight:500;font-size:0.8rem;letter-spacing:0.05em;text-decoration:none;border-radius:1px;transition:all 0.25s;margin-bottom:1rem}
+.btn-email:hover{background:var(--gold-lt);transform:translateY(-1px)}
+.btn-email svg{width:18px;height:18px;flex-shrink:0}
+
+/* WHATSAPP BUTTON */
+.btn-whatsapp{display:inline-flex;align-items:center;gap:0.9rem;padding:1.1rem 2rem;background:var(--whatsapp);color:#FFFFFF;font-family:'Jost',sans-serif;font-weight:500;font-size:0.85rem;letter-spacing:0.03em;text-decoration:none;border-radius:2px;transition:all 0.25s;margin-bottom:0.8rem;box-shadow:0 2px 12px rgba(37,211,102,0.15)}
+.btn-whatsapp:hover{background:var(--whatsapp-dk);transform:translateY(-1px);box-shadow:0 4px 18px rgba(37,211,102,0.35)}
+.btn-whatsapp svg{width:22px;height:22px;flex-shrink:0;fill:currentColor}
+
+/* PHONE (clickable, readable) */
+.phone-line{display:inline-flex;align-items:center;gap:0.7rem;font-family:'Cormorant',serif;font-size:1.3rem;font-weight:400;color:var(--sand);text-decoration:none;letter-spacing:0.03em;margin-top:0.3rem;transition:color 0.2s}
+.phone-line:hover{color:var(--gold)}
+.phone-line svg{width:16px;height:16px;opacity:0.75;flex-shrink:0}
+
+.contact-note{font-size:0.72rem;letter-spacing:0.03em;color:rgba(232,210,168,0.6);font-style:italic;margin-top:1.2rem;display:block}
+
+/* ═══ CHECKLIST ═══ */
+.what-to-include{padding:7rem 3rem;background:var(--ink);border-top:1px solid rgba(184,132,42,0.12)}
+.wti-inner{max-width:820px;margin:0 auto}
+.wti-inner h2{font-family:'Cormorant',serif;font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:300;color:var(--parchment);margin-bottom:2rem;line-height:1.15}
+.wti-inner h2 em{font-style:italic;color:var(--gold)}
+.wti-intro{font-size:1rem;color:rgba(232,210,168,0.88);line-height:1.9;margin-bottom:2.5rem}
+.wti-list{list-style:none;padding:0;margin:0 0 2.5rem}
+.wti-list li{position:relative;padding:0.9rem 0 0.9rem 2rem;font-size:0.95rem;color:rgba(232,210,168,0.92);line-height:1.7;border-bottom:1px solid rgba(184,132,42,0.08)}
+.wti-list li:last-child{border-bottom:none}
+.wti-list li::before{content:'';position:absolute;left:0;top:1.3rem;width:8px;height:8px;background:var(--gold);border-radius:50%;opacity:0.8}
+.wti-list li em{font-style:italic;color:var(--warm)}
+.wti-privacy{font-size:0.82rem;color:rgba(232,210,168,0.6);font-style:italic;line-height:1.7;padding-top:2rem;border-top:1px solid rgba(184,132,42,0.12)}
+.wti-privacy a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,132,42,0.3)}
+.wti-privacy a:hover{color:var(--gold-lt)}
 
 /* ═══ PRACTICAL ═══ */
-.practical{padding:5rem 3rem;background:linear-gradient(135deg,#0A0806,#120C07);border-top:1px solid rgba(184,132,42,0.12)}
-.practical-inner{max-width:1000px;margin:0 auto}
-.practical-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;margin-top:4rem}
-.practical-card{padding:2rem;border:1px solid rgba(184,132,42,0.15);border-radius:2px}
-.practical-icon{font-family:'Cormorant',serif;font-style:italic;font-size:1.5rem;color:var(--gold);margin-bottom:1rem}
-.practical-title{font-family:'Jost',sans-serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--warm);margin-bottom:0.8rem}
-.practical-text{font-size:0.82rem;color:rgba(232,210,168,0.72);line-height:1.85}
+.practical{padding:7rem 3rem;background:linear-gradient(160deg,#0A0806 0%,#18100A 50%,#0A0806 100%);border-top:1px solid rgba(184,132,42,0.12)}
+.practical-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;margin-bottom:5rem}
+.pract-item{text-align:center;padding:0 1rem}
+.pract-hero{font-family:'Cormorant',serif;font-size:3.5rem;font-weight:300;font-style:italic;color:var(--gold);line-height:1;margin-bottom:1rem;display:block}
+.pract-label{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(232,210,168,0.7);margin-bottom:1.2rem}
+.pract-item h3{font-family:'Cormorant',serif;font-size:1.4rem;font-weight:400;color:var(--warm);margin-bottom:1rem;line-height:1.25}
+.pract-item p{font-size:0.9rem;color:rgba(232,210,168,0.82);line-height:1.8}
 
-/* ═══ HUMANITARIAN ═══ */
-.humanitarian{padding:5rem 3rem;text-align:center;border-top:1px solid rgba(184,132,42,0.12)}
-.humanitarian-inner{max-width:560px;margin:0 auto}
-.humanitarian-label{font-size:0.52rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
-.humanitarian-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;color:var(--warm);line-height:1.7}
-.humanitarian-text em{color:var(--gold);font-style:normal}
+.purpose{max-width:720px;margin:0 auto;padding:3rem 2rem;text-align:center;border:1px solid rgba(184,132,42,0.25);border-radius:2px;background:rgba(184,132,42,0.03)}
+.purpose-eye{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;display:block}
+.purpose p{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--warm);line-height:1.6}
+.purpose p em{color:var(--gold);font-style:normal;font-family:'Cormorant',serif}
 
 /* ═══ FOOTER ═══ */
 footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:2rem;border-top:1px solid rgba(184,132,42,0.12)}
 .footer-brand{font-family:'Cormorant',serif;font-size:1rem;font-weight:400;font-style:italic;color:var(--sand)}
 .footer-brand em{color:var(--gold);font-style:normal}
-.footer-nav{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
-.footer-nav a{font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none;transition:color 0.2s}
-.footer-nav a:hover{color:var(--gold)}
+.footer-center{text-align:center;font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(232,210,168,0.75)}
 .footer-right{text-align:right;font-size:0.52rem;letter-spacing:0.1em;color:rgba(232,210,168,0.75)}
 .footer-right a{color:var(--gold);text-decoration:none;opacity:0.8}
 .footer-right a:hover{opacity:1}
+.footer-nav{grid-column:1/-1;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;padding-top:1.2rem;margin-top:0.5rem;border-top:1px solid rgba(184,132,42,0.15)}
+.footer-nav a{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(232,210,168,0.8);text-decoration:none;transition:color 0.2s}
+.footer-nav a:hover{color:var(--gold)}
 
 /* ═══ ANIMATIONS ═══ */
 @keyframes fadeUp{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(45px);transition:opacity 1s ease,transform 1s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
 
 /* ═══ MOBILE ═══ */
 @media(max-width:860px){
-  nav{padding:0.9rem 1.2rem}
-  .nav-sub,.nav-links,.nav-enquire{display:none}
+  nav.site-nav{padding:0.9rem 1.2rem}
+  .nav-sub{display:none}
+  .nav-links{display:none}
+  .nav-enquire{display:none}
   .nav-toggle{display:flex}
-  .nav-mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(14,11,9,0.98);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
-  .nav-mobile-menu.open{display:flex}
-  .nav-mobile-menu a{font-family:'Cormorant',serif;font-size:2.2rem;font-weight:300;color:var(--parchment);text-decoration:none;letter-spacing:0.05em;transition:color 0.2s}
-  .nav-mobile-menu a:hover,.nav-mobile-menu a.active{color:var(--gold)}
-  .nav-mobile-menu .mob-enquire{margin-top:1rem;font-family:'Jost',sans-serif;font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.9rem 2rem;border:1px solid var(--gold);color:var(--gold);background:transparent;text-decoration:none}
-  .nav-mobile-menu .mob-lang{display:flex;gap:0.4rem;margin-top:0.5rem}
-  .nav-mobile-menu .mob-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--parchment);opacity:0.6;line-height:1}
-  .page-hero{padding:10rem 1.5rem 5rem}
-  .how{padding:5rem 1.5rem}
-  .steps{grid-template-columns:1fr 1fr;gap:2rem}
-  .contact-section{padding:4rem 1.5rem}
-  .contact-grid{grid-template-columns:1fr;gap:3rem}
-  .practical{padding:3rem 1.5rem}
-  .practical-grid{grid-template-columns:1fr;gap:2rem}
-  .humanitarian{padding:3rem 1.5rem}
-  footer{grid-template-columns:1fr;gap:1rem}
-  .footer-nav,.footer-right{text-align:left}
+
+  .page-head{padding:8rem 1.5rem 4rem}
+  .page-head h1{font-size:3rem}
+
+  .process{padding:5rem 1.5rem}
+  .process-grid{grid-template-columns:1fr;gap:2rem}
+
+  .contact{padding:5rem 1.5rem}
+  .contact-grid{grid-template-columns:1fr;gap:1.5rem}
+  .contact-card{padding:2.5rem 1.8rem}
+  .contact-card h3{font-size:1.7rem}
+  .btn-email,.btn-whatsapp{width:100%;justify-content:center;padding:1.1rem 1.5rem}
+  .phone-line{font-size:1.15rem}
+
+  .what-to-include{padding:5rem 1.5rem}
+  .practical{padding:5rem 1.5rem}
+  .practical-grid{grid-template-columns:1fr;gap:3rem;margin-bottom:3rem}
+
+  footer{grid-template-columns:1fr;gap:1rem;padding:2rem 1.5rem}
+  .footer-center,.footer-right{text-align:left}
 }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-brand">Maison <em>Cordier</em><span class="nav-sub" id="nav-sub">Original Works · Curated Collection</span></a>
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">
+    Maison <em>Cordier</em>
+    <span class="nav-sub">Original Works &middot; Curated Collection</span>
+  </a>
   <div class="nav-links">
     <a href="collection.html" class="nav-link">Collection</a>
     <a href="artist.html" class="nav-link">The Artist</a>
     <a href="collect.html" class="nav-link active">Collect</a>
     <a href="journal.html" class="nav-link">Journal</a>
   </div>
-  <div style="display:flex;align-items:center;gap:1.5rem">
+  <div class="nav-right">
     <div class="nav-lang">
       <button class="lang-btn active" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('nl')">NL</button>
       <button class="lang-btn" onclick="setLang('fr')">FR</button>
       <button class="lang-btn" onclick="setLang('de')">DE</button>
     </div>
-    <a href="collect.html" class="nav-enquire" id="nav-enquire">Enquire</a>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <a href="mailto:bonjour@maisoncordier.art" class="nav-enquire">Enquire</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
 <!-- MOBILE MENU -->
 <div class="nav-mobile-menu" id="nav-mobile-menu">
-  <button class="mob-close" onclick="document.getElementById('nav-toggle').classList.remove('open');document.getElementById('nav-mobile-menu').classList.remove('open');document.body.style.overflow=''">&#x2715;</button>
+  <button class="mob-close" onclick="document.getElementById('nav-toggle').classList.remove('open');document.getElementById('nav-mobile-menu').classList.remove('open');document.body.style.overflow=''">&times;</button>
+  <a href="index.html">Home</a>
   <a href="collection.html">Collection</a>
   <a href="artist.html">The Artist</a>
   <a href="collect.html" class="active">Collect</a>
   <a href="journal.html">Journal</a>
-  <a href="collect.html" class="mob-enquire">Enquire</a>
   <div class="mob-lang">
-    <button class="lang-btn" onclick="setLang('en');document.getElementById('nav-toggle').classList.remove('open');document.getElementById('nav-mobile-menu').classList.remove('open');document.body.style.overflow=''">EN</button>
-    <button class="lang-btn" onclick="setLang('nl');document.getElementById('nav-toggle').classList.remove('open');document.getElementById('nav-mobile-menu').classList.remove('open');document.body.style.overflow=''">NL</button>
-    <button class="lang-btn" onclick="setLang('fr');document.getElementById('nav-toggle').classList.remove('open');document.getElementById('nav-mobile-menu').classList.remove('open');document.body.style.overflow=''">FR</button>
-    <button class="lang-btn" onclick="setLang('de');document.getElementById('nav-toggle').classList.remove('open');document.getElementById('nav-mobile-menu').classList.remove('open');document.body.style.overflow=''">DE</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('nl')">NL</button>
+    <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" onclick="setLang('de')">DE</button>
   </div>
 </div>
 
-<!-- HERO -->
-<div class="page-hero">
-  <p class="page-eyebrow" id="col2-eyebrow">Maison Cordier · Private Enquiry</p>
-  <h1 id="col2-h1">How to<br><em>Collect</em></h1>
-  <p class="hero-body" id="col2-body">No galleries, no agents. A painting finds its home through a conversation — one work, one person, one introduction. Write to us. We'll take it from there.</p>
-</div>
+<!-- PAGE HEAD -->
+<section class="page-head">
+  <div class="page-head-inner">
+    <p class="page-eyebrow">Maison Cordier &middot; Private Enquiry</p>
+    <h1>How to <em>Collect</em></h1>
+    <p class="page-head-body">No galleries, no agents. A painting finds its home through a conversation &mdash; one work, one person, one introduction. Write to us. We&rsquo;ll take it from there.</p>
+  </div>
+</section>
 
-<!-- HOW IT WORKS -->
-<div class="how">
-  <div class="how-inner">
-    <p class="section-label" id="proc2-label">The process</p>
-    <h2 class="section-h2" id="proc2-h2">Simple by <em>design</em></h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <h3 class="step-title" id="step1-title">You write</h3>
-        <p class="step-text" id="step1-text">Tell us which work caught your attention. Tell us about your space. Or simply say hello — there's no wrong way to start.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <h3 class="step-title" id="step2-title">We respond</h3>
-        <p class="step-text" id="step2-text">Marc responds personally, always within 24 hours. A conversation, not a sales process. Questions welcome. No pressure.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <h3 class="step-title" id="step3-title">Agreement</h3>
-        <p class="step-text" id="step3-text">If the work is right for you, we agree terms directly. Payment by bank transfer or equivalent. Secure, simple, human.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <h3 class="step-title" id="step4-title">Delivered</h3>
-        <p class="step-text" id="step4-text">Carefully packaged, fully insured. Shipped across Europe. Arrives ready to hang. And the conversation doesn't end there.</p>
-      </div>
+<!-- PROCESS -->
+<section class="process">
+  <p class="section-label">The process</p>
+  <h2 class="section-title">Simple by <em>design</em></h2>
+  <div class="process-grid">
+    <div class="process-step reveal">
+      <span class="process-num">01</span>
+      <h3>You write</h3>
+      <p>Tell us which work caught your attention. Tell us about your space. Or simply say hello &mdash; there&rsquo;s no wrong way to start.</p>
+    </div>
+    <div class="process-step reveal">
+      <span class="process-num">02</span>
+      <h3>We respond</h3>
+      <p>Marc responds personally, always within 24 hours. A conversation, not a sales process. Questions welcome. No pressure.</p>
+    </div>
+    <div class="process-step reveal">
+      <span class="process-num">03</span>
+      <h3>Agreement</h3>
+      <p>If the work is right for you, we agree terms directly. Payment by bank transfer or equivalent. Secure, simple, human.</p>
+    </div>
+    <div class="process-step reveal">
+      <span class="process-num">04</span>
+      <h3>Delivered</h3>
+      <p>Carefully packaged, fully insured. Shipped across Europe. Arrives ready to hang. And the conversation doesn&rsquo;t end there.</p>
     </div>
   </div>
-</div>
+</section>
 
 <!-- CONTACT -->
-<div class="contact-section">
+<section class="contact">
   <div class="contact-grid">
-    <div>
-      <div class="contact-card">
-        <p class="contact-card-label" id="email-label">Email</p>
-        <h3 class="contact-card-title" id="email-title">Write a letter</h3>
-        <p class="contact-card-text" id="email-text">The unhurried option. Tell us about a work, your space, or anything you'd like us to know. <em>Marc reads every message himself.</em></p>
-        <a href="/cdn-cgi/l/email-protection#01636e6f6b6e7473416c6068726e6f626e73656864732f607375" class="btn-contact btn-contact-primary"><span class="__cf_email__" data-cfemail="13717c7d797c6661537e727a607c7d707c61777a76613d726167">[email&#160;protected]</span></a>
-        <p class="contact-detail" id="email-detail">Response within 24 hours · Personal reply · EN · NL · FR · DE</p>
-      </div>
-      <div class="contact-card">
-        <p class="contact-card-label" id="wa-label">WhatsApp</p>
-        <h3 class="contact-card-title" id="wa-title">Start a conversation</h3>
-        <p class="contact-card-text" id="wa-text">Prefer to talk? Send a message on WhatsApp. <em>Voice notes welcome.</em> Same personal response, same 24-hour commitment.</p>
-        <a href="https://wa.me/32456396879" class="btn-contact btn-contact-ghost">+32 456 39 68 79</a>
-        <p class="contact-detail" id="wa-detail">Available across Europe · Any language welcome</p>
-      </div>
+
+    <!-- EMAIL CARD -->
+    <div class="contact-card reveal">
+      <p class="contact-card-label">Email</p>
+      <h3>Write a letter</h3>
+      <p class="contact-card-body">The unhurried option. Tell us about a work, your space, or anything you&rsquo;d like us to know. <em>Marc reads every message himself.</em></p>
+      <a href="mailto:bonjour@maisoncordier.art?subject=Maison%20Cordier%20%E2%80%94%20Enquiry" class="btn-email" aria-label="Email bonjour at maisoncordier.art">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="5" width="18" height="14" rx="1.5"/>
+          <path d="m3 7 9 7 9-7"/>
+        </svg>
+        bonjour@maisoncordier.art
+      </a>
+      <span class="contact-note">Response within 24 hours &middot; Personal reply &middot; EN &middot; NL &middot; FR &middot; DE</span>
     </div>
-    <div>
-      <p class="what-label" id="what-label">What to include</p>
-      <h3 class="what-h3" id="what-h3">Nothing required. These help.</h3>
-      <p class="what-text" id="what-text">You don't need to have anything figured out before you write. But if you want to give us a head start, here's what helps a conversation move well:</p>
-      <ul class="what-list">
-        <li><div class="what-dot"></div><span>Which work or works you're drawn to — a name, a number, or a description is fine</span></li>
-        <li><div class="what-dot"></div><span>Something about the room or space you have in mind — light, colour, feeling</span></li>
-        <li><div class="what-dot"></div><span>Your location in Europe — for shipping and timing</span></li>
-        <li><div class="what-dot"></div><span>Any questions about the work, the artist, or the process — all welcome</span></li>
-        <li><div class="what-dot"></div><span>Or simply say <em style="color:var(--warm);font-style:italic">bonjour</em> — and we'll go from there</span></li>
-      </ul>
-      <p class="privacy-note">We collect your name and email solely to respond to your enquiry. We do not send unsolicited communications. Your data is never shared. See our <a href="privacy.html">privacy policy</a> for full details.</p>
+
+    <!-- WHATSAPP CARD -->
+    <div class="contact-card reveal">
+      <p class="contact-card-label">WhatsApp</p>
+      <h3>Start a conversation</h3>
+      <p class="contact-card-body">Prefer to talk? Send a message on WhatsApp. <em>Voice notes welcome.</em> Same personal response, same 24-hour commitment.</p>
+
+      <a href="https://wa.me/32456396879?text=Hello%20Marc%2C%20I%27m%20enquiring%20about%20a%20painting" class="btn-whatsapp" target="_blank" rel="noopener" aria-label="Open WhatsApp chat">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </svg>
+        Message us on WhatsApp
+      </a>
+
+      <a href="tel:+32456396879" class="phone-line" aria-label="Call +32 456 39 68 79">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92Z"/>
+        </svg>
+        +32 456 39 68 79
+      </a>
+      <span class="contact-note">Available across Europe &middot; Any language welcome</span>
     </div>
+
   </div>
-</div>
+</section>
+
+<!-- WHAT TO INCLUDE -->
+<section class="what-to-include">
+  <div class="wti-inner reveal">
+    <p class="section-label" style="text-align:left;margin-bottom:1rem">What to include</p>
+    <h2>Nothing required. <em>These help.</em></h2>
+    <p class="wti-intro">You don&rsquo;t need to have anything figured out before you write. But if you want to give us a head start, here&rsquo;s what helps a conversation move well:</p>
+    <ul class="wti-list">
+      <li>Which work or works you&rsquo;re drawn to &mdash; a name, a number, or a description is fine</li>
+      <li>Something about the room or space you have in mind &mdash; light, colour, feeling</li>
+      <li>Your location in Europe &mdash; for shipping and timing</li>
+      <li>Any questions about the work, the artist, or the process &mdash; all welcome</li>
+      <li>Or simply say <em>bonjour</em> &mdash; and we&rsquo;ll go from there</li>
+    </ul>
+    <p class="wti-privacy">We collect your name and email solely to respond to your enquiry. We do not send unsolicited communications. Your data is never shared. See our <a href="privacy.html">privacy policy</a> for full details.</p>
+  </div>
+</section>
 
 <!-- PRACTICAL -->
-<div class="practical">
-  <div class="practical-inner">
-    <p class="section-label" id="prac-label">Practical</p>
-    <h2 class="section-h2" id="prac-h2">Good to <em>know</em></h2>
-    <div class="practical-grid">
-      <div class="practical-card">
-        <p class="practical-icon" id="prac1-icon">€1,095</p>
-        <p class="practical-title" id="prac1-title">Pricing</p>
-        <p class="practical-text" id="prac1-text">Each of the five works is priced at €1,095. This is the final price — there are no gallery commissions, no agent fees. You pay the artist's value directly.</p>
-      </div>
-      <div class="practical-card">
-        <p class="practical-icon" id="prac2-icon">Shipping</p>
-        <p class="practical-title" id="prac2-title">Delivery across Europe</p>
-        <p class="practical-text" id="prac2-text">Works are carefully packaged and shipped fully insured. Delivery time and cost discussed at enquiry stage. Works arrive ready to hang — edges painted, no framing required. Import duties beyond the EU are the buyer's responsibility.</p>
-      </div>
-      <div class="practical-card">
-        <p class="practical-icon" id="prac3-icon">Once</p>
-        <p class="practical-title" id="prac3-title">Scarcity by nature</p>
-        <p class="practical-text" id="prac3-text">Each work exists once. When it finds its home, it leaves this collection permanently. There are no editions, no prints, no reproductions. Five works, five homes — and then they're gone.</p>
-      </div>
+<section class="practical">
+  <p class="section-label">Practical</p>
+  <h2 class="section-title">Good to <em>know</em></h2>
+  <div class="practical-grid">
+    <div class="pract-item reveal">
+      <span class="pract-hero">&euro;1,095</span>
+      <p class="pract-label">Pricing</p>
+      <p>Each of the five works is priced at &euro;1,095. This is the final price &mdash; there are no gallery commissions, no agent fees. You pay the artist&rsquo;s value directly.</p>
+    </div>
+    <div class="pract-item reveal">
+      <span class="pract-hero">Shipping</span>
+      <p class="pract-label">Delivery across Europe</p>
+      <p>Works are carefully packaged and shipped fully insured. Delivery time and cost discussed at enquiry stage. Works arrive ready to hang &mdash; edges painted, no framing required. Import duties beyond the EU are the buyer&rsquo;s responsibility.</p>
+    </div>
+    <div class="pract-item reveal">
+      <span class="pract-hero">Once</span>
+      <p class="pract-label">Scarcity by nature</p>
+      <p>Each work exists once. When it finds its home, it leaves this collection permanently. There are no editions, no prints, no reproductions. Five works, five homes &mdash; and then they&rsquo;re gone.</p>
     </div>
   </div>
-</div>
 
-<!-- HUMANITARIAN -->
-<div class="humanitarian">
-  <div class="humanitarian-inner">
-    <p class="humanitarian-label" id="hum2-label">A purchase with purpose</p>
-    <p class="humanitarian-text" id="hum2-text">A portion of proceeds from every sale supports humanitarian projects across <em>Europe and Africa</em> — including ongoing work in Tanzania. When you collect, you give twice.</p>
+  <div class="purpose reveal">
+    <span class="purpose-eye">A purchase with purpose</span>
+    <p>A portion of proceeds from every sale supports humanitarian projects across <em>Europe and Africa</em> &mdash; including ongoing work in Tanzania. When you collect, you give twice.</p>
   </div>
-</div>
+</section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">Maison <em>Cordier</em></div>
-  <div class="footer-nav">
+  <div class="footer-center">Original Works &middot; Curated for European Homes</div>
+  <div class="footer-right">
+    <a href="mailto:bonjour@maisoncordier.art">bonjour@maisoncordier.art</a><br>
+    <span style="margin-top:0.3rem;display:block">&copy; 2026 Maison Cordier &mdash; CaeseySolutions LLC</span>
+  </div>
+  <nav class="footer-nav" aria-label="Footer navigation">
     <a href="index.html">Home</a>
     <a href="collection.html">Collection</a>
     <a href="artist.html">The Artist</a>
     <a href="collect.html">Collect</a>
+    <a href="journal.html">Journal</a>
     <a href="privacy.html">Privacy</a>
-  </div>
-  <div class="footer-right">
-    <a href="/cdn-cgi/l/email-protection#03616c6d696c7671436e626a706c6d606c71676a66712d627177"><span class="__cf_email__" data-cfemail="86e4e9e8ece9f3f4c6ebe7eff5e9e8e5e9f4e2efe3f4a8e7f4f2">[email&#160;protected]</span></a><br>
-    <span style="margin-top:0.3rem;display:block">&copy; 2026 Maison Cordier &mdash; CaeseySolutions LLC</span>
-  </div>
+  </nav>
 </footer>
 
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ── TRANSLATIONS: collect.html only ──
-const T = {
-en:{
-  "nav-sub":"Original Works · Curated Collection",
-  "nav-enquire":"Enquire",
-  "col2-eyebrow":"Maison Cordier · Private Enquiry",
-  "col2-h1":"How to<br><em>Collect</em>",
-  "col2-body":"No galleries, no agents. A painting finds its home through a conversation — one work, one person, one introduction. Write to us. We'll take it from there.",
-  "proc2-label":"The process",
-  "proc2-h2":"Simple by <em>design</em>",
-  "step1-title":"You write","step1-text":"Tell us which work caught your attention. Tell us about your space. Or simply say hello — there's no wrong way to start.",
-  "step2-title":"We respond","step2-text":"Marc responds personally, always within 24 hours. A conversation, not a sales process. Questions welcome. No pressure.",
-  "step3-title":"Agreement","step3-text":"If the work is right for you, we agree terms directly. Payment by bank transfer or equivalent. Secure, simple, human.",
-  "step4-title":"Delivered","step4-text":"Carefully packaged, fully insured. Shipped across Europe. Arrives ready to hang. And the conversation doesn't end there.",
-  "email-label":"Email","email-title":"Write a letter",
-  "email-text":"The unhurried option. Tell us about a work, your space, or anything you'd like us to know. <em>Marc reads every message himself.</em>",
-  "email-detail":"Response within 24 hours · Personal reply · EN · NL · FR · DE",
-  "wa-label":"WhatsApp","wa-title":"Start a conversation",
-  "wa-text":"Prefer to talk? Send a message on WhatsApp. <em>Voice notes welcome.</em> Same personal response, same 24-hour commitment.",
-  "wa-detail":"Available across Europe · Any language welcome",
-  "what-label":"What to include","what-h3":"Nothing required. These help.",
-  "what-text":"You don't need to have anything figured out before you write. But if you want to give us a head start, here's what helps a conversation move well:",
-  "prac-label":"Practical","prac-h2":"Good to <em>know</em>",
-  "prac1-icon":"€1,095","prac1-title":"Pricing","prac1-text":"Each of the five works is priced at €1,095. This is the final price — there are no gallery commissions, no agent fees. You pay the artist's value directly.",
-  "prac2-icon":"Shipping","prac2-title":"Delivery across Europe","prac2-text":"Works are carefully packaged and shipped fully insured. Delivery time and cost discussed at enquiry stage. Works arrive ready to hang — edges painted, no framing required. Import duties beyond the EU are the buyer's responsibility.",
-  "prac3-icon":"Once","prac3-title":"Scarcity by nature","prac3-text":"Each work exists once. When it finds its home, it leaves this collection permanently. There are no editions, no prints, no reproductions. Five works, five homes — and then they're gone.",
-  "hum2-label":"A purchase with purpose",
-  "hum2-text":"A portion of proceeds from every sale supports humanitarian projects across <em>Europe and Africa</em> — including ongoing work in Tanzania. When you collect, you give twice."
-},
-nl:{
-  "nav-sub":"Originele Werken · Samengestelde Collectie",
-  "nav-enquire":"Contact",
-  "col2-eyebrow":"Maison Cordier · Privé-Aanvraag",
-  "col2-h1":"Hoe te<br><em>Verzamelen</em>",
-  "col2-body":"Geen galeries, geen agenten. Een schilderij vindt zijn thuis via een gesprek — één werk, één persoon, één introductie. Schrijf ons. We nemen het van daar over.",
-  "proc2-label":"Het proces",
-  "proc2-h2":"Eenvoudig van <em>ontwerp</em>",
-  "step1-title":"U schrijft","step1-text":"Vertel ons welk werk uw aandacht trok. Vertel ons over uw ruimte. Of zeg gewoon hallo — er is geen verkeerde manier om te beginnen.",
-  "step2-title":"Wij reageren","step2-text":"Marc reageert persoonlijk, altijd binnen 24 uur. Een gesprek, geen verkoopproces. Vragen welkom. Geen druk.",
-  "step3-title":"Akkoord","step3-text":"Als het werk geschikt voor u is, spreken we de voorwaarden rechtstreeks af. Betaling per bankoverschrijving of equivalent. Veilig, eenvoudig, menselijk.",
-  "step4-title":"Geleverd","step4-text":"Zorgvuldig verpakt, volledig verzekerd. Verzonden door heel Europa. Arriveert ophangklaar. En het gesprek eindigt daar niet.",
-  "email-label":"E-mail","email-title":"Schrijf een brief",
-  "email-text":"De ongehaaste optie. Vertel ons over een werk, uw ruimte of alles wat u wilt laten weten. <em>Marc leest elk bericht zelf.</em>",
-  "email-detail":"Antwoord binnen 24 uur · Persoonlijk antwoord · EN · NL · FR · DE",
-  "wa-label":"WhatsApp","wa-title":"Start een gesprek",
-  "wa-text":"Liever praten? Stuur een bericht op WhatsApp. <em>Voicenotes welkom.</em> Zelfde persoonlijk antwoord, zelfde 24-uurs toezegging.",
-  "wa-detail":"Beschikbaar door heel Europa · Elke taal welkom",
-  "what-label":"Wat te vermelden","what-h3":"Niets vereist. Dit helpt.",
-  "what-text":"U hoeft niets uitgedacht te hebben voordat u schrijft. Maar als u ons een voorsprong wilt geven, helpt dit een gesprek goed op gang te brengen:",
-  "prac-label":"Praktisch","prac-h2":"Goed om te <em>weten</em>",
-  "prac1-icon":"€1.095","prac1-title":"Prijsstelling","prac1-text":"Elk van de vijf werken is geprijsd op €1.095. Dit is de definitieve prijs — geen galerijcommissies, geen agentkosten. U betaalt de waarde van de kunstenares rechtstreeks.",
-  "prac2-icon":"Verzending","prac2-title":"Levering door Europa","prac2-text":"Werken worden zorgvuldig verpakt en volledig verzekerd verzonden. Levertijd en kosten worden besproken bij de aanvraag. Werken worden ophangklaar geleverd — randen geschilderd, geen lijst nodig. Invoerrechten buiten de EU zijn de verantwoordelijkheid van de koper.",
-  "prac3-icon":"Eenmalig","prac3-title":"Schaarste van nature","prac3-text":"Elk werk bestaat eenmalig. Wanneer het zijn thuis vindt, verlaat het deze collectie definitief. Er zijn geen edities, geen prints, geen reproducties. Vijf werken, vijf huizen — en dan zijn ze weg.",
-  "hum2-label":"Een aankoop met betekenis",
-  "hum2-text":"Een deel van de opbrengst van elke verkoop steunt humanitaire projecten in <em>Europa en Afrika</em> — waaronder lopend werk in Tanzania. Wanneer u verzamelt, geeft u tweemaal."
-},
-fr:{
-  "nav-sub":"Œuvres Originales · Collection Curatée",
-  "nav-enquire":"Nous contacter",
-  "col2-eyebrow":"Maison Cordier · Demande Privée",
-  "col2-h1":"Comment<br><em>Acquérir</em>",
-  "col2-body":"Pas de galeries, pas d'agents. Un tableau trouve son foyer à travers une conversation — une œuvre, une personne, une introduction. Écrivez-nous. Nous prendrons soin du reste.",
-  "proc2-label":"Le processus",
-  "proc2-h2":"Simple par <em>conception</em>",
-  "step1-title":"Vous écrivez","step1-text":"Dites-nous quelle œuvre a retenu votre attention. Parlez-nous de votre espace. Ou dites simplement bonjour — il n'y a pas de mauvaise façon de commencer.",
-  "step2-title":"Nous répondons","step2-text":"Marc répond personnellement, toujours sous 24 heures. Une conversation, pas un processus de vente. Questions bienvenues. Sans pression.",
-  "step3-title":"Accord","step3-text":"Si l'œuvre vous convient, nous convenons des conditions directement. Paiement par virement bancaire ou équivalent. Sécurisé, simple, humain.",
-  "step4-title":"Livré","step4-text":"Soigneusement emballé, entièrement assuré. Expédié dans toute l'Europe. Arrive prêt à accrocher. Et la conversation ne s'arrête pas là.",
-  "email-label":"E-mail","email-title":"Écrire une lettre",
-  "email-text":"L'option sans hâte. Parlez-nous d'une œuvre, de votre espace ou de tout ce que vous souhaitez nous faire savoir. <em>Marc lit chaque message lui-même.</em>",
-  "email-detail":"Réponse sous 24h · Réponse personnelle · EN · NL · FR · DE",
-  "wa-label":"WhatsApp","wa-title":"Démarrer une conversation",
-  "wa-text":"Préférez-vous parler? Envoyez un message sur WhatsApp. <em>Notes vocales bienvenues.</em> Même réponse personnelle, même engagement de 24 heures.",
-  "wa-detail":"Disponible dans toute l'Europe · Toute langue bienvenue",
-  "what-label":"Quoi inclure","what-h3":"Rien n'est requis. Ces éléments aident.",
-  "what-text":"Vous n'avez pas besoin d'avoir tout planifié avant d'écrire. Mais si vous souhaitez nous donner une longueur d'avance, voici ce qui aide une conversation à bien se dérouler :",
-  "prac-label":"Pratique","prac-h2":"Bon à <em>savoir</em>",
-  "prac1-icon":"€1 095","prac1-title":"Tarification","prac1-text":"Chacune des cinq œuvres est au prix de €1 095. C'est le prix final — pas de commissions de galerie, pas de frais d'agent. Vous payez directement la valeur de l'artiste.",
-  "prac2-icon":"Livraison","prac2-title":"Livraison dans toute l'Europe","prac2-text":"Les œuvres sont soigneusement emballées et expédiées entièrement assurées. Délai et coût de livraison discutés lors de la demande. Les œuvres arrivent prêtes à accrocher — bords peints, pas d'encadrement requis. Les droits d'importation hors UE sont à la charge de l'acheteur.",
-  "prac3-icon":"Une fois","prac3-title":"Rareté par nature","prac3-text":"Chaque œuvre existe une seule fois. Lorsqu'elle trouve son foyer, elle quitte définitivement cette collection. Pas d'éditions, pas d'impressions, pas de reproductions. Cinq œuvres, cinq foyers — et puis elles sont parties.",
-  "hum2-label":"Un achat avec une finalité",
-  "hum2-text":"Une partie des recettes de chaque vente soutient des projets humanitaires à travers <em>l'Europe et l'Afrique</em> — dont le travail en cours en Tanzanie. Quand vous collectionnez, vous donnez deux fois."
-},
-de:{
-  "nav-sub":"Originalwerke · Kuratierte Sammlung",
-  "nav-enquire":"Anfrage stellen",
-  "col2-eyebrow":"Maison Cordier · Private Anfrage",
-  "col2-h1":"Wie man<br><em>Sammelt</em>",
-  "col2-body":"Keine Galerien, keine Agenten. Ein Gemälde findet sein Zuhause durch ein Gespräch — ein Werk, eine Person, eine Einführung. Schreiben Sie uns. Wir kümmern uns um den Rest.",
-  "proc2-label":"Der Prozess",
-  "proc2-h2":"Einfach von <em>Natur aus</em>",
-  "step1-title":"Sie schreiben","step1-text":"Sagen Sie uns, welches Werk Ihre Aufmerksamkeit erregt hat. Erzählen Sie uns von Ihrem Raum. Oder sagen Sie einfach Hallo — es gibt keinen falschen Anfang.",
-  "step2-title":"Wir antworten","step2-text":"Marc antwortet persönlich, immer innerhalb von 24 Stunden. Ein Gespräch, kein Verkaufsprozess. Fragen willkommen. Kein Druck.",
-  "step3-title":"Vereinbarung","step3-text":"Wenn das Werk das Richtige für Sie ist, vereinbaren wir die Bedingungen direkt. Zahlung per Überweisung oder gleichwertig. Sicher, einfach, menschlich.",
-  "step4-title":"Geliefert","step4-text":"Sorgfältig verpackt, vollständig versichert. In ganz Europa versandt. Kommt hängefertig an. Und das Gespräch endet dort nicht.",
-  "email-label":"E-Mail","email-title":"Einen Brief schreiben",
-  "email-text":"Die entspannte Option. Erzählen Sie uns von einem Werk, Ihrem Raum oder allem, was Sie uns wissen lassen möchten. <em>Marc liest jede Nachricht selbst.</em>",
-  "email-detail":"Antwort innerhalb 24h · Persönliche Antwort · EN · NL · FR · DE",
-  "wa-label":"WhatsApp","wa-title":"Ein Gespräch beginnen",
-  "wa-text":"Lieber reden? Schicken Sie eine Nachricht auf WhatsApp. <em>Sprachnachrichten willkommen.</em> Gleiche persönliche Antwort, gleiche 24-Stunden-Zusage.",
-  "wa-detail":"In ganz Europa verfügbar · Jede Sprache willkommen",
-  "what-label":"Was einzuschließen","what-h3":"Nichts erforderlich. Das hilft.",
-  "what-text":"Sie müssen nichts ausgearbeitet haben, bevor Sie schreiben. Aber wenn Sie uns einen Vorsprung geben möchten, hilft das, ein Gespräch gut voranzubringen:",
-  "prac-label":"Praktisch","prac-h2":"Gut zu <em>wissen</em>",
-  "prac1-icon":"€1.095","prac1-title":"Preisgestaltung","prac1-text":"Jedes der fünf Werke ist für €1.095 erhältlich. Dies ist der Endpreis — keine Galerieprovisionen, keine Agentengebühren. Sie zahlen den Wert der Künstlerin direkt.",
-  "prac2-icon":"Versand","prac2-title":"Lieferung in ganz Europa","prac2-text":"Werke werden sorgfältig verpackt und vollständig versichert versandt. Lieferzeit und -kosten werden bei der Anfrage besprochen. Werke kommen hängefertig an — Kanten bemalt, keine Rahmung erforderlich. Einfuhrzölle außerhalb der EU liegen in der Verantwortung des Käufers.",
-  "prac3-icon":"Einmalig","prac3-title":"Knappheit von Natur aus","prac3-text":"Jedes Werk existiert einmal. Wenn es sein Zuhause findet, verlässt es diese Sammlung dauerhaft. Es gibt keine Auflagen, keine Drucke, keine Reproduktionen. Fünf Werke, fünf Häuser — und dann sind sie weg.",
-  "hum2-label":"Ein Kauf mit Bedeutung",
-  "hum2-text":"Ein Teil des Erlöses jedes Verkaufs unterstützt humanitäre Projekte in <em>Europa und Afrika</em> — einschließlich laufender Arbeit in Tansania. Wenn Sie sammeln, geben Sie zweimal."
-}
-};
-
-const ids=["nav-sub","nav-enquire","col2-eyebrow","col2-h1","col2-body","proc2-label","proc2-h2","step1-title","step1-text","step2-title","step2-text","step3-title","step3-text","step4-title","step4-text","email-label","email-title","email-text","email-detail","wa-label","wa-title","wa-text","wa-detail","what-label","what-h3","what-text","prac-label","prac-h2","prac1-icon","prac1-title","prac1-text","prac2-icon","prac2-title","prac2-text","prac3-icon","prac3-title","prac3-text","hum2-label","hum2-text"];
-
+<script>
+// Language switcher stub (collect.html content is EN-only for now;
+// hook into your T{} dictionary later to translate sections)
 function setLang(l){
-  var d=T[l];if(!d)return;
-  ids.forEach(function(id){var el=document.getElementById(id);if(el&&d[id])el.innerHTML=d[id];});
-  document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent===l.toUpperCase());});
-  document.documentElement.lang=l;
-  try{localStorage.setItem('mc_lang',l);}catch(e){}
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.toggle('active', b.textContent.toLowerCase() === l.toLowerCase());
+  });
+  document.documentElement.lang = l;
+  try{ localStorage.setItem('mc_lang', l); }catch(e){}
 }
+
+// Restore saved language
 (function(){
-  var s='';try{s=localStorage.getItem('mc_lang')||'';}catch(e){}
-  var b=(navigator.language||'en').toLowerCase().slice(0,2);
-  setLang(s||{en:'en',nl:'nl',fr:'fr',de:'de'}[b]||'en');
+  var s = '';
+  try{ s = localStorage.getItem('mc_lang') || ''; }catch(e){}
+  if(s) setLang(s);
 })();
 
-// Hamburger
+// Scroll reveal
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:0.1});
+document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+
+// Mobile hamburger
 (function(){
-  var toggle=document.getElementById('nav-toggle');
-  var menu=document.getElementById('nav-mobile-menu');
-  if(!toggle||!menu)return;
-  toggle.addEventListener('click',function(){
+  var toggle = document.getElementById('nav-toggle');
+  var menu = document.getElementById('nav-mobile-menu');
+  if(!toggle || !menu) return;
+  toggle.addEventListener('click', function(){
     toggle.classList.toggle('open');
     menu.classList.toggle('open');
-    document.body.style.overflow=menu.classList.contains('open')?'hidden':'';
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      toggle.classList.remove('open');
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
   });
 })();
 </script>
