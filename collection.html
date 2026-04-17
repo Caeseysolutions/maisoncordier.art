@@ -30,7 +30,7 @@
 html{scroll-behavior:smooth;font-size:16px}
 :root{
   --ink:#0E0B09;--parchment:#FAF6EE;--warm:#F2EAD8;
-  --gold:#B8842A;--gold-lt:#D4A855;--sand:#E8D0A8;
+  --gold:#B8842A;--gold-lt:#D4A855;--gold-dk:#8A6220;--sand:#E8D0A8;
 }
 body{background:var(--ink);color:var(--parchment);font-family:'Jost',sans-serif;font-weight:300;line-height:1.8;overflow-x:hidden}
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:0.5;mix-blend-mode:overlay}
@@ -68,10 +68,10 @@ nav{position:fixed;top:0;width:100%;z-index:500;display:flex;justify-content:spa
 .work.flip{grid-template-columns:45% 55%}
 .work.flip .work-img{order:2}
 .work.flip .work-info{order:1}
-.work:nth-child(1){--ac:#22A1D7}
+.work:nth-child(1){--ac:#489CE4}
 .work:nth-child(2){--ac:#BB8F70}
-.work:nth-child(3){--ac:#C59669}
-.work:nth-child(4){--ac:#489CE4}
+.work:nth-child(3){--ac:#22A1D7}
+.work:nth-child(4){--ac:#C59669}
 .work:nth-child(5){--ac:#BE916A}
 .work-img{position:relative;overflow:hidden;min-height:500px;align-self:stretch}
 .work-img img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform 1s ease;display:block}
@@ -81,23 +81,71 @@ nav{position:fixed;top:0;width:100%;z-index:500;display:flex;justify-content:spa
 .work-info{display:flex;flex-direction:column;justify-content:center;padding:5rem 4.5rem;background:#0E0B09;position:relative}
 .work-info::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--ac),transparent);opacity:0.35}
 .work-info::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(184,132,42,0.04) 0%,transparent 65%);pointer-events:none}
-.work-tag{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ac);margin-bottom:1.5rem}
+
+/* ── FEATURED BADGE (hero only) ── */
+.work-featured{display:inline-flex;align-items:center;gap:0.6rem;align-self:flex-start;font-family:'Jost',sans-serif;font-size:0.58rem;font-weight:500;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:0.55rem 1.1rem;border-radius:1px;margin-bottom:1.3rem;box-shadow:0 2px 12px rgba(184,132,42,0.3)}
+.work-featured::before{content:'';width:6px;height:6px;background:var(--ink);border-radius:50%;opacity:0.7}
+
+.work-tag{font-family:'Jost',sans-serif;font-size:0.56rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ac);margin-bottom:1.5rem}
 .work-title{font-family:'Cormorant',serif;font-size:clamp(2.2rem,3.5vw,3.5rem);font-weight:400;color:#FFFFFF;line-height:1.05;margin-bottom:0.5rem;text-shadow:0 1px 8px rgba(0,0,0,0.6)}
-.work-price{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;font-style:italic;color:var(--gold);margin-bottom:0.5rem}
-.work-medium{font-size:0.56rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,220,180,0.90);margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(184,132,42,0.25)}
-.work-desc{font-size:0.95rem;font-weight:300;color:#E8D5B0;line-height:2;margin-bottom:2rem}
+.work-hero .work-title{font-size:clamp(2.6rem,4vw,4.2rem)}
+.work-price{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:300;font-style:italic;color:var(--gold);margin-bottom:0.5rem}
+.work-medium{font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,220,180,0.90);margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(184,132,42,0.25)}
+.work-desc{font-size:0.95rem;font-weight:300;color:#E8D5B0;line-height:2;margin-bottom:2.25rem}
 .work-desc p{margin-bottom:1.2rem}
 .work-desc p:last-child{margin-bottom:0}
-.work-availability{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(210,160,60,0.9);margin-bottom:2rem}
-.avail-dot{width:6px;height:6px;background:#4CAF50;border-radius:50%;animation:blink 2.5s ease infinite}
+.work-availability{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(210,160,60,0.9);margin-bottom:1.75rem}
+.avail-dot{width:7px;height:7px;background:#4CAF50;border-radius:50%;animation:blink 2.5s ease infinite;box-shadow:0 0 8px rgba(76,175,80,0.5)}
 @keyframes blink{0%,100%{opacity:0.5}50%{opacity:1}}
-.work-cta{display:flex;flex-direction:column;align-items:flex-start;gap:0.8rem}
-.btn-buy-now{display:inline-flex;align-items:center;gap:0.8rem;padding:1rem 2.2rem;background:var(--gold);color:var(--ink);font-family:'Jost',sans-serif;font-weight:500;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all 0.3s}
-.btn-buy-now:hover{background:var(--gold-lt);transform:translateY(-2px)}
-.btn-enquire{display:inline-flex;align-items:center;gap:0.8rem;padding:1rem 2.2rem;border:1px solid var(--ac);color:var(--parchment);font-family:'Jost',sans-serif;font-weight:300;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all 0.3s;background:transparent}
-.btn-enquire:hover{background:var(--ac);color:var(--ink)}
-.cta-note{font-size:0.52rem;letter-spacing:0.1em;color:rgba(232,210,168,0.78);font-style:italic}
-.work-duties{font-size:0.52rem;color:rgba(232,210,168,0.75);margin-top:0.5rem;font-style:italic}
+
+/* ── CTA BLOCK: DOMINANT BUY NOW + QUIET ENQUIRE LINK ── */
+.work-cta{display:flex;flex-direction:column;align-items:stretch;gap:0}
+.btn-buy-now{
+  display:flex;align-items:center;justify-content:center;gap:0.8rem;
+  width:100%;max-width:380px;
+  padding:1.3rem 2.4rem;
+  background:var(--gold);color:var(--ink);
+  font-family:'Jost',sans-serif;font-weight:500;
+  font-size:0.92rem;letter-spacing:0.14em;text-transform:uppercase;
+  text-decoration:none;border-radius:2px;
+  transition:all 0.3s ease;
+  box-shadow:0 4px 18px rgba(184,132,42,0.28),0 1px 3px rgba(0,0,0,0.4);
+  position:relative;
+  margin-bottom:0.9rem;
+}
+.btn-buy-now::after{
+  content:'→';font-size:1.05rem;line-height:1;transition:transform 0.3s ease;margin-left:0.3rem;
+}
+.btn-buy-now:hover{
+  background:var(--gold-lt);transform:translateY(-2px);
+  box-shadow:0 6px 24px rgba(184,132,42,0.45),0 2px 6px rgba(0,0,0,0.5);
+}
+.btn-buy-now:hover::after{transform:translateX(4px)}
+
+/* Hero Buy Now — slightly larger, subtle glow ring */
+.work-hero .btn-buy-now{
+  padding:1.4rem 2.6rem;font-size:0.98rem;
+  box-shadow:0 4px 22px rgba(184,132,42,0.38),0 0 0 1px rgba(212,168,85,0.35);
+}
+.work-hero .btn-buy-now:hover{box-shadow:0 8px 30px rgba(184,132,42,0.55),0 0 0 1px rgba(212,168,85,0.5)}
+
+/* Quiet text link — secondary CTA */
+.link-enquire{
+  display:inline-flex;align-items:center;gap:0.4rem;align-self:flex-start;
+  font-family:'Jost',sans-serif;font-size:0.78rem;font-weight:300;
+  letter-spacing:0.08em;
+  color:var(--sand);text-decoration:none;
+  padding:0.5rem 0;
+  border-bottom:1px solid rgba(232,208,168,0.3);
+  transition:all 0.25s ease;
+  margin-bottom:1.1rem;
+}
+.link-enquire::after{content:'→';opacity:0.6;transition:transform 0.25s ease}
+.link-enquire:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.link-enquire:hover::after{transform:translateX(3px);opacity:1}
+
+.cta-note{font-size:0.66rem;letter-spacing:0.05em;color:rgba(232,210,168,0.75);font-style:italic;line-height:1.6}
+.work-duties{font-size:0.58rem;color:rgba(232,210,168,0.55);margin-top:0.5rem;font-style:italic;line-height:1.5}
 
 /* ═══ HUMANITARIAN ═══ */
 .humanitarian{background:linear-gradient(135deg,#0A0806,#120C07);border-top:1px solid rgba(184,132,42,0.15);border-bottom:1px solid rgba(184,132,42,0.15);padding:4rem 3rem;text-align:center}
@@ -114,9 +162,9 @@ nav{position:fixed;top:0;width:100%;z-index:500;display:flex;justify-content:spa
 .closer h2{font-family:'Cormorant',serif;font-size:clamp(2.8rem,5vw,5rem);font-weight:300;color:var(--parchment);line-height:1.05;margin-bottom:1.5rem}
 .closer h2 em{font-style:italic;color:var(--gold)}
 .closer-body{font-size:0.95rem;font-weight:300;color:var(--sand);line-height:1.95;margin-bottom:1.5rem}
-.btn-primary{display:inline-flex;align-items:center;padding:1rem 2.4rem;background:var(--gold);color:var(--ink);font-family:'Jost',sans-serif;font-weight:500;font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all 0.25s;margin-top:1rem}
-.btn-primary:hover{background:var(--gold-lt);transform:translateY(-2px)}
-.btn-whatsapp{display:inline-flex;align-items:center;gap:0.6rem;padding:1rem 2.4rem;border:1px solid rgba(184,132,42,0.4);color:var(--sand);font-family:'Jost',sans-serif;font-weight:300;font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all 0.25s;margin-top:1rem;margin-left:1rem}
+.btn-primary{display:inline-flex;align-items:center;padding:1.2rem 2.6rem;background:var(--gold);color:var(--ink);font-family:'Jost',sans-serif;font-weight:500;font-size:0.85rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all 0.25s;margin-top:1rem;box-shadow:0 4px 18px rgba(184,132,42,0.3)}
+.btn-primary:hover{background:var(--gold-lt);transform:translateY(-2px);box-shadow:0 6px 24px rgba(184,132,42,0.45)}
+.btn-whatsapp{display:inline-flex;align-items:center;gap:0.6rem;padding:1.2rem 2.6rem;border:1px solid rgba(184,132,42,0.4);color:var(--sand);font-family:'Jost',sans-serif;font-weight:300;font-size:0.85rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all 0.25s;margin-top:1rem;margin-left:1rem}
 .btn-whatsapp:hover{border-color:var(--gold);color:var(--gold)}
 .cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:0.5rem}
 
@@ -152,6 +200,13 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
   .work-img{min-height:max(80vw,280px)}
   .work-info{padding:2.5rem 1.5rem}
   .work-num{font-size:4rem}
+
+  /* Mobile CTA — full-width dominant Buy Now */
+  .btn-buy-now{max-width:100%;width:100%;padding:1.25rem 1.5rem;font-size:0.95rem;letter-spacing:0.12em}
+  .work-hero .btn-buy-now{padding:1.35rem 1.5rem;font-size:1rem}
+  .link-enquire{font-size:0.8rem;align-self:center;padding:0.7rem 0}
+  .work-featured{align-self:center;font-size:0.6rem}
+
   .humanitarian{padding:3rem 1.5rem}
   .closer{padding:7rem 1.5rem}
   .cta-row{flex-direction:column;align-items:center}
@@ -210,26 +265,26 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
 <!-- PAINTINGS -->
 <div class="works">
 
-  <!-- 01 Coastal Grasses -->
-  <div class="work">
+  <!-- 01 Seagrasses & Island (featured — ad landing HERO) -->
+  <div class="work work-hero" id="seagrasses">
     <div class="work-img">
-      <img src="https://i.ibb.co/pjPhsxMk/Painting-40-Grasses7.jpg" alt="Coastal Grasses — original mixed media painting by Kirsteen">
+      <img src="https://i.ibb.co/5q471wL/Kirsteen-Art-Painting-31-Seagrasses-and-Island1.avif" alt="Seagrasses and Island — original mixed media painting by Kirsteen">
       <div class="work-img-shade"></div>
       <div class="work-num">01</div>
     </div>
     <div class="work-info">
-      <p class="work-tag" id="tag1">Original · Mixed Media · A2</p>
-      <h2 class="work-title" id="title1">Coastal<br>Grasses</h2>
+      <p class="work-tag" id="tag1">Original · Mixed Media &amp; Oil Pastel · A3</p>
+      <h2 class="work-title" id="title1">Seagrasses<br>&amp; Island</h2>
       <p class="work-price">€1,095</p>
-      <p class="work-medium" id="med1">Paint &amp; mixed media on canvas · Edges painted · Ready to hang</p>
+      <p class="work-medium" id="med1">Paint, oil pastel &amp; mixed media on canvas · Edges painted · Ready to hang</p>
       <div class="work-availability"><div class="avail-dot"></div><span id="avail1">Available</span></div>
       <div class="work-desc">
-        <p>Tall stems bending in the sea breeze. Warm ochres, soft browns, pale creams and deep coastal blues — layered in loose, energetic brushstrokes that suggest rhythm and natural motion.</p>
-        <p>Hints of delicate seed heads and wild plants evoke the untamed edges of Scotland's shores. A lively contemporary landscape that brings movement and atmosphere into a room — and keeps it there.</p>
+        <p>Soft, expressive layers of wind-swept seagrasses fill the foreground. On the horizon, a distant island rests against the sky — promising escape, calm, and the pull of somewhere just beyond reach.</p>
+        <p>This piece balances freedom and structure: fluid painterly marks combined with confident linear accents. Neither restless nor static.</p>
       </div>
       <div class="work-cta">
-        <a href="https://www.kirsteenart.com/product-page/coastal-grasses" class="btn-buy-now" id="buy1" target="_blank" rel="noopener">Buy Now — €1,095</a>
-        <a href="collect.html?work=coastal-grasses" class="btn-enquire" id="cta1">Express interest</a>
+        <a href="https://www.kirsteenart.com/product-page/seagrasses-and-island" class="btn-buy-now" id="buy1" target="_blank" rel="noopener">Buy Now — €1,095</a>
+        <a href="collect.html?work=seagrasses" class="link-enquire" id="cta1">Or ask a question first</a>
         <span class="cta-note" id="note1">Personal response within 24 hours · Original, not a print · Ships across Europe</span>
         <span class="work-duties">Import duties beyond EU are the buyer's responsibility.</span>
       </div>
@@ -255,59 +310,59 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
       </div>
       <div class="work-cta">
         <a href="https://www.kirsteenart.com/product-page/malta-street" class="btn-buy-now" id="buy2" target="_blank" rel="noopener">Buy Now — €1,095</a>
-        <a href="collect.html?work=malta-street" class="btn-enquire" id="cta2">Express interest</a>
+        <a href="collect.html?work=malta-street" class="link-enquire" id="cta2">Or ask a question first</a>
         <span class="cta-note" id="note2">Personal response within 24 hours · Original, not a print · Ships across Europe</span>
         <span class="work-duties">Import duties beyond EU are the buyer's responsibility.</span>
       </div>
     </div>
   </div>
 
-  <!-- 03 Blue Flowers on Copper -->
+  <!-- 03 Coastal Grasses -->
   <div class="work">
     <div class="work-img">
-      <img src="https://i.ibb.co/Xr82YZZs/Kirsteen-Art-Painting-28-Blue-Flowers-on-Copper1.avif" alt="Blue Flowers on Copper — original mixed media painting by Kirsteen">
+      <img src="https://i.ibb.co/pjPhsxMk/Painting-40-Grasses7.jpg" alt="Coastal Grasses — original mixed media painting by Kirsteen">
       <div class="work-img-shade"></div>
       <div class="work-num">03</div>
     </div>
     <div class="work-info">
-      <p class="work-tag" id="tag3">Original · Copper Leaf &amp; Mixed Media · A2</p>
-      <h2 class="work-title" id="title3">Blue Flowers<br>on Copper</h2>
+      <p class="work-tag" id="tag3">Original · Mixed Media · A2</p>
+      <h2 class="work-title" id="title3">Coastal<br>Grasses</h2>
       <p class="work-price">€1,095</p>
-      <p class="work-medium" id="med3">Copper leaf, paint &amp; mixed media on canvas · Edges painted · Ready to hang</p>
+      <p class="work-medium" id="med3">Paint &amp; mixed media on canvas · Edges painted · Ready to hang</p>
       <div class="work-availability"><div class="avail-dot"></div><span id="avail3">Available</span></div>
       <div class="work-desc">
-        <p>Luminous blue floral forms emerging against the warmth of real copper leaf — a surface that reflects light subtly, shifting in mood as the light in your room changes.</p>
-        <p>A contemporary botanical that feels both energetic and grounded. A painting that breathes with the room, changes with the hour, and rewards the kind of looking that most art never earns.</p>
+        <p>Tall stems bending in the sea breeze. Warm ochres, soft browns, pale creams and deep coastal blues — layered in loose, energetic brushstrokes that suggest rhythm and natural motion.</p>
+        <p>Hints of delicate seed heads and wild plants evoke the untamed edges of Scotland's shores. A lively contemporary landscape that brings movement and atmosphere into a room — and keeps it there.</p>
       </div>
       <div class="work-cta">
-        <a href="https://www.kirsteenart.com/product-page/blue-flowers-on-copper" class="btn-buy-now" id="buy3" target="_blank" rel="noopener">Buy Now — €1,095</a>
-        <a href="collect.html?work=blue-flowers" class="btn-enquire" id="cta3">Express interest</a>
+        <a href="https://www.kirsteenart.com/product-page/coastal-grasses" class="btn-buy-now" id="buy3" target="_blank" rel="noopener">Buy Now — €1,095</a>
+        <a href="collect.html?work=coastal-grasses" class="link-enquire" id="cta3">Or ask a question first</a>
         <span class="cta-note" id="note3">Personal response within 24 hours · Original, not a print · Ships across Europe</span>
         <span class="work-duties">Import duties beyond EU are the buyer's responsibility.</span>
       </div>
     </div>
   </div>
 
-  <!-- 04 Seagrasses & Island -->
-  <div class="work flip" id="seagrasses">
+  <!-- 04 Blue Flowers on Copper -->
+  <div class="work flip">
     <div class="work-img">
-      <img src="https://i.ibb.co/5q471wL/Kirsteen-Art-Painting-31-Seagrasses-and-Island1.avif" alt="Seagrasses and Island — original mixed media painting by Kirsteen">
+      <img src="https://i.ibb.co/Xr82YZZs/Kirsteen-Art-Painting-28-Blue-Flowers-on-Copper1.avif" alt="Blue Flowers on Copper — original mixed media painting by Kirsteen">
       <div class="work-img-shade"></div>
       <div class="work-num">04</div>
     </div>
     <div class="work-info">
-      <p class="work-tag" id="tag4">Original · Mixed Media &amp; Oil Pastel · A3</p>
-      <h2 class="work-title" id="title4">Seagrasses<br>&amp; Island</h2>
+      <p class="work-tag" id="tag4">Original · Copper Leaf &amp; Mixed Media · A2</p>
+      <h2 class="work-title" id="title4">Blue Flowers<br>on Copper</h2>
       <p class="work-price">€1,095</p>
-      <p class="work-medium" id="med4">Paint, oil pastel &amp; mixed media on canvas · Edges painted · Ready to hang</p>
+      <p class="work-medium" id="med4">Copper leaf, paint &amp; mixed media on canvas · Edges painted · Ready to hang</p>
       <div class="work-availability"><div class="avail-dot"></div><span id="avail4">Available</span></div>
       <div class="work-desc">
-        <p>Soft, expressive layers of wind-swept seagrasses fill the foreground. On the horizon, a distant island rests against the sky — promising escape, calm, and the pull of somewhere just beyond reach.</p>
-        <p>This piece balances freedom and structure: fluid painterly marks combined with confident linear accents. Neither restless nor static.</p>
+        <p>Luminous blue floral forms emerging against the warmth of real copper leaf — a surface that reflects light subtly, shifting in mood as the light in your room changes.</p>
+        <p>A contemporary botanical that feels both energetic and grounded. A painting that breathes with the room, changes with the hour, and rewards the kind of looking that most art never earns.</p>
       </div>
       <div class="work-cta">
-        <a href="https://www.kirsteenart.com/product-page/seagrasses-and-island" class="btn-buy-now" id="buy4" target="_blank" rel="noopener">Buy Now — €1,095</a>
-        <a href="collect.html?work=seagrasses" class="btn-enquire" id="cta4">Express interest</a>
+        <a href="https://www.kirsteenart.com/product-page/blue-flowers-on-copper" class="btn-buy-now" id="buy4" target="_blank" rel="noopener">Buy Now — €1,095</a>
+        <a href="collect.html?work=blue-flowers" class="link-enquire" id="cta4">Or ask a question first</a>
         <span class="cta-note" id="note4">Personal response within 24 hours · Original, not a print · Ships across Europe</span>
         <span class="work-duties">Import duties beyond EU are the buyer's responsibility.</span>
       </div>
@@ -333,7 +388,7 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
       </div>
       <div class="work-cta">
         <a href="https://www.kirsteenart.com/product-page/magnolia-and-bamboo" class="btn-buy-now" id="buy5" target="_blank" rel="noopener">Buy Now — €1,095</a>
-        <a href="collect.html?work=magnolia" class="btn-enquire" id="cta5">Express interest</a>
+        <a href="collect.html?work=magnolia" class="link-enquire" id="cta5">Or ask a question first</a>
         <span class="cta-note" id="note5">Personal response within 24 hours · Original, not a print · Ships across Europe</span>
         <span class="work-duties">Import duties beyond EU are the buyer's responsibility.</span>
       </div>
@@ -385,7 +440,8 @@ footer{background:#070504;padding:2.5rem 3rem;display:grid;grid-template-columns
 
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ── TRANSLATIONS: collection.html only ──
+// ── TRANSLATIONS: collection.html ──
+// Order (17 Apr 2026): 01 Seagrasses (HERO) · 02 Malta Street · 03 Coastal Grasses · 04 Blue Flowers · 05 Magnolia
 const T = {
 en:{
   "nav-sub":"Original Works · Curated Collection",
@@ -393,23 +449,23 @@ en:{
   "col-eyebrow":"Maison Cordier · Five Original Works",
   "col-h1":"The <em>Collection</em>",
   "col-hero-body":"Each painting is a single, unrepeatable object — not a print, not a reproduction. Original mixed media works by Scottish painter Kirsteen, personally curated and introduced across Europe.",
-  "tag1":"Original · Mixed Media · A2","title1":"Coastal<br>Grasses",
+  "tag1":"Original · Mixed Media & Oil Pastel · A3","title1":"Seagrasses<br>& Island",
   "tag2":"Original · Mixed Media · A2","title2":"Malta<br>Street",
-  "tag3":"Original · Copper Leaf & Mixed Media · A2","title3":"Blue Flowers<br>on Copper",
-  "tag4":"Original · Mixed Media & Oil Pastel · A3","title4":"Seagrasses<br>& Island",
+  "tag3":"Original · Mixed Media · A2","title3":"Coastal<br>Grasses",
+  "tag4":"Original · Copper Leaf & Mixed Media · A2","title4":"Blue Flowers<br>on Copper",
   "tag5":"Original · Copper Leaf & Mixed Media · A2","title5":"Magnolia<br>& Bamboo",
   "avail1":"Available","avail2":"Available","avail3":"Available","avail4":"Available","avail5":"Available",
-  "med1":"Paint & mixed media on canvas · Edges painted · Ready to hang",
+  "med1":"Paint, oil pastel & mixed media on canvas · Edges painted · Ready to hang",
   "med2":"Paint & mixed media on canvas · Edges painted · Ready to hang",
-  "med3":"Copper leaf, paint & mixed media on canvas · Edges painted · Ready to hang",
-  "med4":"Paint, oil pastel & mixed media on canvas · Edges painted · Ready to hang",
+  "med3":"Paint & mixed media on canvas · Edges painted · Ready to hang",
+  "med4":"Copper leaf, paint & mixed media on canvas · Edges painted · Ready to hang",
   "med5":"Copper leaf, paint & mixed media on canvas · Edges painted · Ready to hang",
   "buy1":"Buy Now — €1,095","buy2":"Buy Now — €1,095","buy3":"Buy Now — €1,095","buy4":"Buy Now — €1,095","buy5":"Buy Now — €1,095",
-  "cta1":"Express interest","note1":"Personal response within 24 hours · Original, not a print · Ships across Europe",
-  "cta2":"Express interest","note2":"Personal response within 24 hours · Original, not a print · Ships across Europe",
-  "cta3":"Express interest","note3":"Personal response within 24 hours · Original, not a print · Ships across Europe",
-  "cta4":"Express interest","note4":"Personal response within 24 hours · Original, not a print · Ships across Europe",
-  "cta5":"Express interest","note5":"Personal response within 24 hours · Original, not a print · Ships across Europe",
+  "cta1":"Or ask a question first","note1":"Personal response within 24 hours · Original, not a print · Ships across Europe",
+  "cta2":"Or ask a question first","note2":"Personal response within 24 hours · Original, not a print · Ships across Europe",
+  "cta3":"Or ask a question first","note3":"Personal response within 24 hours · Original, not a print · Ships across Europe",
+  "cta4":"Or ask a question first","note4":"Personal response within 24 hours · Original, not a print · Ships across Europe",
+  "cta5":"Or ask a question first","note5":"Personal response within 24 hours · Original, not a print · Ships across Europe",
   "hum-label":"A purchase with purpose",
   "hum-text":"A portion of proceeds from every sale supports humanitarian projects across <em>Europe and Africa</em> — including work in Tanzania. Art that gives, twice over.",
   "closer-eye":"A personal introduction",
@@ -425,23 +481,23 @@ nl:{
   "col-eyebrow":"Maison Cordier · Vijf Originele Werken",
   "col-h1":"De <em>Collectie</em>",
   "col-hero-body":"Elk schilderij is een uniek, onherhaalbaar object — geen print, geen reproductie. Originele mixed media werken van de Schotse schilderes Kirsteen, persoonlijk samengesteld en geïntroduceerd door heel Europa.",
-  "tag1":"Origineel · Mixed Media · A2","title1":"Kust-<br>gras",
+  "tag1":"Origineel · Mixed Media & Oliepastel · A3","title1":"Zeegras<br>& Eiland",
   "tag2":"Origineel · Mixed Media · A2","title2":"Malta<br>Street",
-  "tag3":"Origineel · Koperblad & Mixed Media · A2","title3":"Blauwe Bloemen<br>op Koper",
-  "tag4":"Origineel · Mixed Media & Oliepastel · A3","title4":"Zeegras<br>& Eiland",
+  "tag3":"Origineel · Mixed Media · A2","title3":"Kustgras",
+  "tag4":"Origineel · Koperblad & Mixed Media · A2","title4":"Blauwe Bloemen<br>op Koper",
   "tag5":"Origineel · Koperblad & Mixed Media · A2","title5":"Magnolia<br>& Bamboe",
   "avail1":"Beschikbaar","avail2":"Beschikbaar","avail3":"Beschikbaar","avail4":"Beschikbaar","avail5":"Beschikbaar",
-  "med1":"Verf & mixed media op doek · Randen geschilderd · Ophangklaar",
+  "med1":"Verf, oliepastel & mixed media op doek · Randen geschilderd · Ophangklaar",
   "med2":"Verf & mixed media op doek · Randen geschilderd · Ophangklaar",
-  "med3":"Koperblad, verf & mixed media op doek · Randen geschilderd · Ophangklaar",
-  "med4":"Verf, oliepastel & mixed media op doek · Randen geschilderd · Ophangklaar",
+  "med3":"Verf & mixed media op doek · Randen geschilderd · Ophangklaar",
+  "med4":"Koperblad, verf & mixed media op doek · Randen geschilderd · Ophangklaar",
   "med5":"Koperblad, verf & mixed media op doek · Randen geschilderd · Ophangklaar",
   "buy1":"Nu kopen — €1,095","buy2":"Nu kopen — €1,095","buy3":"Nu kopen — €1,095","buy4":"Nu kopen — €1,095","buy5":"Nu kopen — €1,095",
-  "cta1":"Interesse tonen","note1":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
-  "cta2":"Interesse tonen","note2":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
-  "cta3":"Interesse tonen","note3":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
-  "cta4":"Interesse tonen","note4":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
-  "cta5":"Interesse tonen","note5":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
+  "cta1":"Of stel eerst een vraag","note1":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
+  "cta2":"Of stel eerst een vraag","note2":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
+  "cta3":"Of stel eerst een vraag","note3":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
+  "cta4":"Of stel eerst een vraag","note4":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
+  "cta5":"Of stel eerst een vraag","note5":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
   "hum-label":"Een aankoop met betekenis",
   "hum-text":"Een deel van de opbrengst van elke verkoop steunt humanitaire projecten in <em>Europa en Afrika</em> — waaronder werk in Tanzania. Kunst die tweemaal geeft.",
   "closer-eye":"Een persoonlijke introductie",
@@ -457,23 +513,23 @@ fr:{
   "col-eyebrow":"Maison Cordier · Cinq Œuvres Originales",
   "col-h1":"La <em>Collection</em>",
   "col-hero-body":"Chaque tableau est un objet unique et irremplaçable — pas une impression, pas une reproduction. Œuvres originales en technique mixte de la peintre écossaise Kirsteen, personnellement sélectionnées et présentées à travers l'Europe.",
-  "tag1":"Original · Technique mixte · A2","title1":"Herbes<br>Côtières",
+  "tag1":"Original · Technique mixte & pastel à l'huile · A3","title1":"Herbes Marines<br>& Île",
   "tag2":"Original · Technique mixte · A2","title2":"Malta<br>Street",
-  "tag3":"Original · Feuille de cuivre & technique mixte · A2","title3":"Fleurs Bleues<br>sur Cuivre",
-  "tag4":"Original · Technique mixte & pastel à l'huile · A3","title4":"Herbes Marines<br>& Île",
+  "tag3":"Original · Technique mixte · A2","title3":"Herbes<br>Côtières",
+  "tag4":"Original · Feuille de cuivre & technique mixte · A2","title4":"Fleurs Bleues<br>sur Cuivre",
   "tag5":"Original · Feuille de cuivre & technique mixte · A2","title5":"Magnolia<br>& Bambou",
   "avail1":"Disponible","avail2":"Disponible","avail3":"Disponible","avail4":"Disponible","avail5":"Disponible",
-  "med1":"Peinture & technique mixte sur toile · Bords peints · Prêt à accrocher",
+  "med1":"Peinture, pastel à l'huile & technique mixte sur toile · Bords peints · Prêt à accrocher",
   "med2":"Peinture & technique mixte sur toile · Bords peints · Prêt à accrocher",
-  "med3":"Feuille de cuivre, peinture & technique mixte sur toile · Bords peints · Prêt à accrocher",
-  "med4":"Peinture, pastel à l'huile & technique mixte sur toile · Bords peints · Prêt à accrocher",
+  "med3":"Peinture & technique mixte sur toile · Bords peints · Prêt à accrocher",
+  "med4":"Feuille de cuivre, peinture & technique mixte sur toile · Bords peints · Prêt à accrocher",
   "med5":"Feuille de cuivre, peinture & technique mixte sur toile · Bords peints · Prêt à accrocher",
   "buy1":"Acheter — €1,095","buy2":"Acheter — €1,095","buy3":"Acheter — €1,095","buy4":"Acheter — €1,095","buy5":"Acheter — €1,095",
-  "cta1":"Exprimer son intérêt","note1":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
-  "cta2":"Exprimer son intérêt","note2":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
-  "cta3":"Exprimer son intérêt","note3":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
-  "cta4":"Exprimer son intérêt","note4":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
-  "cta5":"Exprimer son intérêt","note5":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
+  "cta1":"Ou poser une question d'abord","note1":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
+  "cta2":"Ou poser une question d'abord","note2":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
+  "cta3":"Ou poser une question d'abord","note3":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
+  "cta4":"Ou poser une question d'abord","note4":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
+  "cta5":"Ou poser une question d'abord","note5":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
   "hum-label":"Un achat avec une finalité",
   "hum-text":"Une partie des recettes de chaque vente soutient des projets humanitaires à travers <em>l'Europe et l'Afrique</em> — dont le travail en Tanzanie. L'art qui donne deux fois.",
   "closer-eye":"Une introduction personnelle",
@@ -489,23 +545,23 @@ de:{
   "col-eyebrow":"Maison Cordier · Fünf Originalwerke",
   "col-h1":"Die <em>Sammlung</em>",
   "col-hero-body":"Jedes Gemälde ist ein einzigartiges, unwiederholbares Objekt — kein Druck, keine Reproduktion. Originale Mixed-Media-Werke der schottischen Malerin Kirsteen, persönlich kuratiert und in ganz Europa vermittelt.",
-  "tag1":"Original · Mixed Media · A2","title1":"Küsten-<br>gras",
+  "tag1":"Original · Mixed Media & Ölpastel · A3","title1":"Seegras<br>& Insel",
   "tag2":"Original · Mixed Media · A2","title2":"Malta<br>Street",
-  "tag3":"Original · Kupferblatt & Mixed Media · A2","title3":"Blaue Blumen<br>auf Kupfer",
-  "tag4":"Original · Mixed Media & Ölpastel · A3","title4":"Seegras<br>& Insel",
+  "tag3":"Original · Mixed Media · A2","title3":"Küstengras",
+  "tag4":"Original · Kupferblatt & Mixed Media · A2","title4":"Blaue Blumen<br>auf Kupfer",
   "tag5":"Original · Kupferblatt & Mixed Media · A2","title5":"Magnolie<br>& Bambus",
   "avail1":"Verfügbar","avail2":"Verfügbar","avail3":"Verfügbar","avail4":"Verfügbar","avail5":"Verfügbar",
-  "med1":"Farbe & Mixed Media auf Leinwand · Kanten bemalt · Hängefertig",
+  "med1":"Farbe, Ölpastel & Mixed Media auf Leinwand · Kanten bemalt · Hängefertig",
   "med2":"Farbe & Mixed Media auf Leinwand · Kanten bemalt · Hängefertig",
-  "med3":"Kupferblatt, Farbe & Mixed Media auf Leinwand · Kanten bemalt · Hängefertig",
-  "med4":"Farbe, Ölpastel & Mixed Media auf Leinwand · Kanten bemalt · Hängefertig",
+  "med3":"Farbe & Mixed Media auf Leinwand · Kanten bemalt · Hängefertig",
+  "med4":"Kupferblatt, Farbe & Mixed Media auf Leinwand · Kanten bemalt · Hängefertig",
   "med5":"Kupferblatt, Farbe & Mixed Media auf Leinwand · Kanten bemalt · Hängefertig",
   "buy1":"Jetzt kaufen — €1,095","buy2":"Jetzt kaufen — €1,095","buy3":"Jetzt kaufen — €1,095","buy4":"Jetzt kaufen — €1,095","buy5":"Jetzt kaufen — €1,095",
-  "cta1":"Interesse bekunden","note1":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
-  "cta2":"Interesse bekunden","note2":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
-  "cta3":"Interesse bekunden","note3":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
-  "cta4":"Interesse bekunden","note4":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
-  "cta5":"Interesse bekunden","note5":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
+  "cta1":"Oder erst eine Frage stellen","note1":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
+  "cta2":"Oder erst eine Frage stellen","note2":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
+  "cta3":"Oder erst eine Frage stellen","note3":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
+  "cta4":"Oder erst eine Frage stellen","note4":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
+  "cta5":"Oder erst eine Frage stellen","note5":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
   "hum-label":"Ein Kauf mit Bedeutung",
   "hum-text":"Ein Teil des Erlöses jedes Verkaufs unterstützt humanitäre Projekte in <em>Europa und Afrika</em> — einschließlich Arbeit in Tansania. Kunst, die zweimal gibt.",
   "closer-eye":"Eine persönliche Einführung",
@@ -540,4 +596,9 @@ function setLang(l){
   toggle.addEventListener('click',function(){
     toggle.classList.toggle('open');
     menu.classList.toggle('open');
-    document.body.style.overflow=me
+    document.body.style.overflow=menu.classList.contains('open')?'hidden':'';
+  });
+})();
+</script>
+</body>
+</html>
