@@ -438,4 +438,11 @@ function setLang(l){
   var menu=document.getElementById('nav-mobile-menu');
   if(!toggle||!menu)return;
   toggle.addEventListener('click',function(){
-    togg
+    toggle.classList.toggle('open');
+    menu.classList.toggle('open');
+    document.body.style.overflow=menu.classList.contains('open')?'hidden':'';
+  });
+})();
+</script>
+</body>
+</html>
