@@ -1,0 +1,16 @@
+# CHANGELOG — maisoncordier.art
+
+## [Unreleased] — 2026-04-18
+
+### Fixed
+- **index.html**: Corrected Coastal Grasses image on homepage slot 04.
+  - Was: `https://i.ibb.co/rKgLZ9G5/Painting-40-Grasses1.avif` (close-up of reed strands — wrong image)
+  - Now: `https://i.ibb.co/pjPhsxMk/Painting-40-Grasses7.jpg` (full painting on easel — correct, matches painting-coastal-grasses.html detail page)
+  - Single image src attribute changed. No other modifications.
+  - Verified: hero, all 5 work cards, nav, mobile menu, language switcher (EN/NL/FR/DE), Buy Now links, Enquire mailto links, footer, Google Analytics tag, IntersectionObserver reveal animations — all intact.
+
+## [Previous] — 2026-04-17
+- Full index.html rebuild (57 KB, ibb.co CDN URLs)
+- collect.html reverted to working state (4 languages)
+- Cloudflare email obfuscation disabled sitewide
+- sitemap.xml validated with 19 URLs (GREEN in Search Console)

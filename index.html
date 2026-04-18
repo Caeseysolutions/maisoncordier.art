@@ -20,11 +20,9 @@
 <link rel="canonical" href="https://maisoncordier.art">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
-
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
-
 :root{
   --ink:#0E0B09;
   --deep:#141008;
@@ -38,7 +36,6 @@ html{scroll-behavior:smooth;font-size:16px}
   --ocean:#2768AA;
   --terra:#8B4A2F;
 }
-
 body{background:var(--ink);color:var(--parchment);font-family:'Jost',sans-serif;font-weight:300;line-height:1.8;overflow-x:hidden}
 
 /* GRAIN */
@@ -132,44 +129,37 @@ nav{
 
 /* ═══ PAINTINGS ═══ */
 .works{background:var(--ink)}
-
 .work{min-height:100vh;display:grid;grid-template-columns:55% 45%;position:relative;overflow:hidden}
 .work.flip{grid-template-columns:45% 55%}
 .work.flip .work-img{order:2}
 .work.flip .work-info{order:1}
-
 .work:nth-child(1){--ac:#22A1D7;--ac2:#966348}
 .work:nth-child(2){--ac:#BB8F70;--ac2:#6A9FB9}
 .work:nth-child(3){--ac:#C59669;--ac2:#6A859B}
 .work:nth-child(4){--ac:#489CE4;--ac2:#93826E}
 .work:nth-child(5){--ac:#BE916A;--ac2:#593E31}
-
 .work-img{position:relative;overflow:hidden;min-height:65vh}
 .work-img img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 1s ease;display:block}
 .work-img:hover img{transform:scale(1.05)}
 .work-img-shade{position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,11,9,0.08),transparent 60%)}
-
 .work-num{
   position:absolute;bottom:1.5rem;right:1.5rem;
   font-family:'Cormorant',serif;font-size:6rem;font-weight:300;font-style:italic;
   color:rgba(255,255,255,0.06);line-height:1;pointer-events:none;
   z-index:1;
 }
-
 .work-info{
   display:flex;flex-direction:column;justify-content:center;
   padding:5rem 4.5rem;background:#0E0B09;position:relative;
 }
 .work-info::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--ac),transparent);opacity:0.35}
 .work-info::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(184,132,42,0.04) 0%,transparent 65%);pointer-events:none}
-
 .work-tag{font-family:'Jost',sans-serif;font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ac);margin-bottom:1.5rem}
 .work-title{font-family:'Cormorant',serif;font-size:clamp(2.2rem,3.5vw,3.5rem);font-weight:400;color:#FFFFFF;line-height:1.05;margin-bottom:0.5rem;text-shadow:0 1px 8px rgba(0,0,0,0.6)}
 .work-medium{font-size:0.56rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,220,180,0.90);margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(184,132,42,0.25)}
 .work-desc{font-size:0.95rem;font-weight:300;color:#E8D5B0;line-height:2;margin-bottom:2rem}
 .work-desc p{margin-bottom:1.2rem}
 .work-desc p:last-child{margin-bottom:0}
-
 .work-availability{
   display:inline-flex;align-items:center;gap:0.6rem;
   font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;
@@ -177,7 +167,6 @@ nav{
 }
 .avail-dot{width:6px;height:6px;background:#4CAF50;border-radius:50%;animation:blink 2.5s ease infinite}
 @keyframes blink{0%,100%{opacity:0.5}50%{opacity:1}}
-
 .work-cta{display:flex;flex-direction:column;align-items:flex-start;gap:0.8rem}
 .btn-buy-now{display:inline-flex;align-items:center;gap:0.8rem;padding:1.1rem 2.4rem;background:var(--gold);color:var(--ink);font-family:'Jost',sans-serif;font-weight:600;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all 0.3s}
 .btn-buy-now:hover{background:var(--gold-lt);transform:translateY(-2px)}
@@ -248,7 +237,6 @@ footer{
   footer{grid-template-columns:1fr;gap:1rem}
   .footer-center,.footer-right{text-align:left}
   .hero-scroll{display:none}
-
   .nav-toggle{display:flex}
   .nav-mobile-menu{
     display:none;
@@ -299,15 +287,11 @@ footer{
 .nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(6px,6px)}
 .nav-toggle.open span:nth-child(2){opacity:0}
 .nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
-
-
-
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-
 <nav>
   <a href="https://maisoncordier.art" class="nav-brand">
     Maison <em>Cordier</em>
@@ -467,7 +451,7 @@ footer{
   <!-- 04 SEAGRASSES AND ISLAND -->
   <div class="work flip reveal reveal-slow">
     <div class="work-img">
-      <img src="https://i.ibb.co/rKgLZ9G5/Painting-40-Grasses1.avif" alt="Coastal Grasses &mdash; original mixed media painting" loading="lazy">
+      <img src="https://i.ibb.co/pjPhsxMk/Painting-40-Grasses7.jpg" alt="Coastal Grasses &mdash; original mixed media painting" loading="lazy">
       <div class="work-img-shade"></div>
       <div class="work-num">04</div>
     </div>
@@ -548,168 +532,167 @@ footer{
 
 <script>
 const T={
-en:{
-  "nav-sub":"Original Works · Curated Collection",
-  "nav-cta":"Enquire",
-  "hero-tag":"Maison Cordier · Five original works · Each one unrepeatable",
-  "hero-h1":"Where light<br>finds its<br><em>home.</em>",
-  "hero-body":"Original mixed media paintings. Each piece is a single, unrepeatable object — not a print, not a reproduction. Curated and personally introduced across Europe.",
-  "hero-btn1":"See the paintings","hero-btn2":"Ask about a painting",
-  "strip-quote":"&ldquo;Born into art. Trained in Edinburgh.<br>Exhibited in Stockholm.<br>Now in European homes — <em>personally placed.</em>&rdquo;",
-  "strip-body":"These works are not sold through galleries or agents. Each painting is presented through a <strong>personal introduction</strong> — one conversation, one painting, one home. The artist has exhibited internationally, including a solo show at Galleri Cupido, Stockholm (2025). When one work finds its home, it leaves this collection permanently.",
-  "proof-label":"Why through Maison Cordier",
-  "proof1":"Every work is original — painted once, owned once, never reproduced",
-  "proof2":"Personal introduction — Marc responds to every enquiry himself",
-  "proof3":"Safe delivery across Europe — carefully packaged, fully insured",
-  "proof4":"Internationally exhibited artist — solo show Stockholm 2025",
-  "proof5":"No galleries, no agents — you deal directly with the curator",
-  "avail1":"Available","avail2":"Available","avail3":"Available","avail4":"Available","avail5":"Available",
-  "tag1":"Original · Mixed Media · A2","title1":"Coastal Grasses",
-  "tag2":"Original · Mixed Media · A2","title2":"Malta Street",
-  "tag3":"Original · Copper Leaf & Mixed Media · A2","title3":"Blue Flowers<br>on Copper",
-  "tag4":"Original · Mixed Media & Oil Pastel · A3","title4":"Seagrasses<br>& Island",
-  "tag5":"Original · Copper Leaf & Mixed Media · A2","title5":"Magnolia<br>& Bamboo",
-  "buy1":"Buy Now — €1,095","buy2":"Buy Now — €1,095","buy3":"Buy Now — €1,095","buy4":"Buy Now — €1,095","buy5":"Buy Now — €1,095",
-  "cta1":"I want this painting","note1":"Personal response within 24 hours · Original, not a print · Ships across Europe",
-  "cta2":"I want this painting","note2":"Personal response within 24 hours · Original, not a print · Ships across Europe",
-  "cta3":"I want this painting","note3":"Personal response within 24 hours · Original, not a print · Ships across Europe",
-  "cta4":"I want this painting","note4":"Personal response within 24 hours · Original, not a print · Ships across Europe",
-  "cta5":"I want this painting","note5":"Personal response within 24 hours · Original, not a print · Ships across Europe",
-  "desc1":"<p>Tall stems bending in the sea breeze. Warm ochres, soft browns, pale creams and deep coastal blues — layered in loose, energetic brushstrokes that suggest rhythm and natural motion.</p><p>Hints of delicate seed heads and wild plants appear among the sweeping strokes, evoking the untamed edges of Scotland's shores where grasses grow thick over dunes and sandy ground. A lively contemporary landscape that brings the movement and atmosphere of the Scottish coast into a room — and keeps it there.</p>",
-  "desc2":"<p>Pale stone walls. Deep shadows. Vivid blues and sun-warmed yellows. The air itself glowing.</p><p>Loose, expressive marks suggest architecture rather than depicting it. Layers of paint evoke heat, movement and memory rather than a fixed place. A painting that carries the warmth of the Mediterranean — and places it permanently on your wall.</p>",
-  "desc3":"<p>Luminous blue floral forms emerging against the warmth of real copper leaf — a surface that reflects light subtly, shifting in mood as the light in your room changes.</p><p>A contemporary botanical that feels both energetic and grounded. A painting that breathes with the room, changes with the hour, and rewards the kind of looking that most art never earns.</p>",
-  "desc4":"<p>Soft, expressive layers of wind-swept seagrasses fill the foreground. On the horizon, a distant island rests against the sky — promising escape, calm, and the pull of somewhere just beyond reach.</p><p>This piece balances freedom and structure: fluid painterly marks combined with confident linear accents. Neither restless nor static.</p>",
-  "desc5":"<p>Magnolia blooms opening with quiet confidence. Bamboo stems rising rhythmically — symbolising endurance, calm, and the elegance of things that bend but do not break.</p><p>Copper leaf catches the light beneath layers of paint, adding warmth and luminosity that shifts as the viewer moves. A work that invites close, contemplative viewing — and keeps giving.</p>",
-  "closer-eye":"A personal introduction",
-  "closer-h2":"Something<br>stayed with <em>you?</em>",
-  "closer-body":"If one of these works stopped you — even for a moment — that is worth a conversation. Tell me which one. Tell me about your space. Tell me nothing at all if you prefer — just write <em>bonjour.</em>",
-  "closer-body2":"There is no catalogue, no pressure, no hard sell. Just two people talking about a painting. I respond personally, always within 24 hours.",
-  "closer-scarcity":"Each work exists once. When it finds its home, it leaves this collection permanently.",
-  "closer-btn":"Enquire about this work",
-  "footer-center":"Original Works · Curated for European Homes"
-},
-nl:{
-  "nav-sub":"Originele Werken · Samengestelde Collectie",
-  "nav-cta":"Neem contact op",
-  "hero-tag":"Maison Cordier · Vijf originele werken · Elk uniek en onherhaalbaar",
-  "hero-h1":"Waar licht<br>zijn thuis<br><em>vindt.</em>",
-  "hero-body":"Originele mixed media schilderijen. Elk werk is een uniek, onherhaalbaar object — geen print, geen reproductie. Persoonlijk samengesteld en geïntroduceerd door heel Europa.",
-  "hero-btn1":"Bekijk de schilderijen","hero-btn2":"Vraag over een schilderij",
-  "strip-quote":"&ldquo;Geboren in de kunst. Opgeleid in Edinburgh.<br>Tentoongesteld in Stockholm.<br>Nu in Europese huizen — <em>persoonlijk geplaatst.</em>&rdquo;",
-  "strip-body":"Deze werken worden niet via galeries of agenten verkocht. Elk schilderij wordt gepresenteerd via een <strong>persoonlijke introductie</strong> — één gesprek, één schilderij, één thuis. De kunstenaar heeft internationaal geëxposeerd, inclusief een solotentoonstelling bij Galleri Cupido, Stockholm (2025). Wanneer een werk zijn thuis vindt, verlaat het deze collectie definitief.",
-  "proof-label":"Waarom via Maison Cordier",
-  "proof1":"Elk werk is origineel — eenmalig geschilderd, eenmalig in bezit, nooit gereproduceerd",
-  "proof2":"Persoonlijke introductie — Marc reageert zelf op elke aanvraag",
-  "proof3":"Veilige levering door heel Europa — zorgvuldig verpakt, volledig verzekerd",
-  "proof4":"Internationaal tentoongestelde kunstenaar — solotentoonstelling Stockholm 2025",
-  "proof5":"Geen galeries, geen agenten — u werkt rechtstreeks met de curator",
-  "avail1":"Beschikbaar","avail2":"Beschikbaar","avail3":"Beschikbaar","avail4":"Beschikbaar","avail5":"Beschikbaar",
-  "tag1":"Origineel · Mixed Media · A2","title1":"Kustgras",
-  "tag2":"Origineel · Mixed Media · A2","title2":"Malta Street",
-  "tag3":"Origineel · Koperblad & Mixed Media · A2","title3":"Blauwe Bloemen<br>op Koper",
-  "tag4":"Origineel · Mixed Media & Oliepastel · A3","title4":"Zeegras<br>& Eiland",
-  "tag5":"Origineel · Koperblad & Mixed Media · A2","title5":"Magnolia<br>& Bamboe",
-  "buy1":"Nu kopen — €1,095","buy2":"Nu kopen — €1,095","buy3":"Nu kopen — €1,095","buy4":"Nu kopen — €1,095","buy5":"Nu kopen — €1,095",
-  "cta1":"Ik wil dit schilderij","note1":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
-  "cta2":"Ik wil dit schilderij","note2":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
-  "cta3":"Ik wil dit schilderij","note3":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
-  "cta4":"Ik wil dit schilderij","note4":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
-  "cta5":"Ik wil dit schilderij","note5":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
-  "desc1":"<p>Hoge stengels buigen in de zeebries. Warme okers, zachte bruinen, bleke crèmes en diepe kustblauwen — gelaagd in losse, energieke penseelstreken die ritme en natuurlijke beweging suggereren.</p><p>Hints van tere zaadpluimen en wilde planten verschijnen tussen de brede streken, die de ongetemde randen van Schotlands kusten oproepen. Een levendig hedendaags landschap dat de beweging en sfeer van de Schotse kust in een kamer brengt — en daar houdt.</p>",
-  "desc2":"<p>Bleke stenen muren. Diepe schaduwen. Levendige blues en zongewarmde gelen. De lucht zelf gloeit.</p><p>Losse, expressieve streken suggereren architectuur in plaats van het af te beelden. Lagen verf roepen hitte, beweging en herinnering op. Een schilderij dat de warmte van de Middellandse Zee draagt — en het permanent op uw muur plaatst.</p>",
-  "desc3":"<p>Lichtgevende blauwe bloemenvormen die opdoemen tegen de warmte van echt koperblad — een oppervlak dat licht subtiel weerkaatst en van stemming wisselt naarmate het licht in uw kamer verandert.</p><p>Een hedendaagse botanische die zowel energiek als gegrond aanvoelt. Een schilderij dat meeademt met de kamer, verandert met het uur en beloont het soort kijken dat de meeste kunst nooit verdient.</p>",
-  "desc4":"<p>Zachte, expressieve lagen windvegen zeegrassen vullen de voorgrond. Aan de horizon rust een ver eiland — een belofte van ontsnapping, rust en de aantrekkingskracht van iets net buiten bereik.</p><p>Dit werk balanceert vrijheid en structuur: vloeiende schilderachtige streken gecombineerd met zelfverzekerde lineaire accenten. Noch rusteloos noch statisch.</p>",
-  "desc5":"<p>Magnoliaboesems die met stille zelfverzekerdheid opengaan. Bamboestengels die ritmisch door de compositie rijzen — een symbool van uithoudingsvermogen, rust en elegantie.</p><p>Koperblad vangt het licht onder lagen verf en voegt warmte en lichtsterkte toe die verschuift als de kijker zich beweegt. Een werk dat uitnodigt tot contemplatief kijken — en blijft geven.</p>",
-  "closer-eye":"Een persoonlijke introductie",
-  "closer-h2":"Iets bleef<br>bij <em>u hangen?</em>",
-  "closer-body":"Als een van deze werken u ook maar een moment deed stoppen — dat is een gesprek waard. Vertel me welke. Vertel me over uw ruimte. Of schrijf gewoon <em>bonjour.</em>",
-  "closer-body2":"Geen catalogus, geen druk, geen verkooppraatje. Gewoon twee mensen die praten over een schilderij. Ik reageer persoonlijk, altijd binnen 24 uur.",
-  "closer-scarcity":"Elk werk bestaat eenmalig. Wanneer het zijn thuis vindt, verlaat het deze collectie definitief.",
-  "closer-btn":"Vraag naar dit werk",
-  "footer-center":"Originele Werken · Samengesteld voor Europese Huizen"
-},
-fr:{
-  "nav-sub":"Œuvres Originales · Collection Curatée",
-  "nav-cta":"Nous contacter",
-  "hero-tag":"Maison Cordier · Cinq œuvres originales · Chacune unique et irremplaçable",
-  "hero-h1":"Là où la lumière<br>trouve sa<br><em>maison.</em>",
-  "hero-body":"Peintures originales en technique mixte. Chaque œuvre est un objet unique et irremplaçable — pas une impression, pas une reproduction. Sélectionnées et présentées personnellement à travers l'Europe.",
-  "hero-btn1":"Voir les tableaux","hero-btn2":"Poser une question sur un tableau",
-  "strip-quote":"&ldquo;Née dans l'art. Formée à Édimbourg.<br>Exposée à Stockholm.<br>Maintenant dans des maisons européennes — <em>placées personnellement.</em>&rdquo;",
-  "strip-body":"Ces œuvres ne sont pas vendues via des galeries ou des agents. Chaque tableau est présenté par le biais d'une <strong>introduction personnelle</strong> — une conversation, un tableau, un foyer. L'artiste a exposé à l'international, notamment lors d'une exposition solo à la Galleri Cupido, Stockholm (2025). Lorsqu'une œuvre trouve son foyer, elle quitte définitivement cette collection.",
-  "proof-label":"Pourquoi par Maison Cordier",
-  "proof1":"Chaque œuvre est originale — peinte une fois, possédée une fois, jamais reproduite",
-  "proof2":"Introduction personnelle — Marc répond lui-même à chaque demande",
-  "proof3":"Livraison sécurisée dans toute l'Europe — soigneusement emballée, entièrement assurée",
-  "proof4":"Artiste exposée à l'international — exposition solo Stockholm 2025",
-  "proof5":"Pas de galeries, pas d'agents — vous traitez directement avec le curateur",
-  "avail1":"Disponible","avail2":"Disponible","avail3":"Disponible","avail4":"Disponible","avail5":"Disponible",
-  "tag1":"Original · Technique mixte · A2","title1":"Herbes Côtières",
-  "tag2":"Original · Technique mixte · A2","title2":"Malta Street",
-  "tag3":"Original · Feuille de cuivre & technique mixte · A2","title3":"Fleurs Bleues<br>sur Cuivre",
-  "tag4":"Original · Technique mixte & pastel à l'huile · A3","title4":"Herbes Marines<br>& Île",
-  "tag5":"Original · Feuille de cuivre & technique mixte · A2","title5":"Magnolia<br>& Bambou",
-  "buy1":"Acheter — €1,095","buy2":"Acheter — €1,095","buy3":"Acheter — €1,095","buy4":"Acheter — €1,095","buy5":"Acheter — €1,095",
-  "cta1":"Je veux ce tableau","note1":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
-  "cta2":"Je veux ce tableau","note2":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
-  "cta3":"Je veux ce tableau","note3":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
-  "cta4":"Je veux ce tableau","note4":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
-  "cta5":"Je veux ce tableau","note5":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
-  "desc1":"<p>De hautes tiges se courbant dans la brise marine. Des ocres chauds, des bruns doux, des crèmes pâles et des bleus côtiers profonds — superposés en larges coups de pinceau énergiques qui suggèrent le rythme et le mouvement naturel.</p><p>Des traces de têtes de graines délicates et de plantes sauvages évoquent les rives sauvages des côtes écossaises. Un paysage contemporain vivant qui apporte le mouvement et l'atmosphère de la côte écossaise dans une pièce.</p>",
-  "desc2":"<p>Murs de pierre pâle. Ombres profondes. Blues vifs et jaunes réchauffés par le soleil. L'air lui-même rayonne.</p><p>Des marques expressives suggèrent l'architecture plutôt que de la dépeindre. Des couches de peinture évoquent la chaleur, le mouvement et le souvenir. Un tableau qui porte la chaleur de la Méditerranée — et la place de façon permanente sur votre mur.</p>",
-  "desc3":"<p>Des formes florales bleues lumineuses émergeant contre la chaleur d'une vraie feuille de cuivre — une surface qui réfléchit subtilement la lumière, changeant d'humeur au gré de la lumière dans votre pièce.</p><p>Une botanique contemporaine à la fois énergique et ancrée. Un tableau qui respire avec la pièce et récompense le regard que la plupart des œuvres ne méritent jamais.</p>",
-  "desc4":"<p>De douces couches expressives d'herbes marines balayées par le vent remplissent le premier plan. À l'horizon, une île lointaine repose contre le ciel — promesse d'évasion, de calme et de l'attrait de quelque chose juste hors de portée.</p><p>Cette œuvre équilibre liberté et structure : des marques fluides combinées à des accents linéaires confiants. Ni agitée ni statique.</p>",
-  "desc5":"<p>Des fleurs de magnolia s'ouvrant avec une douce assurance. Des tiges de bambou s'élevant rythmiquement — symboles d'endurance, de calme et de l'élégance des choses qui plient sans se briser.</p><p>La feuille de cuivre capte la lumière sous des couches de peinture, ajoutant chaleur et luminosité. Une œuvre qui invite à une contemplation attentive — et qui continue de donner.</p>",
-  "closer-eye":"Une introduction personnelle",
-  "closer-h2":"Quelque chose<br>vous a <em>arrêté?</em>",
-  "closer-body":"Si l'une de ces œuvres vous a arrêté — même un instant — cela vaut une conversation. Dites-moi laquelle. Parlez-moi de votre espace. Ou écrivez simplement <em>bonjour.</em>",
-  "closer-body2":"Pas de catalogue, pas de pression, pas de vente forcée. Juste deux personnes qui parlent d'un tableau. Je réponds personnellement, toujours sous 24 heures.",
-  "closer-scarcity":"Chaque œuvre existe une seule fois. Lorsqu'elle trouve son foyer, elle quitte définitivement cette collection.",
-  "closer-btn":"Renseignez-vous sur cette œuvre",
-  "footer-center":"Œuvres Originales · Sélectionnées pour les Maisons Européennes"
-},
-de:{
-  "nav-sub":"Originalwerke · Kuratierte Sammlung",
-  "nav-cta":"Anfrage stellen",
-  "hero-tag":"Maison Cordier · Fünf Originalwerke · Jedes einzigartig und unwiederholbar",
-  "hero-h1":"Wo Licht<br>sein Zuhause<br><em>findet.</em>",
-  "hero-body":"Originale Mixed-Media-Gemälde. Jedes Werk ist ein einzigartiges, unwiederholbares Objekt — kein Druck, keine Reproduktion. Kuratiert und persönlich in ganz Europa vermittelt.",
-  "hero-btn1":"Die Gemälde ansehen","hero-btn2":"Frage zu einem Gemälde",
-  "strip-quote":"&ldquo;In die Kunst hineingeboren. Ausgebildet in Edinburgh.<br>Ausgestellt in Stockholm.<br>Jetzt in europäischen Häusern — <em>persönlich platziert.</em>&rdquo;",
-  "strip-body":"Diese Werke werden nicht über Galerien oder Agenten verkauft. Jedes Gemälde wird durch eine <strong>persönliche Einführung</strong> präsentiert — ein Gespräch, ein Gemälde, ein Zuhause. Die Künstlerin hat international ausgestellt, darunter eine Einzelausstellung in der Galleri Cupido, Stockholm (2025). Wenn ein Werk sein Zuhause findet, verlässt es diese Sammlung dauerhaft.",
-  "proof-label":"Warum über Maison Cordier",
-  "proof1":"Jedes Werk ist original — einmal gemalt, einmal besessen, nie reproduziert",
-  "proof2":"Persönliche Einführung — Marc antwortet selbst auf jede Anfrage",
-  "proof3":"Sichere Lieferung in ganz Europa — sorgfältig verpackt, vollständig versichert",
-  "proof4":"International ausgestellte Künstlerin — Einzelausstellung Stockholm 2025",
-  "proof5":"Keine Galerien, keine Agenten — Sie arbeiten direkt mit dem Kurator",
-  "avail1":"Verfügbar","avail2":"Verfügbar","avail3":"Verfügbar","avail4":"Verfügbar","avail5":"Verfügbar",
-  "tag1":"Original · Mixed Media · A2","title1":"Küstengras",
-  "tag2":"Original · Mixed Media · A2","title2":"Malta Street",
-  "tag3":"Original · Kupferblatt & Mixed Media · A2","title3":"Blaue Blumen<br>auf Kupfer",
-  "tag4":"Original · Mixed Media & Ölpastel · A3","title4":"Seegras<br>& Insel",
-  "tag5":"Original · Kupferblatt & Mixed Media · A2","title5":"Magnolie<br>& Bambus",
-  "buy1":"Jetzt kaufen — €1,095","buy2":"Jetzt kaufen — €1,095","buy3":"Jetzt kaufen — €1,095","buy4":"Jetzt kaufen — €1,095","buy5":"Jetzt kaufen — €1,095",
-  "cta1":"Ich möchte dieses Gemälde","note1":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
-  "cta2":"Ich möchte dieses Gemälde","note2":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
-  "cta3":"Ich möchte dieses Gemälde","note3":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
-  "cta4":"Ich möchte dieses Gemälde","note4":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
-  "cta5":"Ich möchte dieses Gemälde","note5":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
-  "desc1":"<p>Hohe Stängel, die sich in der Meeresbrise biegen. Warme Ocker, sanfte Brauntöne, blasses Creme und tiefe Küstenblaus — in lockeren, energischen Pinselstrichen geschichtet, die Rhythmus und natürliche Bewegung suggerieren.</p><p>Andeutungen zarter Samenköpfe und wilder Pflanzen beschwören die ungezähmten Ränder der schottischen Küste. Ein lebhaftes zeitgenössisches Landschaft, das die Bewegung und Atmosphäre der schottischen Küste in einen Raum bringt — und dort behält.</p>",
-  "desc2":"<p>Blasse Steinmauern. Tiefe Schatten. Lebhafte Blues und sonnenwarme Gelbtöne. Die Luft selbst leuchtet.</p><p>Lockere, ausdrucksstarke Striche suggerieren Architektur, anstatt sie abzubilden. Farbschichten beschwören Wärme, Bewegung und Erinnerung. Ein Gemälde, das die Wärme des Mittelmeers trägt — und sie dauerhaft an Ihre Wand bringt.</p>",
-  "desc3":"<p>Leuchtende blaue Blumenformen, die gegen die Wärme echter Kupferfolie auftauchen — eine Oberfläche, die Licht subtil reflektiert und ihre Stimmung verändert, wenn sich das Licht in Ihrem Raum ändert.</p><p>Eine zeitgenössische Botanik, die sich sowohl energisch als auch geerdet anfühlt. Ein Gemälde, das mit dem Raum atmet und die Art des Schauens belohnt, die die meisten Kunstwerke nie verdienen.</p>",
-  "desc4":"<p>Weiche, ausdrucksstarke Schichten windgepeitschter Seegräser füllen den Vordergrund. Am Horizont ruht eine ferne Insel gegen den Himmel — ein Versprechen von Flucht, Ruhe und dem Sog von etwas gerade außer Reichweite.</p><p>Dieses Werk balanciert Freiheit und Struktur: fließende malerische Striche kombiniert mit selbstbewussten linearen Akzenten. Weder ruhelos noch statisch.</p>",
-  "desc5":"<p>Magnolienblüten, die sich mit stiller Zuversicht öffnen. Bambusstängel, die rhythmisch durch die Komposition aufsteigen — ein Symbol für Ausdauer, Ruhe und die Eleganz von Dingen, die sich biegen, aber nicht brechen.</p><p>Kupferfolie fängt das Licht unter Farbschichten ein und verleiht Wärme und Leuchtkraft. Ein Werk, das zu aufmerksamer, kontemplativer Betrachtung einlädt — und weiter gibt.</p>",
-  "closer-eye":"Eine persönliche Einführung",
-  "closer-h2":"Etwas blieb<br>bei <em>Ihnen hängen?</em>",
-  "closer-body":"Wenn eines dieser Werke Sie auch nur einen Moment aufgehalten hat — das ist ein Gespräch wert. Sagen Sie mir, welches. Erzählen Sie mir von Ihrem Raum. Oder schreiben Sie einfach <em>bonjour.</em>",
-  "closer-body2":"Kein Katalog, kein Druck, kein harter Verkauf. Nur zwei Menschen, die über ein Gemälde sprechen. Ich antworte persönlich, immer innerhalb von 24 Stunden.",
-  "closer-scarcity":"Jedes Werk existiert einmal. Wenn es sein Zuhause findet, verlässt es diese Sammlung dauerhaft.",
-  "closer-btn":"Nach diesem Werk anfragen",
-  "footer-center":"Originalwerke · Kuratiert für europäische Häuser"
-}
+  en:{
+    "nav-sub":"Original Works · Curated Collection",
+    "nav-cta":"Enquire",
+    "hero-tag":"Maison Cordier · Five original works · Each one unrepeatable",
+    "hero-h1":"Where light<br>finds its<br><em>home.</em>",
+    "hero-body":"Original mixed media paintings. Each piece is a single, unrepeatable object — not a print, not a reproduction. Curated and personally introduced across Europe.",
+    "hero-btn1":"See the paintings","hero-btn2":"Ask about a painting",
+    "strip-quote":"&ldquo;Born into art. Trained in Edinburgh.<br>Exhibited in Stockholm.<br>Now in European homes — <em>personally placed.</em>&rdquo;",
+    "strip-body":"These works are not sold through galleries or agents. Each painting is presented through a <strong>personal introduction</strong> — one conversation, one painting, one home. The artist has exhibited internationally, including a solo show at Galleri Cupido, Stockholm (2025). When one work finds its home, it leaves this collection permanently.",
+    "proof-label":"Why through Maison Cordier",
+    "proof1":"Every work is original — painted once, owned once, never reproduced",
+    "proof2":"Personal introduction — Marc responds to every enquiry himself",
+    "proof3":"Safe delivery across Europe — carefully packaged, fully insured",
+    "proof4":"Internationally exhibited artist — solo show Stockholm 2025",
+    "proof5":"No galleries, no agents — you deal directly with the curator",
+    "avail1":"Available","avail2":"Available","avail3":"Available","avail4":"Available","avail5":"Available",
+    "tag1":"Original · Mixed Media · A2","title1":"Coastal Grasses",
+    "tag2":"Original · Mixed Media · A2","title2":"Malta Street",
+    "tag3":"Original · Copper Leaf & Mixed Media · A2","title3":"Blue Flowers<br>on Copper",
+    "tag4":"Original · Mixed Media & Oil Pastel · A3","title4":"Seagrasses<br>& Island",
+    "tag5":"Original · Copper Leaf & Mixed Media · A2","title5":"Magnolia<br>& Bamboo",
+    "buy1":"Buy Now — €1,095","buy2":"Buy Now — €1,095","buy3":"Buy Now — €1,095","buy4":"Buy Now — €1,095","buy5":"Buy Now — €1,095",
+    "cta1":"I want this painting","note1":"Personal response within 24 hours · Original, not a print · Ships across Europe",
+    "cta2":"I want this painting","note2":"Personal response within 24 hours · Original, not a print · Ships across Europe",
+    "cta3":"I want this painting","note3":"Personal response within 24 hours · Original, not a print · Ships across Europe",
+    "cta4":"I want this painting","note4":"Personal response within 24 hours · Original, not a print · Ships across Europe",
+    "cta5":"I want this painting","note5":"Personal response within 24 hours · Original, not a print · Ships across Europe",
+    "desc1":"<p>Tall stems bending in the sea breeze. Warm ochres, soft browns, pale creams and deep coastal blues — layered in loose, energetic brushstrokes that suggest rhythm and natural motion.</p><p>Hints of delicate seed heads and wild plants appear among the sweeping strokes, evoking the untamed edges of Scotland's shores where grasses grow thick over dunes and sandy ground. A lively contemporary landscape that brings the movement and atmosphere of the Scottish coast into a room — and keeps it there.</p>",
+    "desc2":"<p>Pale stone walls. Deep shadows. Vivid blues and sun-warmed yellows. The air itself glowing.</p><p>Loose, expressive marks suggest architecture rather than depicting it. Layers of paint evoke heat, movement and memory rather than a fixed place. A painting that carries the warmth of the Mediterranean — and places it permanently on your wall.</p>",
+    "desc3":"<p>Luminous blue floral forms emerging against the warmth of real copper leaf — a surface that reflects light subtly, shifting in mood as the light in your room changes.</p><p>A contemporary botanical that feels both energetic and grounded. A painting that breathes with the room, changes with the hour, and rewards the kind of looking that most art never earns.</p>",
+    "desc4":"<p>Soft, expressive layers of wind-swept seagrasses fill the foreground. On the horizon, a distant island rests against the sky — promising escape, calm, and the pull of somewhere just beyond reach.</p><p>This piece balances freedom and structure: fluid painterly marks combined with confident linear accents. Neither restless nor static.</p>",
+    "desc5":"<p>Magnolia blooms opening with quiet confidence. Bamboo stems rising rhythmically — symbolising endurance, calm, and the elegance of things that bend but do not break.</p><p>Copper leaf catches the light beneath layers of paint, adding warmth and luminosity that shifts as the viewer moves. A work that invites close, contemplative viewing — and keeps giving.</p>",
+    "closer-eye":"A personal introduction",
+    "closer-h2":"Something<br>stayed with <em>you?</em>",
+    "closer-body":"If one of these works stopped you — even for a moment — that is worth a conversation. Tell me which one. Tell me about your space. Tell me nothing at all if you prefer — just write <em>bonjour.</em>",
+    "closer-body2":"There is no catalogue, no pressure, no hard sell. Just two people talking about a painting. I respond personally, always within 24 hours.",
+    "closer-scarcity":"Each work exists once. When it finds its home, it leaves this collection permanently.",
+    "closer-btn":"Enquire about this work",
+    "footer-center":"Original Works · Curated for European Homes"
+  },
+  nl:{
+    "nav-sub":"Originele Werken · Samengestelde Collectie",
+    "nav-cta":"Neem contact op",
+    "hero-tag":"Maison Cordier · Vijf originele werken · Elk uniek en onherhaalbaar",
+    "hero-h1":"Waar licht<br>zijn thuis<br><em>vindt.</em>",
+    "hero-body":"Originele mixed media schilderijen. Elk werk is een uniek, onherhaalbaar object — geen print, geen reproductie. Persoonlijk samengesteld en geïntroduceerd door heel Europa.",
+    "hero-btn1":"Bekijk de schilderijen","hero-btn2":"Vraag over een schilderij",
+    "strip-quote":"&ldquo;Geboren in de kunst. Opgeleid in Edinburgh.<br>Tentoongesteld in Stockholm.<br>Nu in Europese huizen — <em>persoonlijk geplaatst.</em>&rdquo;",
+    "strip-body":"Deze werken worden niet via galeries of agenten verkocht. Elk schilderij wordt gepresenteerd via een <strong>persoonlijke introductie</strong> — één gesprek, één schilderij, één thuis. De kunstenaar heeft internationaal geëxposeerd, inclusief een solotentoonstelling bij Galleri Cupido, Stockholm (2025). Wanneer een werk zijn thuis vindt, verlaat het deze collectie definitief.",
+    "proof-label":"Waarom via Maison Cordier",
+    "proof1":"Elk werk is origineel — eenmalig geschilderd, eenmalig in bezit, nooit gereproduceerd",
+    "proof2":"Persoonlijke introductie — Marc reageert zelf op elke aanvraag",
+    "proof3":"Veilige levering door heel Europa — zorgvuldig verpakt, volledig verzekerd",
+    "proof4":"Internationaal tentoongestelde kunstenaar — solotentoonstelling Stockholm 2025",
+    "proof5":"Geen galeries, geen agenten — u werkt rechtstreeks met de curator",
+    "avail1":"Beschikbaar","avail2":"Beschikbaar","avail3":"Beschikbaar","avail4":"Beschikbaar","avail5":"Beschikbaar",
+    "tag1":"Origineel · Mixed Media · A2","title1":"Kustgras",
+    "tag2":"Origineel · Mixed Media · A2","title2":"Malta Street",
+    "tag3":"Origineel · Koperblad & Mixed Media · A2","title3":"Blauwe Bloemen<br>op Koper",
+    "tag4":"Origineel · Mixed Media & Oliepastel · A3","title4":"Zeegras<br>& Eiland",
+    "tag5":"Origineel · Koperblad & Mixed Media · A2","title5":"Magnolia<br>& Bamboe",
+    "buy1":"Nu kopen — €1,095","buy2":"Nu kopen — €1,095","buy3":"Nu kopen — €1,095","buy4":"Nu kopen — €1,095","buy5":"Nu kopen — €1,095",
+    "cta1":"Ik wil dit schilderij","note1":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
+    "cta2":"Ik wil dit schilderij","note2":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
+    "cta3":"Ik wil dit schilderij","note3":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
+    "cta4":"Ik wil dit schilderij","note4":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
+    "cta5":"Ik wil dit schilderij","note5":"Persoonlijk antwoord binnen 24 uur · Origineel, geen print · Levering door Europa",
+    "desc1":"<p>Hoge stengels buigen in de zeebries. Warme okers, zachte bruinen, bleke crèmes en diepe kustblauwen — gelaagd in losse, energieke penseelstreken die ritme en natuurlijke beweging suggereren.</p><p>Hints van tere zaadpluimen en wilde planten verschijnen tussen de brede streken, die de ongetemde randen van Schotlands kusten oproepen. Een levendig hedendaags landschap dat de beweging en sfeer van de Schotse kust in een kamer brengt — en daar houdt.</p>",
+    "desc2":"<p>Bleke stenen muren. Diepe schaduwen. Levendige blues en zongewarmde gelen. De lucht zelf gloeit.</p><p>Losse, expressieve streken suggereren architectuur in plaats van het af te beelden. Lagen verf roepen hitte, beweging en herinnering op. Een schilderij dat de warmte van de Middellandse Zee draagt — en het permanent op uw muur plaatst.</p>",
+    "desc3":"<p>Lichtgevende blauwe bloemenvormen die opdoemen tegen de warmte van echt koperblad — een oppervlak dat licht subtiel weerkaatst en van stemming wisselt naarmate het licht in uw kamer verandert.</p><p>Een hedendaagse botanische die zowel energiek als gegrond aanvoelt. Een schilderij dat meeademt met de kamer, verandert met het uur en beloont het soort kijken dat de meeste kunst nooit verdient.</p>",
+    "desc4":"<p>Zachte, expressieve lagen windvegen zeegrassen vullen de voorgrond. Aan de horizon rust een ver eiland — een belofte van ontsnapping, rust en de aantrekkingskracht van iets net buiten bereik.</p><p>Dit werk balanceert vrijheid en structuur: vloeiende schilderachtige streken gecombineerd met zelfverzekerde lineaire accenten. Noch rusteloos noch statisch.</p>",
+    "desc5":"<p>Magnoliaboesems die met stille zelfverzekerdheid opengaan. Bamboestengels die ritmisch door de compositie rijzen — een symbool van uithoudingsvermogen, rust en elegantie.</p><p>Koperblad vangt het licht onder lagen verf en voegt warmte en lichtsterkte toe die verschuift als de kijker zich beweegt. Een werk dat uitnodigt tot contemplatief kijken — en blijft geven.</p>",
+    "closer-eye":"Een persoonlijke introductie",
+    "closer-h2":"Iets bleef<br>bij <em>u hangen?</em>",
+    "closer-body":"Als een van deze werken u ook maar een moment deed stoppen — dat is een gesprek waard. Vertel me welke. Vertel me over uw ruimte. Of schrijf gewoon <em>bonjour.</em>",
+    "closer-body2":"Geen catalogus, geen druk, geen verkooppraatje. Gewoon twee mensen die praten over een schilderij. Ik reageer persoonlijk, altijd binnen 24 uur.",
+    "closer-scarcity":"Elk werk bestaat eenmalig. Wanneer het zijn thuis vindt, verlaat het deze collectie definitief.",
+    "closer-btn":"Vraag naar dit werk",
+    "footer-center":"Originele Werken · Samengesteld voor Europese Huizen"
+  },
+  fr:{
+    "nav-sub":"Œuvres Originales · Collection Curatée",
+    "nav-cta":"Nous contacter",
+    "hero-tag":"Maison Cordier · Cinq œuvres originales · Chacune unique et irremplaçable",
+    "hero-h1":"Là où la lumière<br>trouve sa<br><em>maison.</em>",
+    "hero-body":"Peintures originales en technique mixte. Chaque œuvre est un objet unique et irremplaçable — pas une impression, pas une reproduction. Sélectionnées et présentées personnellement à travers l'Europe.",
+    "hero-btn1":"Voir les tableaux","hero-btn2":"Poser une question sur un tableau",
+    "strip-quote":"&ldquo;Née dans l'art. Formée à Édimbourg.<br>Exposée à Stockholm.<br>Maintenant dans des maisons européennes — <em>placées personnellement.</em>&rdquo;",
+    "strip-body":"Ces œuvres ne sont pas vendues via des galeries ou des agents. Chaque tableau est présenté par le biais d'une <strong>introduction personnelle</strong> — une conversation, un tableau, un foyer. L'artiste a exposé à l'international, notamment lors d'une exposition solo à la Galleri Cupido, Stockholm (2025). Lorsqu'une œuvre trouve son foyer, elle quitte définitivement cette collection.",
+    "proof-label":"Pourquoi par Maison Cordier",
+    "proof1":"Chaque œuvre est originale — peinte une fois, possédée une fois, jamais reproduite",
+    "proof2":"Introduction personnelle — Marc répond lui-même à chaque demande",
+    "proof3":"Livraison sécurisée dans toute l'Europe — soigneusement emballée, entièrement assurée",
+    "proof4":"Artiste exposée à l'international — exposition solo Stockholm 2025",
+    "proof5":"Pas de galeries, pas d'agents — vous traitez directement avec le curateur",
+    "avail1":"Disponible","avail2":"Disponible","avail3":"Disponible","avail4":"Disponible","avail5":"Disponible",
+    "tag1":"Original · Technique mixte · A2","title1":"Herbes Côtières",
+    "tag2":"Original · Technique mixte · A2","title2":"Malta Street",
+    "tag3":"Original · Feuille de cuivre & technique mixte · A2","title3":"Fleurs Bleues<br>sur Cuivre",
+    "tag4":"Original · Technique mixte & pastel à l'huile · A3","title4":"Herbes Marines<br>& Île",
+    "tag5":"Original · Feuille de cuivre & technique mixte · A2","title5":"Magnolia<br>& Bambou",
+    "buy1":"Acheter — €1,095","buy2":"Acheter — €1,095","buy3":"Acheter — €1,095","buy4":"Acheter — €1,095","buy5":"Acheter — €1,095",
+    "cta1":"Je veux ce tableau","note1":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
+    "cta2":"Je veux ce tableau","note2":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
+    "cta3":"Je veux ce tableau","note3":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
+    "cta4":"Je veux ce tableau","note4":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
+    "cta5":"Je veux ce tableau","note5":"Réponse personnelle sous 24h · Original, pas une impression · Livraison dans toute l'Europe",
+    "desc1":"<p>De hautes tiges se courbant dans la brise marine. Des ocres chauds, des bruns doux, des crèmes pâles et des bleus côtiers profonds — superposés en larges coups de pinceau énergiques qui suggèrent le rythme et le mouvement naturel.</p><p>Des traces de têtes de graines délicates et de plantes sauvages évoquent les rives sauvages des côtes écossaises. Un paysage contemporain vivant qui apporte le mouvement et l'atmosphère de la côte écossaise dans une pièce.</p>",
+    "desc2":"<p>Murs de pierre pâle. Ombres profondes. Blues vifs et jaunes réchauffés par le soleil. L'air lui-même rayonne.</p><p>Des marques expressives suggèrent l'architecture plutôt que de la dépeindre. Des couches de peinture évoquent la chaleur, le mouvement et le souvenir. Un tableau qui porte la chaleur de la Méditerranée — et la place de façon permanente sur votre mur.</p>",
+    "desc3":"<p>Des formes florales bleues lumineuses émergeant contre la chaleur d'une vraie feuille de cuivre — une surface qui réfléchit subtilement la lumière, changeant d'humeur au gré de la lumière dans votre pièce.</p><p>Une botanique contemporaine à la fois énergique et ancrée. Un tableau qui respire avec la pièce et récompense le regard que la plupart des œuvres ne méritent jamais.</p>",
+    "desc4":"<p>De douces couches expressives d'herbes marines balayées par le vent remplissent le premier plan. À l'horizon, une île lointaine repose contre le ciel — promesse d'évasion, de calme et de l'attrait de quelque chose juste hors de portée.</p><p>Cette œuvre équilibre liberté et structure : des marques fluides combinées à des accents linéaires confiants. Ni agitée ni statique.</p>",
+    "desc5":"<p>Des fleurs de magnolia s'ouvrant avec une douce assurance. Des tiges de bambou s'élevant rythmiquement — symboles d'endurance, de calme et de l'élégance des choses qui plient sans se briser.</p><p>La feuille de cuivre capte la lumière sous des couches de peinture, ajoutant chaleur et luminosité. Une œuvre qui invite à une contemplation attentive — et qui continue de donner.</p>",
+    "closer-eye":"Une introduction personnelle",
+    "closer-h2":"Quelque chose<br>vous a <em>arrêté?</em>",
+    "closer-body":"Si l'une de ces œuvres vous a arrêté — même un instant — cela vaut une conversation. Dites-moi laquelle. Parlez-moi de votre espace. Ou écrivez simplement <em>bonjour.</em>",
+    "closer-body2":"Pas de catalogue, pas de pression, pas de vente forcée. Juste deux personnes qui parlent d'un tableau. Je réponds personnellement, toujours sous 24 heures.",
+    "closer-scarcity":"Chaque œuvre existe une seule fois. Lorsqu'elle trouve son foyer, elle quitte définitivement cette collection.",
+    "closer-btn":"Renseignez-vous sur cette œuvre",
+    "footer-center":"Œuvres Originales · Sélectionnées pour les Maisons Européennes"
+  },
+  de:{
+    "nav-sub":"Originalwerke · Kuratierte Sammlung",
+    "nav-cta":"Anfrage stellen",
+    "hero-tag":"Maison Cordier · Fünf Originalwerke · Jedes einzigartig und unwiederholbar",
+    "hero-h1":"Wo Licht<br>sein Zuhause<br><em>findet.</em>",
+    "hero-body":"Originale Mixed-Media-Gemälde. Jedes Werk ist ein einzigartiges, unwiederholbares Objekt — kein Druck, keine Reproduktion. Kuratiert und persönlich in ganz Europa vermittelt.",
+    "hero-btn1":"Die Gemälde ansehen","hero-btn2":"Frage zu einem Gemälde",
+    "strip-quote":"&ldquo;In die Kunst hineingeboren. Ausgebildet in Edinburgh.<br>Ausgestellt in Stockholm.<br>Jetzt in europäischen Häusern — <em>persönlich platziert.</em>&rdquo;",
+    "strip-body":"Diese Werke werden nicht über Galerien oder Agenten verkauft. Jedes Gemälde wird durch eine <strong>persönliche Einführung</strong> präsentiert — ein Gespräch, ein Gemälde, ein Zuhause. Die Künstlerin hat international ausgestellt, darunter eine Einzelausstellung in der Galleri Cupido, Stockholm (2025). Wenn ein Werk sein Zuhause findet, verlässt es diese Sammlung dauerhaft.",
+    "proof-label":"Warum über Maison Cordier",
+    "proof1":"Jedes Werk ist original — einmal gemalt, einmal besessen, nie reproduziert",
+    "proof2":"Persönliche Einführung — Marc antwortet selbst auf jede Anfrage",
+    "proof3":"Sichere Lieferung in ganz Europa — sorgfältig verpackt, vollständig versichert",
+    "proof4":"International ausgestellte Künstlerin — Einzelausstellung Stockholm 2025",
+    "proof5":"Keine Galerien, keine Agenten — Sie arbeiten direkt mit dem Kurator",
+    "avail1":"Verfügbar","avail2":"Verfügbar","avail3":"Verfügbar","avail4":"Verfügbar","avail5":"Verfügbar",
+    "tag1":"Original · Mixed Media · A2","title1":"Küstengras",
+    "tag2":"Original · Mixed Media · A2","title2":"Malta Street",
+    "tag3":"Original · Kupferblatt & Mixed Media · A2","title3":"Blaue Blumen<br>auf Kupfer",
+    "tag4":"Original · Mixed Media & Ölpastel · A3","title4":"Seegras<br>& Insel",
+    "tag5":"Original · Kupferblatt & Mixed Media · A2","title5":"Magnolie<br>& Bambus",
+    "buy1":"Jetzt kaufen — €1,095","buy2":"Jetzt kaufen — €1,095","buy3":"Jetzt kaufen — €1,095","buy4":"Jetzt kaufen — €1,095","buy5":"Jetzt kaufen — €1,095",
+    "cta1":"Ich möchte dieses Gemälde","note1":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
+    "cta2":"Ich möchte dieses Gemälde","note2":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
+    "cta3":"Ich möchte dieses Gemälde","note3":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
+    "cta4":"Ich möchte dieses Gemälde","note4":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
+    "cta5":"Ich möchte dieses Gemälde","note5":"Persönliche Antwort innerhalb 24h · Original, kein Druck · Lieferung in ganz Europa",
+    "desc1":"<p>Hohe Stängel, die sich in der Meeresbrise biegen. Warme Ocker, sanfte Brauntöne, blasses Creme und tiefe Küstenblaus — in lockeren, energischen Pinselstrichen geschichtet, die Rhythmus und natürliche Bewegung suggerieren.</p><p>Andeutungen zarter Samenköpfe und wilder Pflanzen beschwören die ungezähmten Ränder der schottischen Küste. Ein lebhaftes zeitgenössisches Landschaft, das die Bewegung und Atmosphäre der schottischen Küste in einen Raum bringt — und dort behält.</p>",
+    "desc2":"<p>Blasse Steinmauern. Tiefe Schatten. Lebhafte Blues und sonnenwarme Gelbtöne. Die Luft selbst leuchtet.</p><p>Lockere, ausdrucksstarke Striche suggerieren Architektur, anstatt sie abzubilden. Farbschichten beschwören Wärme, Bewegung und Erinnerung. Ein Gemälde, das die Wärme des Mittelmeers trägt — und sie dauerhaft an Ihre Wand bringt.</p>",
+    "desc3":"<p>Leuchtende blaue Blumenformen, die gegen die Wärme echter Kupferfolie auftauchen — eine Oberfläche, die Licht subtil reflektiert und ihre Stimmung verändert, wenn sich das Licht in Ihrem Raum ändert.</p><p>Eine zeitgenössische Botanik, die sich sowohl energisch als auch geerdet anfühlt. Ein Gemälde, das mit dem Raum atmet und die Art des Schauens belohnt, die die meisten Kunstwerke nie verdienen.</p>",
+    "desc4":"<p>Weiche, ausdrucksstarke Schichten windgepeitschter Seegräser füllen den Vordergrund. Am Horizont ruht eine ferne Insel gegen den Himmel — ein Versprechen von Flucht, Ruhe und dem Sog von etwas gerade außer Reichweite.</p><p>Dieses Werk balanciert Freiheit und Struktur: fließende malerische Striche kombiniert mit selbstbewussten linearen Akzenten. Weder ruhelos noch statisch.</p>",
+    "desc5":"<p>Magnolienblüten, die sich mit stiller Zuversicht öffnen. Bambusstängel, die rhythmisch durch die Komposition aufsteigen — ein Symbol für Ausdauer, Ruhe und die Eleganz von Dingen, die sich biegen, aber nicht brechen.</p><p>Kupferfolie fängt das Licht unter Farbschichten ein und verleiht Wärme und Leuchtkraft. Ein Werk, das zu aufmerksamer, kontemplativer Betrachtung einlädt — und weiter gibt.</p>",
+    "closer-eye":"Eine persönliche Einführung",
+    "closer-h2":"Etwas blieb<br>bei <em>Ihnen hängen?</em>",
+    "closer-body":"Wenn eines dieser Werke Sie auch nur einen Moment aufgehalten hat — das ist ein Gespräch wert. Sagen Sie mir, welches. Erzählen Sie mir von Ihrem Raum. Oder schreiben Sie einfach <em>bonjour.</em>",
+    "closer-body2":"Kein Katalog, kein Druck, kein harter Verkauf. Nur zwei Menschen, die über ein Gemälde sprechen. Ich antworte persönlich, immer innerhalb von 24 Stunden.",
+    "closer-scarcity":"Jedes Werk existiert einmal. Wenn es sein Zuhause findet, verlässt es diese Sammlung dauerhaft.",
+    "closer-btn":"Nach diesem Werk anfragen",
+    "footer-center":"Originalwerke · Kuratiert für europäische Häuser"
+  }
 };
-
 const ids=["nav-sub","nav-cta","hero-tag","hero-h1","hero-body","hero-btn1","hero-btn2",
   "strip-quote","strip-body","proof-label","proof1","proof2","proof3","proof4","proof5",
   "avail1","avail2","avail3","avail4","avail5",
@@ -717,7 +700,6 @@ const ids=["nav-sub","nav-cta","hero-tag","hero-h1","hero-body","hero-btn1","her
   "buy1","buy2","buy3","buy4","buy5","cta1","note1","cta2","note2","cta3","note3","cta4","note4","cta5","note5",
   "desc1","desc2","desc3","desc4","desc5",
   "closer-eye","closer-h2","closer-body","closer-body2","closer-scarcity","closer-btn","footer-center"];
-
 function setLang(l){
   var d=T[l];if(!d)return;
   ids.forEach(function(id){var el=document.getElementById(id);if(el&&d[id])el.innerHTML=d[id];});
@@ -725,12 +707,10 @@ function setLang(l){
   document.documentElement.lang=l;
   try{localStorage.setItem('mc_lang',l);}catch(e){}
 }
-
 var obs=new IntersectionObserver(function(entries){
   entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});
 },{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
-
 (function(){
   var s='';try{s=localStorage.getItem('mc_lang')||'';}catch(e){}
   var m={en:'en',nl:'nl',fr:'fr',de:'de'};
@@ -743,11 +723,13 @@ document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
   var toggle = document.getElementById('nav-toggle');
   var menu = document.getElementById('nav-mobile-menu');
   if(!toggle || !menu) return;
+
   toggle.addEventListener('click', function(){
     toggle.classList.toggle('open');
     menu.classList.toggle('open');
     document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
   });
+
   menu.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click', function(){
       toggle.classList.remove('open');
@@ -757,5 +739,6 @@ document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
   });
 })();
 </script>
+
 </body>
 </html>
