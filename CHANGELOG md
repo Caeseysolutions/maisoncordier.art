@@ -1,0 +1,69 @@
+# CHANGELOG — maisoncordier.art
+
+## [1.3.0] — 2026-04-18 — Conversion rescue + mobile optimisation
+
+Five coordinated fixes deployed across the day to repair homepage image/text alignment and create a mobile conversion path for the active Seagrasses & Island Meta boost (€2/day, €0.10 CPC, 29 landing page views, zero sales as of 17 Apr — hence today's work).
+
+### Fixed — Deploy 1 · Coastal Grasses image on slot 04
+- Replaced wrong image `i.ibb.co/rKgLZ9G5/Painting-40-Grasses1.avif` (close-up reeds) with correct `i.ibb.co/pjPhsxMk/Painting-40-Grasses7.jpg` (full Coastal Grasses painting, matches `painting-coastal-grasses.html` detail page).
+
+### Fixed — Deploy 2 · Slot 01/04 title & description alignment
+- JS `T` dictionary was overriding HTML-hardcoded titles/descriptions with the wrong painting. Result: slot 01 showed Seagrasses image with Coastal Grasses text; slot 04 showed Coastal Grasses image with Seagrasses text.
+- Swapped `title1↔title4`, `tag1↔tag4`, `desc1↔desc4` across all 4 languages (EN / NL / FR / DE) in the T dictionary.
+- Correct end state: Slot 01 = Seagrasses (title + A3 Oil Pastel + description) · Slot 04 = Coastal Grasses (title + A2 Mixed Media + description). Buy Now URLs, mailto subjects, and images unchanged (already correct).
+
+### Fixed — Deploy 3 · Mobile above-the-fold + sticky Buy Now bar
+- **Why:** Buy Now button was below the fold on mobile. Paid ad traffic bounced before reaching purchase point.
+- Mobile CSS changes (`≤860px` viewport only):
+  - `.work` / `.work.flip`: min-height 100vh → auto
+  - `.work-img`: min-height 60vw → 50vw
+  - `.work-info` padding tightened 3rem → 2rem
+  - `.work-title` on mobile 2.2rem → 1.8rem
+  - `.work-desc` reduced font-size and margins
+  - `.btn-buy-now` / `.btn-enquire`: full-width mobile
+- Added **floating sticky Buy Now bar** (mobile only, `≤860px`):
+  - Fixed to bottom of viewport
+  - Gold gradient background, 48px+ tap target
+  - Points to `kirsteenart.com/product-page/seagrasses-and-island` (active boost painting)
+  - Desktop: hidden via `@media(min-width:861px){.sticky-buy{display:none!important}}`
+
+### Fixed — Deploy 4 · Sticky bar translated (EN/NL/FR/DE)
+- Added `sticky-buy-link` key to T dictionary for all 4 languages.
+- EN: "Buy Seagrasses & Island — €1,095"
+- NL: "Koop Zeegras & Eiland — €1,095"
+- FR: "Acheter Herbes Marines & Île — €1,095"
+- DE: "Seegras & Insel kaufen — €1,095"
+
+### Fixed — Deploy 5 · Hamburger menu visible on mobile
+- CSS specificity conflict: base `.nav-toggle{display:none}` at line 326 was overriding mobile media query's `.nav-toggle{display:flex}` at line 240 (later rule wins when specificity equal).
+- Fix: added `!important` to the media query rule. Hamburger now visible on mobile, desktop unaffected.
+- Flagged as tech debt for future CSS cleanup session — the proper fix is reordering CSS so media query is the last block.
+
+### Post-deploy verification (all steps passed)
+- File integrity: 816 lines, 61.2 KB
+- CSS brace balance: 161/161 ✅
+- JS syntax: valid (node --check clean)
+- Images: all 6 ibb.co URLs at correct positions
+- Buy Now links: 6 total (5 paintings + 1 sticky)
+- Email links: 9 total (nav, mobile menu, hero, 5 enquiry buttons, closer, footer)
+- Language switcher: 10 references, all 4 languages complete
+
+### Known tech debt (deferred to dedicated session)
+- **Painting detail pages** (`painting-*.html`) show only "Enquire about this work" — no direct Buy Now button. Instagram bio link temporarily pointed to homepage (which HAS sticky bar) instead of detail pages.
+- **Slot 01/04 HTML hardcoded values** describe opposite paintings to their JS overrides. Works via JS but fragile if JS ever fails. Cleanup candidate.
+- **CSS ordering** in index.html needs reorganisation (media query should be last) to eliminate the `!important` patches.
+- **Painting card fonts** use fixed rem sizes for desktop (zoom scaling). Mobile partially addressed today; desktop audit deferred.
+- **Phone number dark-on-dark** on collect.html — reported, not fixed.
+- **collect.html canonical URL duplication** (`/collection`, `/collection.html`, `/collect`, `/collect.html`) — noted in 17 April SEO review, deferred to 2-week parking period.
+- **Full site SEO + readability audit** — deferred to dedicated session.
+
+## [Previous] — 2026-04-17
+- Full index.html rebuild (57 KB, ibb.co CDN URLs)
+- collect.html reverted to working state (4 languages)
+- Cloudflare email obfuscation disabled sitewide
+- sitemap.xml validated with 19 URLs (GREEN in Search Console)
+
+## [Previous] — 2026-04-16
+- Seagrasses & Island painting detail page deployed
+- Instagram + Facebook feed posts live
+- Meta boost submitted: €2/day × 5 days, 55+ EU targeting

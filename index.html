@@ -237,7 +237,7 @@ footer{
   footer{grid-template-columns:1fr;gap:1rem}
   .footer-center,.footer-right{text-align:left}
   .hero-scroll{display:none}
-  .nav-toggle{display:flex}
+  .nav-toggle{display:flex !important}
   .nav-mobile-menu{
     display:none;
     position:fixed;top:0;left:0;right:0;bottom:0;
@@ -278,6 +278,48 @@ footer{
     font-size:1.5rem;color:var(--parchment);opacity:0.6;
     line-height:1;
   }
+
+  /* MOBILE CONVERSION OPTIMISATION — added 18 Apr 2026 */
+  /* Shorten work card min-height so Buy Now sits closer to the fold */
+  .work,.work.flip{min-height:auto}
+  .work-img{min-height:50vw}
+  .work-info{padding:2rem 1.5rem}
+  .work-title{font-size:1.8rem !important;margin-bottom:0.3rem}
+  .work-medium{margin-bottom:1rem;padding-bottom:1rem}
+  .work-desc{margin-bottom:1.2rem;font-size:0.88rem}
+  .work-desc p{margin-bottom:0.7rem}
+  .work-availability{margin-bottom:1rem}
+  .btn-buy-now{width:100%;justify-content:center;padding:1rem 1.5rem;font-size:0.8rem}
+  .btn-enquire{width:100%;justify-content:center;padding:0.9rem 1.5rem}
+  .work-cta{width:100%}
+
+  /* Sticky Buy Now bar for Seagrasses (the boost-targeted painting) */
+  .sticky-buy{
+    display:block;
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:400;
+    background:linear-gradient(to top,rgba(10,8,6,0.98) 60%,rgba(10,8,6,0.85));
+    padding:0.85rem 1rem 1rem;
+    backdrop-filter:blur(12px);
+    border-top:1px solid rgba(184,132,42,0.3);
+    transform:translateY(100%);
+    transition:transform 0.4s ease;
+  }
+  .sticky-buy.show{transform:translateY(0)}
+  .sticky-buy a{
+    display:flex;align-items:center;justify-content:center;
+    background:var(--gold);color:var(--ink);
+    font-family:'Jost',sans-serif;font-weight:600;
+    font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;
+    text-decoration:none;border-radius:2px;
+    padding:1rem 1.5rem;width:100%;
+  }
+  .sticky-buy a:active{background:var(--gold-lt)}
+}
+/* Hide sticky buy on desktop */
+@media(min-width:861px){
+  .sticky-buy{display:none !important}
 }
 
 /* ═══ HAMBURGER MENU ═══ */
@@ -530,6 +572,11 @@ footer{
   </div>
 </footer>
 
+<!-- STICKY MOBILE BUY NOW — boost conversion rescue 18 Apr 2026 -->
+<div class="sticky-buy" id="sticky-buy">
+  <a href="https://www.kirsteenart.com/product-page/seagrasses-and-island" target="_blank" rel="noopener" id="sticky-buy-link">Buy Seagrasses & Island — €1,095</a>
+</div>
+
 <script>
 const T={
   en:{
@@ -570,7 +617,8 @@ const T={
     "closer-body2":"There is no catalogue, no pressure, no hard sell. Just two people talking about a painting. I respond personally, always within 24 hours.",
     "closer-scarcity":"Each work exists once. When it finds its home, it leaves this collection permanently.",
     "closer-btn":"Enquire about this work",
-    "footer-center":"Original Works · Curated for European Homes"
+    "footer-center":"Original Works · Curated for European Homes",
+    "sticky-buy-link":"Buy Seagrasses & Island — €1,095"
   },
   nl:{
     "nav-sub":"Originele Werken · Samengestelde Collectie",
@@ -610,7 +658,8 @@ const T={
     "closer-body2":"Geen catalogus, geen druk, geen verkooppraatje. Gewoon twee mensen die praten over een schilderij. Ik reageer persoonlijk, altijd binnen 24 uur.",
     "closer-scarcity":"Elk werk bestaat eenmalig. Wanneer het zijn thuis vindt, verlaat het deze collectie definitief.",
     "closer-btn":"Vraag naar dit werk",
-    "footer-center":"Originele Werken · Samengesteld voor Europese Huizen"
+    "footer-center":"Originele Werken · Samengesteld voor Europese Huizen",
+    "sticky-buy-link":"Koop Zeegras & Eiland — €1,095"
   },
   fr:{
     "nav-sub":"Œuvres Originales · Collection Curatée",
@@ -650,7 +699,8 @@ const T={
     "closer-body2":"Pas de catalogue, pas de pression, pas de vente forcée. Juste deux personnes qui parlent d'un tableau. Je réponds personnellement, toujours sous 24 heures.",
     "closer-scarcity":"Chaque œuvre existe une seule fois. Lorsqu'elle trouve son foyer, elle quitte définitivement cette collection.",
     "closer-btn":"Renseignez-vous sur cette œuvre",
-    "footer-center":"Œuvres Originales · Sélectionnées pour les Maisons Européennes"
+    "footer-center":"Œuvres Originales · Sélectionnées pour les Maisons Européennes",
+    "sticky-buy-link":"Acheter Herbes Marines & Île — €1,095"
   },
   de:{
     "nav-sub":"Originalwerke · Kuratierte Sammlung",
@@ -690,7 +740,8 @@ const T={
     "closer-body2":"Kein Katalog, kein Druck, kein harter Verkauf. Nur zwei Menschen, die über ein Gemälde sprechen. Ich antworte persönlich, immer innerhalb von 24 Stunden.",
     "closer-scarcity":"Jedes Werk existiert einmal. Wenn es sein Zuhause findet, verlässt es diese Sammlung dauerhaft.",
     "closer-btn":"Nach diesem Werk anfragen",
-    "footer-center":"Originalwerke · Kuratiert für europäische Häuser"
+    "footer-center":"Originalwerke · Kuratiert für europäische Häuser",
+    "sticky-buy-link":"Seegras & Insel kaufen — €1,095"
   }
 };
 const ids=["nav-sub","nav-cta","hero-tag","hero-h1","hero-body","hero-btn1","hero-btn2",
@@ -699,7 +750,8 @@ const ids=["nav-sub","nav-cta","hero-tag","hero-h1","hero-body","hero-btn1","her
   "tag1","title1","tag2","title2","tag3","title3","tag4","title4","tag5","title5",
   "buy1","buy2","buy3","buy4","buy5","cta1","note1","cta2","note2","cta3","note3","cta4","note4","cta5","note5",
   "desc1","desc2","desc3","desc4","desc5",
-  "closer-eye","closer-h2","closer-body","closer-body2","closer-scarcity","closer-btn","footer-center"];
+  "closer-eye","closer-h2","closer-body","closer-body2","closer-scarcity","closer-btn","footer-center",
+  "sticky-buy-link"];
 function setLang(l){
   var d=T[l];if(!d)return;
   ids.forEach(function(id){var el=document.getElementById(id);if(el&&d[id])el.innerHTML=d[id];});
@@ -737,6 +789,26 @@ document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
       document.body.style.overflow = '';
     });
   });
+})();
+
+// Sticky mobile Buy Now — always visible on mobile from page load
+(function(){
+  var bar = document.getElementById('sticky-buy');
+  var closer = document.querySelector('.closer');
+  if(!bar) return;
+  function updateBar(){
+    if(window.innerWidth > 860){ bar.classList.remove('show'); return; }
+    // Show immediately on mobile; only hide when user reaches the closer section
+    var closerTop = closer ? closer.getBoundingClientRect().top : Infinity;
+    if(closerTop > window.innerHeight * 0.3){
+      bar.classList.add('show');
+    } else {
+      bar.classList.remove('show');
+    }
+  }
+  window.addEventListener('scroll', updateBar, {passive:true});
+  window.addEventListener('resize', updateBar);
+  updateBar();
 })();
 </script>
 
